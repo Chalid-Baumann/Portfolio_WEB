@@ -1,7 +1,25 @@
+/*SCHRIFT*/
+@font-face {
+    font-family: 'akzidenzgrotesk_regular';
+    src: url(/font/AkzidenzGrotesk-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GazetteLTStd-Roman';
+    src: url(/font/GazetteLTStd-Roman.otf);
+    font-weight: normal;
+    font-style: normal;
+
+
+
+/*GENERAL*/
 html{
     scroll-behavior: smooth;
 }
 
 body{
-    background-color: black;
-}
+    background-color: rgb(183, 183, 183);
+};
+
