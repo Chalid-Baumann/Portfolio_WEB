@@ -27,10 +27,10 @@ html{
 body{
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Verhindert das Scrollen der Startseite */
+    font-size: 2vw;
 
     /*BACKGROUND*/
-    background-color: rgb(255, 255, 255);
+    background-color: #e6e9e5;
 
     /*FONT*/
     font-family: "lft-etica-mono", sans-serif;
@@ -168,7 +168,7 @@ main {
     }
 
     .project-description {
-        font-size: 14px; /* Kleinere Schriftgröße für die Beschreibung */
+        font-size: 9px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
@@ -176,7 +176,7 @@ main {
     }
 
     .nav ul li a{
-        font-size: 14px; /* Kleinere Schriftgröße für die Beschreibung */
+        font-size: 9px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
