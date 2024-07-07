@@ -1,4 +1,6 @@
 /*SCHRIFT*/
+@import url("https://use.typekit.net/ikm7jrk.css");
+
 @font-face {
     font-family: 'akzidenzgrotesk_regular';
     src: url(/font/AkzidenzGrotesk-Regular.otf);
@@ -11,8 +13,8 @@
     src: url(/font/GazetteLTStd-Roman.otf);
     font-weight: normal;
     font-style: normal;
+}
 
-  @import url("https://use.typekit.net/ikm7jrk.css");
 
 
 
@@ -23,6 +25,9 @@ html{
 }
 
 body{
-    background-color: rgb(0, 0, 0);
-};
+    background-color: rgb(255, 255, 255);
+    font-family: "lft-etica-mono", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
