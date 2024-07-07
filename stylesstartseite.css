@@ -89,7 +89,7 @@ main {
     width: 100%; /* Volle Breite des Viewports */
     height: 100%;
     padding: 0; /* Padding für den Container */
-    margin-top: 3%;
+    margin-top: 5%;
     box-sizing:border-box;
 }
 
@@ -128,7 +128,7 @@ main {
     width: 100%; /* Setzt die Breite auf die gesamte Viewport-Breite */
     height: 100%;
     box-sizing: border-box; /* Bezieht Padding in die Breite mit ein */
-    line-height: 0.5;
+    line-height: 60%;
 }
 
 
