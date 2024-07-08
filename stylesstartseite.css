@@ -53,8 +53,7 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
-    color: rgba(255, 255, 255, 0);
-    z-index: 1000; 
+    color: rgba(255, 255, 255, 0); 
 }
 
 nav ul {
@@ -80,14 +79,14 @@ main {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    height: calc(100vh - 100px); /* Höhe des Hauptbereichs */
+    height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
     box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
 }
 
 #projects {
     width: 100%; /* Volle Breite des Viewports */
-    height: 50%;
-    padding: 0; /* Padding für den Container */
+    height: 25%;
+    padding-bottom: 3%;
     margin-top: 5%;
     box-sizing:border-box;
 }
@@ -95,7 +94,7 @@ main {
 .project-container {
     margin:0; /* Abstand zwischen den Projekten */
     padding: 0;
-    height: 20%;
+    height: 30%;
 }
 
 .project {
@@ -160,37 +159,56 @@ main {
 /* Galerie-Stile */
 #gallery {
     margin-top: 1%;
-    overflow-x: wrap;
-    white-space: nowrap; /* Elemente in einer Zeile anordnen */
-    width: 100%;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+   overflow: hidden;
+    /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
+    width: 98%;
+    height: 100%;
+    position: relative;
 }
 
 .gallery-container {
-    justify-content: center;
-    z-index: 1010; 
+    /*justify-content: center;*/
+    align-items: center;
+    z-index: 1010;
     margin-top: 0;
+    margin-bottom: 0;
+   margin-left: 10%;
+   margin-right: 10%;
     display: flex;
     flex-direction: row;
-    /*gap: 0.5%;  Abstand zwischen den Galerie-Items */
-    padding: 0px;
-    height: 50%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
+    gap: 0;
+    position: relative;
 }
+
 
 .gallery-item {
-    height: 100%;
-    display: inline-block;
-    width: 20%;
-    min-width: 200px; /* Mindestbreite für die Galerie-Items */
     text-align: left;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, z-index 0s; /* Rotation und z-index für das Hover- und Click-Verhalten */
     object-fit: contain;
-    transition: transform 0.3s;
-    transform: rotate3d(1, 1, 0, 45deg); /* Standardrotation um 45 Grad in 3D */
-    transform-style: preserve-3d; /* Behält 3D-Transformations-Eigenschaften bei */
-
+    width: 25%; /* Breite der Galerie-Items */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
+    margin-left: -10%; /* Verschiebt das Item nach links für Überlappung */
+    transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
+    z-index: 1; /* Z-Index für die Überlappung */
 }
+
+.gallery-item.active {
+    z-index: 1020; /* Höherer z-index für das aktive Item */
+    transform: scale(1.1) rotate3d(1, 1, 0, 0deg); /* Vergrößert das aktive Item und setzt die Rotation auf 0 Grad */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate3d(1, 1, 0, 0deg); /* Vergrößert das Bild beim Hover und richtet es gerade aus */
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
+    z-index: 1030; /* Setzt den z-index höher beim Hover */
+}
+
 
 .gallery-item img {
     width: 100%;
@@ -207,6 +225,7 @@ main {
 .gallery-item:hover,
 .gallery-item:active {
     transform: rotate3d(1, 1, 0, 0deg); /* Rotation auf 0 Grad bei Hover oder Klick */
+    transform: scale(1.05); /* Vergrößert das Item beim Hover */
 }
 
 
@@ -222,23 +241,47 @@ main {
     }
 
     .project-description {
-        font-size: 9px; /* Kleinere Schriftgröße für die Beschreibung */
+        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
 
-    .nav ul li a{
-        font-size: 9px; /* Kleinere Schriftgröße für die Beschreibung */
+    .nav ul li a {
+        font-size: 10px; /* Kleinere Schriftgröße für die Links */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
-        left: auto; /* Entfernt die horizontale Verschiebung */ 
+        left: auto; /* Entfernt die horizontale Verschiebung */
     }
 
     .gallery-item {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+        height: auto; /* Automatische Höhe für kleinere Bildschirme */
+        margin: 0; /* Kein Margin für mobile Geräte */
+    }
+
+    /* Neue Regel für mobile Darstellung der Galerie-Items */
+    .gallery-container {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        overflow-x: hidden;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        gap: 0; /* Keine Überlappung auf mobilen Geräten */
+    }
+
+    .gallery-item {
+        margin-left: 0; /* Kein margin-left auf mobilen Geräten */
+        transform: scale(0.95) rotate3d(1, 1, 0, 0deg); /* Keine Rotation auf mobilen Geräten */
+    }
+
+    .gallery-item.active {
+        transform: scale(1.1); /* Vergrößert das aktive Item */
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05); /* Vergrößert das Bild beim Hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
     }
 
     .gallery-description {
