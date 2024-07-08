@@ -27,7 +27,7 @@ html{
 body{
     margin: 0;
     padding: 0;
-    font-size: 2vw;
+    font-size: 1.5vw;
 
     /*BACKGROUND*/
     background-color: #e6e9e5;
@@ -78,8 +78,7 @@ main {
     margin: 0;
     padding: 15px 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     text-align: justify;
     height: calc(100vh - 100px); /* Höhe des Hauptbereichs */
     box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
@@ -87,7 +86,7 @@ main {
 
 #projects {
     width: 100%; /* Volle Breite des Viewports */
-    height: 100%;
+    height: 50%;
     padding: 0; /* Padding für den Container */
     margin-top: 5%;
     box-sizing:border-box;
@@ -96,7 +95,7 @@ main {
 .project-container {
     margin:0; /* Abstand zwischen den Projekten */
     padding: 0;
-    height: 100%;
+    height: 20%;
 }
 
 .project {
@@ -158,6 +157,61 @@ main {
 
 
 
+/* Galerie-Stile */
+#gallery {
+    margin-top: 1%;
+    overflow-x: wrap;
+    white-space: nowrap; /* Elemente in einer Zeile anordnen */
+    width: 100%;
+}
+
+.gallery-container {
+    justify-content: center;
+    z-index: 1010; 
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    /*gap: 0.5%;  Abstand zwischen den Galerie-Items */
+    padding: 0px;
+    height: 50%;
+    width: 100%;
+}
+
+.gallery-item {
+    height: 100%;
+    display: inline-block;
+    width: 20%;
+    min-width: 200px; /* Mindestbreite für die Galerie-Items */
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s;
+    object-fit: contain;
+    transition: transform 0.3s;
+    transform: rotate3d(1, 1, 0, 45deg); /* Standardrotation um 45 Grad in 3D */
+    transform-style: preserve-3d; /* Behält 3D-Transformations-Eigenschaften bei */
+
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.gallery-item:hover,
+.gallery-item:active {
+    transform: rotate3d(1, 1, 0, 0deg); /* Rotation auf 0 Grad bei Hover oder Klick */
+}
+
+
+
+
 
 
 
@@ -181,6 +235,14 @@ main {
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
         left: auto; /* Entfernt die horizontale Verschiebung */ 
+    }
+
+    .gallery-item {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+    }
+
+    .gallery-description {
+        font-size: 9px; /* Kleinere Schriftgröße für die Beschreibung */
     }
 }
 
