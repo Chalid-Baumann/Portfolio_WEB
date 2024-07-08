@@ -85,7 +85,7 @@ main {
 
 #projects {
     width: 100%; /* Volle Breite des Viewports */
-    height: 25%;
+    /*height: 25%;*/
     padding-bottom: 3%;
     margin-top: 5%;
     box-sizing:border-box;
@@ -94,7 +94,7 @@ main {
 .project-container {
     margin:0; /* Abstand zwischen den Projekten */
     padding: 0;
-    height: 30%;
+    /*height: 30%;*/
 }
 
 .project {
@@ -160,7 +160,7 @@ main {
 #gallery {
     margin-top: 1%;
     padding-top: 3%;
-    padding-left: 2%;
+    padding-left: 0;
     padding-right: 2%;
    overflow: hidden;
     /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
@@ -229,7 +229,6 @@ main {
 
 
 /* Media Query für mobile Geräte */
-/* Media Query für mobile Geräte */
 @media (max-width: 768px) {
     .project {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
@@ -255,27 +254,15 @@ main {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
         height: auto; /* Automatische Höhe für kleinere Bildschirme */
         margin: 0; /* Kein Margin für mobile Geräte */
-    }
-
-    /* Neue Regel für mobile Darstellung der Galerie-Items */
-    .gallery-container {
-        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
-        overflow-x: hidden;
-        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
-        gap: 0; /* Keine Überlappung auf mobilen Geräten */
-    }
-
-    .gallery-item {
-        margin-left: 0; /* Kein margin-left auf mobilen Geräten */
-        transform: scale(0.95) rotate3d(1, 1, 0, 0deg); /* Keine Rotation auf mobilen Geräten */
+        transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
     }
 
     .gallery-item.active {
-        transform: scale(1.1); /* Vergrößert das aktive Item */
+        transform: scale(1.1) rotate3d(1, 1, 0, 0deg); /* Vergrößert das aktive Item und setzt die Rotation auf 0 Grad */
     }
 
     .gallery-item:hover {
-        transform: scale(1.05); /* Vergrößert das Bild beim Hover */
+        transform: scale(1.05) rotate3d(1, 1, 0, 0deg); /* Vergrößert das Bild beim Hover und richtet es gerade aus */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
     }
 

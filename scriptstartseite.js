@@ -25,15 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             // Nur für Mobile: Tap und Drag-Effekte
-            item.addEventListener('mousedown', () => {
+            item.addEventListener('touchstart', () => {
                 isDragging = false;
             });
 
-            item.addEventListener('mousemove', () => {
+            item.addEventListener('touchmove', () => {
                 isDragging = true;
             });
 
-            item.addEventListener('mouseup', () => {
+            item.addEventListener('touchend', () => {
                 if (isDragging) return;
                 item.classList.toggle('active');
                 item.style.transform = item.classList.contains('active') 
