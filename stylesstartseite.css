@@ -54,6 +54,7 @@ header{
     top: 0;
     width: 100%;
     color: rgba(255, 255, 255, 0); 
+    z-index: 1100;
 }
 
 nav ul {
@@ -89,6 +90,7 @@ main {
     padding-bottom: 3%;
     margin-top: 5%;
     box-sizing:border-box;
+    z-index: 1000;
 }
 
 .project-container {
@@ -106,6 +108,7 @@ main {
     padding: 0;
     cursor: pointer;
     transition: transform 0.3s;
+    z-index: 1001;
 }
 
 .project-details {
@@ -156,13 +159,13 @@ main {
     width: 98%;
     height: 100%;
     position: relative;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .gallery-container {
     /*justify-content: center;*/
     align-items: center;
-    z-index: 1010;
+    z-index: 1;
     margin-top: 0;
     margin-bottom: 0;
    margin-left: 5%;
@@ -222,7 +225,7 @@ main {
 
 
 
-/* Media Query für mobile Geräte */
+/* Mobile Ansicht */
 @media (max-width: 768px) {
     .project {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
