@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             item.addEventListener('mouseup', () => {
                 if (isDragging) return;
-                item.style.transform = 'scale(1.1) rotate3d(1, 1, 0, 0deg)';
-                item.classList.add('active');
+                item.classList.toggle('active');
+                item.style.transform = item.classList.contains('active') 
+                    ? 'scale(1.1) rotate3d(1, 1, 0, 0deg)' 
+                    : 'scale(0.95) rotate3d(1, 1, 0, 45deg)';
             });
 
             item.addEventListener('dragstart', (event) => {
@@ -46,7 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             item.addEventListener('click', () => {
-                galleryItems.forEach(g => g.classList.remove('active'));
+                galleryItems.forEach(g => {
+                    g.classList.remove('active');
+                    g.style.transform = 'scale(0.95) rotate3d(1, 1, 0, 45deg)';
+                });
                 item.classList.add('active');
                 item.style.transform = 'scale(1.1) rotate3d(1, 1, 0, 0deg)';
             });
