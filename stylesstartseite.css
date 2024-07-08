@@ -130,17 +130,6 @@ main {
 }
 
 
-.justify-text{
-    text-align: justify; /* Blocksatz für den Text innerhalb des Paragraphs */
-    text-justify: inter-word; /* Verteilte Wortabstände */
-    margin: 0; /* Außenabstand auf null setzen */
-    padding: 0 20px; /* Innenabstand für den Text für bessere Lesbarkeit hinzufügen */
-    width: 100%; /* Nutzt die gesamte Breite des Containers */
-    height: 100%;
-    box-sizing: border-box; /* Bezieht Padding in die Breite mit ein */
-}
-
-
 .project:hover {
     transform: scale(1.01);
 }
@@ -183,6 +172,7 @@ main {
     width: 90%;
     gap: 0;
     position: relative;
+    /*overflow-x: auto; /* Ermöglicht horizontales Scrollen */
 }
 
 
@@ -223,7 +213,10 @@ main {
 }
 
 
-
+.gallery-item:hover,
+.gallery-item:active {
+    transform: rotate3d(1, 1, 0, 0deg) scale(1.05); /* Rotation und Vergrößerung beim Hover oder Click */
+}
 
 
 
@@ -243,7 +236,7 @@ main {
     }
 
     .nav ul li a {
-        font-size: 10px; /* Kleinere Schriftgröße für die Links */
+        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
@@ -254,16 +247,15 @@ main {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
         height: auto; /* Automatische Höhe für kleinere Bildschirme */
         margin: 0; /* Kein Margin für mobile Geräte */
-        transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
+        transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Startposition auf mobilen Geräten */
     }
 
-    .gallery-item.active {
-        transform: scale(1.1) rotate3d(1, 1, 0, 0deg); /* Vergrößert das aktive Item und setzt die Rotation auf 0 Grad */
-    }
-
-    .gallery-item:hover {
-        transform: scale(1.05) rotate3d(1, 1, 0, 0deg); /* Vergrößert das Bild beim Hover und richtet es gerade aus */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
+    /* Neue Regel für mobile Darstellung der Galerie-Items */
+    .gallery-container {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        overflow-x: hidden;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        gap: 0; /* Keine Überlappung auf mobilen Geräten */
     }
 
     .gallery-description {
