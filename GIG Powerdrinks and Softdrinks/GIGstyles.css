@@ -18,11 +18,16 @@
 
 
 
-
 /*GENERAL*/
 html{
     scroll-behavior: smooth;
     height: 100%;
+}
+
+p{
+    text-align: justify;
+    text-justify: inter-word;
+    box-sizing: border-box;
 }
 
 body{
@@ -41,10 +46,15 @@ body{
     flex-direction: column;
 }
 
-p{
+main {
+    margin: 0;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
     text-align: justify;
-    text-justify: inter-word;
-    box-sizing: border-box;
+    height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
+    box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
+    padding-top: 10px;
 }
 
 
@@ -83,132 +93,41 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    margin: 0;
-    padding: 15px 20px;
+
+
+
+/*PROJEKTBILD // Intro*/
+#project-intro {
+    margin-top: 3%; /* Platz für den fixierten Header */
+}
+
+.project-content {
     display: flex;
-    flex-direction: column;
-    text-align: justify;
-    height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
-    box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
-    padding-top: 10px;
-}
-
-#projects {
-    width: 100%; /* Volle Breite des Viewports */
-    /*height: 25%;*/
-    padding-bottom: 3%;
-    margin-top: 5%;
-    box-sizing:border-box;
-    z-index: 1000;
-}
-
-.project-container {
-    margin:0; /* Abstand zwischen den Projekten */
-    padding: 0;
-    /*height: 30%;*/
-}
-
-.project {
-    justify-content: space-between;
-    width: 100%; /* Ändere diesen Wert, um die Größe der Projektblöcke anzupassen */
-    max-width: 100%;
-    margin: 0;
-    background-color: #f0f0f000;
-    padding: 0;
-    cursor: pointer;
-    transition: transform 0.3s;
-    z-index: 1001;
-}
-
-.project-details {
-    text-align: justify; /* Zentriert den Text */
-    justify-content: space-between;
-    width: 100%;
-    /*height: 100%;*/
-}
-
-.project-description {
     flex-direction: row;
-    text-align: justify;
-    justify-content:space-between;
-    text-justify:inter-word;
-    margin: 0;
-    text-transform: uppercase;
-    color: #000000;
-    width: 100%; /* Setzt die Breite auf die gesamte Viewport-Breite */
-    /*height: 100%;*/
-    box-sizing: border-box; /* Bezieht Padding in die Breite mit ein */
-    line-height: 60%;
-}
-
-
-.project:hover {
-    transform: scale(1.01);
-}
-
-.project-description::after{
-    content: "";
-    display: inline-block;
-    width: 100%; /* Nutzt die gesamte Breite des Containers */
-    height: 100%;
-}
-
-
-
-/* Galerie-Stile */
-#gallery {
-    /*margin-top: 10px;*/
-    padding-top: 5%;
-    padding-left: 0;
-    padding-right: 1%;
-    overflow: hidden;
-    /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
-    width: 98%;
-    /*height: calc(100vh - 10px); /* Höhe des Headers abziehen */
-    position: relative;
-    z-index: 1;
-}
-
-.gallery-container {
-    /*justify-content: center;*/
     align-items: center;
-    z-index: 1;
-    margin: 0 0 0 5%;
-    padding-left: 5%;
-    display: flex;
-    flex-direction: row;
-    /*height: 90%;*/
-    width: 90%;
-    gap: 0;
-    position: relative;
+    gap: 10px; /* Abstand zwischen Bild und Beschreibung */
 }
 
-
-.gallery-item {
-    text-align: left;
-    cursor: pointer;
-    transition: transform 0.3s ease, z-index 0s; /* Rotation und z-index für das Hover- und Click-Verhalten */
+.projektbild{
     object-fit: contain;
     width: 25%; /* Breite der Galerie-Items */
     height: auto; /* Automatische Höhe basierend auf der Breite */
-    margin-left: -10%; /* Verschiebt das Item nach links für Überlappung */
-    transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
-    z-index: 1; /* Z-Index für die Überlappung */
-}
-
-.gallery-item.active {
-    z-index: 1020; /* Höherer z-index für das aktive Item */
-    transform: scale(1.1) rotate3d(1, 1, 0, 0deg); /* Vergrößert das aktive Item und setzt die Rotation auf 0 Grad */
-}
-
-.gallery-item:hover {
-    transform: scale(1.05) rotate3d(1, 1, 0, 0deg); /* Vergrößert das Bild beim Hover und richtet es gerade aus */
-    /*box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
-    z-index: 1030; /* Setzt den z-index höher beim Hover */
 }
 
 
+.project-description {
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+.project-description p {
+    font-size: 1rem; /* Größe für den Beschreibungstext */
+}
+
+
+
+
+/*GALERIE*/
 .gallery-item img {
     width: 100%;
     height: auto;
@@ -222,10 +141,9 @@ main {
 }
 
 
-.gallery-item:hover,
-.gallery-item:active {
-    transform: rotate3d(1, 1, 0, 0deg) scale(1.05); /* Rotation und Vergrößerung beim Hover oder Click */
-}
+
+
+
 
 
 
@@ -278,5 +196,14 @@ main {
     .gallery-description {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
     }
-}
+    .projektbild {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+        height: auto; /* Automatische Höhe für kleinere Bildschirme */
+    }
 
+    .project-content {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        gap: 10px; /* Weniger Abstand auf mobilen Geräten */
+    }
+    
+}

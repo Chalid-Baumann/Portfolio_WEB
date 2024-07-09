@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => {
                 galleryItems.forEach(i => i.classList.remove('active')); // Entfernt `active` von allen Items
                 item.classList.add('active'); // Fügt `active` zum geklickten Item hinzu
+
+                // Öffne die neue HTML-Seite, wenn der Text „01 GIG Powerdrinks and Softdrinks“ geklickt wird
+                const link = item.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link; // Leitet auf die angegebene HTML-Seite weiter
+                }
             });
         } else {
             // Nur für mobile Geräte: Touch-Events
@@ -41,6 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => {
                 galleryItems.forEach(i => i.classList.remove('active')); // Entfernt `active` von allen Items
                 item.classList.add('active'); // Fügt `active` zum geklickten Item hinzu
+
+                // Öffne die neue HTML-Seite, wenn der Text „01 GIG Powerdrinks and Softdrinks“ geklickt wird
+                const link = item.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link; // Leitet auf die angegebene HTML-Seite weiter
+                }
             });
         }
     });
