@@ -72,6 +72,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid blue;
 }
 
 nav ul li {
@@ -216,9 +217,11 @@ main {
 }
 
 .gallery-description {
-    margin-top: 10px;
+    margin-top: 0;
     font-size: 1rem;
     color: #000;
+    border: 1px solid blue;
+    padding-left: 2px;
 }
 
 

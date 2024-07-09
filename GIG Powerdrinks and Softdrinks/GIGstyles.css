@@ -25,7 +25,7 @@ html{
 }
 
 p{
-    text-align: justify;
+    text-align: left;
     text-justify: inter-word;
     box-sizing: border-box;
 }
@@ -82,6 +82,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid blue;
 }
 
 nav ul li {
@@ -96,38 +97,69 @@ nav ul li a {
 
 
 
-/*PROJEKTBILD // Intro*/
-#project-intro {
-    margin-top: 3%; /* Platz für den fixierten Header */
-}
-
-.project-content {
+/*PROJEKTINFO*/
+#info-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px; /* Abstand zwischen Bild und Beschreibung */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    border-bottom: 1px solid blue;
+    margin: 60px 0; /* Abstand zum oberen und unteren Inhalt */
 }
 
-.projektbild{
-    object-fit: contain;
-    width: 25%; /* Breite der Galerie-Items */
-    height: auto; /* Automatische Höhe basierend auf der Breite */
+.info-column {
+    flex: 1 1 20%;
+    padding: 10px 10px; /* Horizontaler Abstand zwischen den Spalten */
+    margin: 10px;
+    text-align: left;
+}
+
+.info-column h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: normal;
+}
+
+.info-column p {
+    margin: 0;
+    font-size: 1rem; /* Textgröße */
+    line-height: 1.5; /* Zeilenhöhe */
+}
+
+.info-column p, .info-column button {
+    margin: 5px 0; /* Margin for spacing between text and button */
+}
+
+/* Anpassung für die dritte Spalte */
+.info-column:nth-of-type(3) {
+    flex: 1 1 50vw; /* Setzt die dritte Spalte auf 50% der Viewport-Breite */
+    max-width: 50vw; /* Beschränkt die Breite der dritten Spalte auf 50% des Viewports */
+    text-align: left;
 }
 
 
-.project-description {
-    align-items: center;
-    text-align: center;
-    flex: 1;
+
+
+
+/* Allgemeine Galerie-Stile */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Abstand zwischen den Bildern */
+    justify-content: space-around;
+    padding-bottom: 20px;
 }
-.project-description p {
-    font-size: 1rem; /* Größe für den Beschreibungstext */
+
+.gallery-item {
+    /*flex: 1 1 calc(50% - 30px); /* 2 Spalten mit Abstand */
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
 }
 
-
-
-
-/*GALERIE*/
 .gallery-item img {
     width: 100%;
     height: auto;
@@ -135,12 +167,22 @@ nav ul li a {
 }
 
 .gallery-description {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #000;
+    position: absolute;
+    font-size: 0.9rem; /* Kleinere Schriftgröße für die Beschreibung */
+    color: #333; /* Dunkle Schriftfarbe */
+    text-align: center; /* Zentriert den Text */
+}
+.large {
+    width: 30%; /* 2 Spalten */
 }
 
+.medium {
+    width: 65%; /* 1 Hochformat- und 2 Querformatbilder nebeneinander */
+}
 
+.small {
+    width: 30%; /* Querformat-Bilder nebeneinander */
+}
 
 
 
@@ -158,18 +200,6 @@ nav ul li a {
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
     }
 
-    .project {
-        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
-    }
-
-    .project-description {
-        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
-        text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
-        width: auto; /* Automatische Breite für kleinere Bildschirme */
-        position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
-        left: auto; /* Entfernt die horizontale Verschiebung */
-    }
-
     .nav ul li a {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
@@ -185,7 +215,6 @@ nav ul li a {
         transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Startposition auf mobilen Geräten */
     }
 
-    /* Neue Regel für mobile Darstellung der Galerie-Items */
     .gallery-container {
         flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
         overflow-x: hidden;
@@ -196,6 +225,7 @@ nav ul li a {
     .gallery-description {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
     }
+    
     .projektbild {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
         height: auto; /* Automatische Höhe für kleinere Bildschirme */
@@ -205,5 +235,39 @@ nav ul li a {
         flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
         gap: 10px; /* Weniger Abstand auf mobilen Geräten */
     }
-    
+
+   #info-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.info-column {
+    flex: 1 1 100%; /* Vollständige Breite auf kleinen Bildschirmen */
+    margin: 10px 0;
+}
+
+.info-column h1 {
+    font-size: 1.5 rem; /* Kleinere Schriftgröße für die Headline */
+}
+
+.info-column p {
+    font-size: 10px; /* Kleinere Schriftgröße für die Textabsätze */
+    flex: 50%;
+}
+.info-column button {
+    font-size: 10px; /* Kleinere Schriftgröße für die Buttons */
+}
+.gallery-item {
+    width: 100%;
+}
+
+.gallery-description {
+    font-size: 0.8rem; /* Noch kleinere Schriftgröße für mobile Geräte */
+}
+.large, .medium, .small {
+    width: 100%; /* Vollständige Breite auf mobilen Geräten */
+}
+
+
 }
