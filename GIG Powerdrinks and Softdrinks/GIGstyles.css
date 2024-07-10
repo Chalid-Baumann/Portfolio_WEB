@@ -318,6 +318,10 @@ nav ul li a {
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
     }
 
+    body {
+        font-size: 0.8rem;
+    }
+
     .nav ul li a {
         font-size: 20px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */

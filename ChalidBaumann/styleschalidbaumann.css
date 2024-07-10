@@ -102,33 +102,6 @@ nav ul li a {
 
 
 
-/*PFEILE NAVIGATION*/
-.navigation {
-    position: relative;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Reduziert die Breite auf mobilen Geräten */
-    box-sizing: border-box;
-}
-
-/* Die Stile für das Pfeil-Icon anpassen */
-.navigation img {
-    width: 100px; /* Breite der Pfeile */
-    height: 100px; /* Höhe der Pfeile */
-    stroke-width: 1px; /* Strichstärke auf 1px */
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,15 +132,4 @@ nav ul li a {
         position:static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
-
-     /* Verkleinert die Pfeile für mobile Geräte */
-     .navigation img {
-        width: 60px; /* Breite auf mobilen Geräten */
-        height: 60px; /* Höhe auf mobilen Geräten */
-    }
-
-    .arrow-right {
-        stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
-    }
-
 }

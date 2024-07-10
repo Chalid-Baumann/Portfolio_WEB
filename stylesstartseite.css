@@ -243,6 +243,10 @@ main {
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
     }
 
+    body {
+        font-size: 0.8rem;
+    }
+
     .project {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
     }
