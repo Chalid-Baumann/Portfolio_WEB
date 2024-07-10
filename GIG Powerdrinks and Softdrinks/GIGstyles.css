@@ -36,7 +36,7 @@ body{
     font-size: 1.5vw;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     /*BACKGROUND*/
-    background-color: #e6e9e5;
+    background-color: #ffffff;
     /*FONT*/
     font-family: "lft-etica-mono", sans-serif;
     font-weight: 400;
@@ -107,6 +107,7 @@ nav ul li a {
     border-top: 1px solid blue;
     border-bottom: 1px solid blue;
     margin: 60px 0; /* Abstand zum oberen und unteren Inhalt */
+    margin-bottom: 0;
     box-sizing: border-box;   
     min-height: auto;
     overflow: auto;
@@ -162,14 +163,14 @@ nav ul li a {
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Abstand zwischen den Bildern */
-    justify-content: space-around;
+    gap: 10px; /* Abstand zwischen den Bildern */
+    justify-content: center;
     padding-bottom: 20px;
 }
 
 .gallery-item {
-    /*flex: 1 1 calc(50% - 30px); /* 2 Spalten mit Abstand */
-    box-sizing: border-box;
+    /*flex: 1 1 calc(25% - 30px);*/
+    /*box-sizing: border-box;*/
     overflow: hidden;
     position: relative;
 }
@@ -178,24 +179,106 @@ nav ul li a {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
+}
+
+.gallery-item img,
+.gallery-item video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Verhindert Verzerrung der Bilder */
+}
+
+/* Video-Stile */
+.gallery-item.video {
+    flex: 1 1 100%; /* Volle Breite für das Video */
+}
+
+.gallery-item.video video {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
+    min-height: 300px; /* Mindesthöhe für das Video */
+    max-height: 850px; /* Maximale Höhe für das Video */
+    display: block; /* Verhindert unerwünschte Abstände */
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Sicherstellen, dass der Inhalt nicht abgeschnitten wird */
+}
+
+/* Steuerungselemente des Videos anpassen */
+.gallery-item.video video::-webkit-media-controls {
+    background: transparent; /* Entfernt den Verlauf */
+}
+
+.gallery-item.video video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.7); /* Schwarzer Hintergrund für das Steuerelemente-Panel */
+}
+
+/* Die folgenden Zeilen sorgen für schwarze Steuerelemente */
+.gallery-item.video video::-webkit-media-controls-play-button,
+.gallery-item.video video::-webkit-media-controls-volume-slider,
+.gallery-item.video video::-webkit-media-controls-mute-button,
+.gallery-item.video video::-webkit-media-controls-fullscreen-button,
+.gallery-item.video video::-webkit-media-controls-timeline {
+    background: black; /* Schwarzer Hintergrund für die Steuerelemente */
+}
+
+.gallery-item.video video::-webkit-media-controls-play-button {
+    color: white; /* Weiße Farbe für das Play-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-volume-slider {
+    background: black; /* Schwarzer Hintergrund für den Lautstärkeregler */
+}
+
+.gallery-item.video video::-webkit-media-controls-mute-button {
+    color: white; /* Weiße Farbe für das Stummschalt-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-fullscreen-button {
+    color: white; /* Weiße Farbe für das Vollbild-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-timeline {
+    background: black; /* Schwarzer Hintergrund für die Zeitleiste */
+}
+
+/* Entfernt zusätzliche schwarze Flächen, falls vorhanden */
+.gallery-item.video::before,
+.gallery-item.video::after {
+    display: none; /* Versteckt mögliche Pseudoelemente */
+}
+
+/* Sicherstellen, dass das Video korrekt angezeigt wird */
+.gallery-item.video video {
+    display: block; /* Verhindert unerwünschte Abstände */
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Sicherstellen, dass der Inhalt nicht abgeschnitten wird */
 }
 
 .gallery-description {
     position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
     font-size: 0.9rem; /* Kleinere Schriftgröße für die Beschreibung */
     color: #333; /* Dunkle Schriftfarbe */
     text-align: center; /* Zentriert den Text */
 }
+
 .large {
-    width: 30%; /* 2 Spalten */
+    flex: 1 1 30%; /* Breitere Bilder */
 }
 
 .medium {
-    width: 65%; /* 1 Hochformat- und 2 Querformatbilder nebeneinander */
+    flex: 1 1 40%; /* Mittlere Bilder */
 }
 
 .small {
-    width: 30%; /* Querformat-Bilder nebeneinander */
+    flex: 1 1 40%; /* Kleinere Bilder */
 }
 
 
@@ -255,6 +338,7 @@ nav ul li a {
         overflow-y: auto;
         padding-top: 5%;
         padding-left: 5%;
+        padding-right: 5%;
         padding-bottom: 0;
     }
 
