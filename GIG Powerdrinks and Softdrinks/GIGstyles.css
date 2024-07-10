@@ -33,7 +33,7 @@ p{
 body{
     margin: 0;
     padding: 0;
-    font-size: 1.5vw;
+    font-size: 2rem;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     /*BACKGROUND*/
     background-color: #ffffff;
@@ -83,6 +83,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid blue;
 }
 
 nav ul li {
@@ -104,7 +105,6 @@ nav ul li a {
     justify-content: space-between;
     align-items: top;
     text-align: left;
-    border-top: 1px solid blue;
     border-bottom: 1px solid blue;
     margin: 60px 0; /* Abstand zum oberen und unteren Inhalt */
     margin-bottom: 0;
@@ -284,6 +284,27 @@ nav ul li a {
 
 
 
+/*PFEILE NAVIGATION*/
+.navigation {
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Reduziert die Breite auf mobilen Geräten */
+    box-sizing: border-box;
+}
+
+/* Die Stile für das Pfeil-Icon anpassen */
+.navigation img {
+    width: 100px; /* Breite der Pfeile */
+    height: 100px; /* Höhe der Pfeile */
+    stroke-width: 1px; /* Strichstärke auf 1px */
+}
+
+
+
 
 
 
@@ -298,7 +319,7 @@ nav ul li a {
     }
 
     .nav ul li a {
-        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
+        font-size: 20px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position:static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
@@ -349,8 +370,9 @@ nav ul li a {
         padding: 0;
     }
 
+
     .info-column h1 {
-        font-size: 1.5rem; /* Kleinere Schriftgröße für die Headline */
+        font-size: 16px; /* Kleinere Schriftgröße für die Headline */
         font-weight: normal;
         margin: 0;
         padding-bottom: 5%;
@@ -391,5 +413,15 @@ nav ul li a {
 body {
     overflow-y: auto; /* Ermöglicht vertikales Scrollen */
 }
+
+    /* Verkleinert die Pfeile für mobile Geräte */
+    .navigation img {
+        width: 60px; /* Breite auf mobilen Geräten */
+        height: 60px; /* Höhe auf mobilen Geräten */
+    }
+
+    .arrow-right {
+        stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
+    }
 
 }

@@ -28,7 +28,7 @@ html{
 body{
     margin: 0;
     padding: 0;
-    font-size: 1.5vw;
+    font-size: 2rem;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     /*BACKGROUND*/
     background-color: #e6e9e5;
@@ -162,10 +162,10 @@ main {
     /*margin-top: 10px;*/
     padding-top: 5%;
     padding-left: 0;
-    padding-right: 1%;
+    padding-right: 0;
     overflow: hidden;
     /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
-    width: 98%;
+    width: 100%;
     /*height: calc(100vh - 10px); /* Höhe des Headers abziehen */
     position: relative;
     z-index: 1;
@@ -179,8 +179,7 @@ main {
     padding-left: 5%;
     display: flex;
     flex-direction: row;
-    /*height: 90%;*/
-    width: 90%;
+    width: 89%;
     gap: 0;
     position: relative;
 }
@@ -221,7 +220,8 @@ main {
     font-size: 1rem;
     color: #000;
     border: 1px solid blue;
-    padding-left: 2px;
+    padding-left: 1px;
+    padding-right: 0;
 }
 
 
@@ -268,6 +268,8 @@ main {
         height: auto; /* Automatische Höhe für kleinere Bildschirme */
         margin: 0; /* Kein Margin für mobile Geräte */
         transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Startposition auf mobilen Geräten */
+        padding-right: 7%;
+        box-sizing: border-box;
     }
 
     /* Neue Regel für mobile Darstellung der Galerie-Items */
@@ -280,6 +282,7 @@ main {
 
     .gallery-description {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
+        box-sizing: border-box; /* Stellt sicher, dass die Border innerhalb der Box-Dimensionen liegt */
     }
 }
 

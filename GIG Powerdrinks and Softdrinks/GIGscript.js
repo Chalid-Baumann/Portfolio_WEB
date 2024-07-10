@@ -28,4 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     arrangeGallery();
     window.addEventListener('resize', arrangeGallery);
+
+    // Scroll-zu-Top-Funktionalität hinzufügen
+    document.getElementById('scrollTop').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
