@@ -41,18 +41,18 @@ body{
     font-family: "lft-etica-mono", sans-serif;
     font-weight: 400;
     font-style: normal;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 main {
+    flex: 1;
     margin: 0;
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
+    /*height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
     box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
     padding-top: 10px;
     overflow-y: auto;
@@ -83,7 +83,6 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid blue;
 }
 
 nav ul li {
@@ -103,14 +102,14 @@ nav ul li a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    align-items: top;
     text-align: left;
+    border-top: 1px solid blue;
     border-bottom: 1px solid blue;
     margin: 60px 0; /* Abstand zum oberen und unteren Inhalt */
-    box-sizing: border-box;
-    min-height: auto;    
+    box-sizing: border-box;   
+    min-height: auto;
+    overflow: auto;
 }
 
 /* Hier stellen wir sicher, dass es keinen zusätzlichen Abstand beim Scrollen gibt */
@@ -125,16 +124,17 @@ nav ul li a {
 
 .info-column {
     flex: 1 1 20%;
-    padding: 10px 10px; /* Horizontaler Abstand zwischen den Spalten */
     margin: 10px;
     text-align: left;
-    box-sizing: border-box;
+    align-items: center;
 }
 
 .info-column h1 {
     font-size: 2rem;
     margin: 0;
+    padding-left: 10px;
     font-weight: normal;
+    text-align: left;
 }
 
 .info-column p {
@@ -208,7 +208,7 @@ nav ul li a {
 @media (max-width: 768px) {
     main {
         margin-top: 1%; /* Platz für den fixierten Header */
-        display: block;
+        display:block;
         height: auto;
         box-sizing: border-box;
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
@@ -218,7 +218,7 @@ nav ul li a {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
-        position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
+        position:static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
 
@@ -234,15 +234,12 @@ nav ul li a {
         overflow-x: hidden;
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
         gap: 0; /* Keine Überlappung auf mobilen Geräten */
+        padding-top: 0;
+        margin-top: 0;
     }
 
     .gallery-description {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
-    }
-    
-    .projektbild {
-        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
-        height: auto; /* Automatische Höhe für kleinere Bildschirme */
     }
 
     .project-content {
@@ -251,27 +248,49 @@ nav ul li a {
     }
 
     #info-container {
-        flex-direction: row;
-        align-items: center;
-        padding: 10px 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
         overflow-y: auto;
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-bottom: 0;
     }
 
     .info-column {
-        flex: 1 1 100%; /* Vollständige Breite auf kleinen Bildschirmen */
-        margin: 10px 0;
+        flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
+        margin: 0 0;
+        text-align: left;
+        padding: 0;
     }
 
     .info-column h1 {
         font-size: 1.5rem; /* Kleinere Schriftgröße für die Headline */
+        font-weight: normal;
+        margin: 0;
+        padding-bottom: 5%;
+        padding-left: 0;
+        text-align: left;
     }
 
     .info-column p {
         font-size: 10px; /* Kleinere Schriftgröße für die Textabsätze */
+        text-align: left;
+        margin: 0;
+        padding: 0;
     }
 
     .info-column button {
         font-size: 10px; /* Kleinere Schriftgröße für die Buttons */
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Spezifischer Abstand zwischen den zwei <p>-Elementen */
+    .info-column .intro-text {
+        margin-bottom: 20px; /* Passe den Wert nach Bedarf an */
     }
 
 .gallery-item {
@@ -284,6 +303,7 @@ nav ul li a {
 .large, .medium, .small {
     width: 100%; /* Vollständige Breite auf mobilen Geräten */
 }
+
 body {
     overflow-y: auto; /* Ermöglicht vertikales Scrollen */
 }
