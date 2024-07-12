@@ -98,6 +98,41 @@ nav ul li a {
 }
 
 
+/*FOOTER*/
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Höhe des Footers */
+    color: rgba(255, 255, 255, 0); 
+    z-index: 1100;
+    background-color: rgba(253, 253, 253, 0.8); /* Hintergrundfarbe des Footers */
+}
+
+footer nav ul {
+    border-top: 1px solid blue;
+    border-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul li {
+    padding: 15px 15px;
+}
+
+footer nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#footer:hover {
+    transform: scale(1.1);
+}
+
+
 
 
 /*PROJEKTINFO*/
@@ -176,11 +211,13 @@ nav ul li a {
 .navigation img {
     width: 100px; /* Breite der Pfeile */
     height: 100px; /* Höhe der Pfeile */
-    stroke-width: 1px; /* Strichstärke auf 1px */
+    /*stroke-width: 1px; /* Strichstärke auf 1px */
 }
 
 
-
+#PTN:hover{
+    transform: scale(1.1); 
+}
 
 
 

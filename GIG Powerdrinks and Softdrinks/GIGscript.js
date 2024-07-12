@@ -34,3 +34,28 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+
+// Fancybox Initialisierung
+$(document).ready(function() {
+    $('[data-fancybox]').fancybox({
+      buttons: [
+        "zoom",
+        "share",
+        "slideShow",
+        "fullScreen",
+        "download",
+        "thumbs",
+        "close"
+      ],
+      loop: false,
+      protect: true
+    });
+  });
+
+
+
+
+
+
+  
