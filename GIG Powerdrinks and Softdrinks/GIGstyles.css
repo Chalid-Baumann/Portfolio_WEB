@@ -298,14 +298,15 @@ nav ul li a {
 
 /* Die Stile für das Pfeil-Icon anpassen */
 .navigation img {
-    width: 100px; /* Breite der Pfeile */
-    height: 100px; /* Höhe der Pfeile */
+    width: 100%; /* Breite der Pfeile */
+    height: 100%; /* Höhe der Pfeile */
     stroke-width: 1px; /* Strichstärke auf 1px */
 }
 
 
-
-
+#s img {
+    transform: rotate(90deg); /* Dreht das Bild um 90 Grad */
+}
 
 
 /* Mobile Ansicht */
