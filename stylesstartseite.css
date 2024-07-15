@@ -42,7 +42,7 @@ body{
 }
 
 p{
-    text-align: justify;
+    /*text-align: justify;*/
     text-justify: inter-word;
     box-sizing: border-box;
 }
