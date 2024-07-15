@@ -318,8 +318,8 @@ footer nav ul li a {
         align-items: flex-start;
         text-align: left;
         overflow-y: auto;
-        padding-top: 5%;
-        padding-left: 5%;
+        padding-top: 1%;
+        padding-left: 3%;
         padding-right: 5%;
         padding-bottom: 0;
     }
@@ -370,6 +370,23 @@ footer nav ul li a {
 
     .arrow-right {
         stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
+    }
+    #secondary-header {
+        top: 47px; /* Platz für den ursprünglichen Header */
+    }
+
+    #secondary-header ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #secondary-header ul li {
+        padding: 0 15px; /* Weniger Abstand auf kleinen Bildschirmen */
+        padding-top: 4px;
+    }
+
+    #secondary-header ul li a {
+        font-size: 15px; /* Kleinere Schriftgröße für kleinere Bildschirme */
     }
 
 }
