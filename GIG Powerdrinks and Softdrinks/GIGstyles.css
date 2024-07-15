@@ -515,15 +515,17 @@ footer nav ul li a {
         align-items: flex-start;
         text-align: left;
         overflow-y: auto;
-        padding-top: 1%;
+        padding-top: 0;
         padding-left: 3%;
         padding-right: 5%;
         padding-bottom: 0;
+        margin-top: 30%;
+        margin-bottom: 0;
     }
 
     .info-column {
         flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
-        margin: 0 0;
+        margin: 0;
         text-align: left;
         padding: 0;
     }
@@ -534,6 +536,8 @@ footer nav ul li a {
         font-weight: normal;
         margin: 0;
         padding-bottom: 5%;
+        margin-top: 0;
+        padding-top: 0;
         padding-left: 0;
         text-align: left;
     }
@@ -585,7 +589,7 @@ body {
 
 
     #secondary-header {
-        top: 47px; /* Platz für den ursprünglichen Header */
+        top: 80px; /* Platz für den ursprünglichen Header */
     }
 
     #secondary-header ul {
