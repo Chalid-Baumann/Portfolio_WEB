@@ -56,15 +56,15 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
     background-color: rgba(253, 253, 253, 0);
 }
 
+/*
 #header:hover{
     transform: scale(1.1);
-}
+}*/
 
 nav ul {
     list-style: none;
@@ -72,6 +72,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid blue;
 }
 
@@ -84,6 +85,53 @@ nav ul li a {
     text-decoration: none;
 }
 
+
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+}
+
+.logo {
+    height: 100px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 17px; /* Space between logo and text */
+}
+
+.logo-container span {
+    font-size: 2rem; /* Adjust font size as needed */
+    color: black; /* Ensure text color is visible */
+}
+
+/* Header unit styling */
+#header-unit {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+/* Kontakt-Link-Stile */
+#contact-link{
+    display: flex;
+    align-items: center;
+}
+
+#contact-link a {
+    color: black; /* Textfarbe des Links */
+    text-decoration: none;
+    font-size: 2rem; /* Schriftgröße des Links */
+}
+
+#contact-link a:hover {
+    transform: scale(1.1); /* Vergrößert den Link beim Hover */
+}
+
+#header-unit a:hover {
+    transform: scale(1.1); /* Vergrößert das gesamte Header-Unit beim Hover */
+}
+
+
+
 main {
     margin: 0;
     padding: 15px 20px;
@@ -95,72 +143,13 @@ main {
     padding-top: 10px;
 }
 
-#projects {
-    width: 100%; /* Volle Breite des Viewports */
-    /*height: 25%;*/
-    padding-bottom: 3%;
-    margin-top: 5%;
-    box-sizing:border-box;
-    z-index: 1000;
-}
-
-.project-container {
-    margin:0; /* Abstand zwischen den Projekten */
-    padding: 0;
-    /*height: 30%;*/
-}
-
-.project {
-    justify-content: space-between;
-    width: 100%; /* Ändere diesen Wert, um die Größe der Projektblöcke anzupassen */
-    max-width: 100%;
-    margin: 0;
-    background-color: #f0f0f000;
-    padding: 0;
-    cursor: pointer;
-    transition: transform 0.3s;
-    z-index: 1001;
-}
-
-.project-details {
-    text-align: justify; /* Zentriert den Text */
-    justify-content: space-between;
-    width: 100%;
-    /*height: 100%;*/
-}
-
-.project-description {
-    flex-direction: row;
-    text-align: justify;
-    justify-content:space-between;
-    text-justify:inter-word;
-    margin: 0;
-    text-transform: uppercase;
-    color: #000000;
-    width: 100%; /* Setzt die Breite auf die gesamte Viewport-Breite */
-    /*height: 100%;*/
-    box-sizing: border-box; /* Bezieht Padding in die Breite mit ein */
-    line-height: 60%;
-}
-
-
-.project:hover {
-    transform: scale(1.01);
-}
-
-.project-description::after{
-    content: "";
-    display: inline-block;
-    width: 100%; /* Nutzt die gesamte Breite des Containers */
-    height: 100%;
-}
 
 
 
 /* Galerie-Stile */
 #gallery {
     /*margin-top: 10px;*/
-    padding-top: 5%;
+    padding-top: 11%;
     padding-left: 0;
     padding-right: 0;
     overflow: hidden;
@@ -282,11 +271,34 @@ main {
         overflow-x: hidden;
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
         gap: 0; /* Keine Überlappung auf mobilen Geräten */
+        margin-top: 7%;
     }
 
     .gallery-description {
         font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
         box-sizing: border-box; /* Stellt sicher, dass die Border innerhalb der Box-Dimensionen liegt */
     }
+
+  /* Anpassen des Logo-Containers für kleine Bildschirme */
+  .logo-container {
+    flex-direction: column; /* Logo und Text vertikal stapeln */
+    align-items: center; /* Zentrieren */
+}
+
+/* Schriftgröße des Textes neben dem Logo */
+.logo-text {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+
+/* Schriftgröße des Kontakt-Links */
+#contact-link a {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+   /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
+   .logo {
+    height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
+}
+
+
 }
 
