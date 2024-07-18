@@ -58,6 +58,26 @@ main {
     overflow-x: hidden;
 }
 
+a:hover{
+color: rgb(249, 28, 65);
+}
+
+
+/*BulletPoint*/
+.kontakt-link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.bulletpoint-icon {
+    width: 5%; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between icon and text */
+    margin-top: 10px;
+}
+
+
 
 
 
@@ -95,23 +115,46 @@ nav ul li a {
 }
 
 
+
+
 /* Logo container styling */
 .logo-container {
     display: flex;
     align-items: center; /* Center items vertically */
     text-decoration: none;
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
 }
 
 .logo {
     height: 100px; /* Adjust height as needed */
     width: auto;
     margin-right: 17px; /* Space between logo and text */
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
 }
+
+.logo-container:hover .logo {
+    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
+    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
+}
+
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
+    }
+    50% {
+        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
+    }
+    100% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
+    }
+}
+
 
 .logo-container span {
     font-size: 2rem; /* Adjust font size as needed */
     color: black; /* Ensure text color is visible */
 }
+
 
 /* Header unit styling */
 #header-unit {
@@ -132,12 +175,15 @@ nav ul li a {
 }
 
 #contact-link a:hover {
-    transform: scale(1.1); /* Vergrößert den Link beim Hover */
+    color: rgb(255, 28, 65)
 }
 
 #header-unit a:hover {
-    transform: scale(1.1); /* Vergrößert das gesamte Header-Unit beim Hover */
+
 }
+
+
+
 
 
 
@@ -182,7 +228,7 @@ nav ul li a {
 }
 
 #secondary-header ul li a:hover {
-    transform: scale(1.1); /* Vergrößert den Text bei Hover */
+    color: rgb(255, 28, 65)
 }
 
 
@@ -221,7 +267,7 @@ footer nav ul li a {
 }
 
 #footer:hover {
-    transform: scale(1.1);
+    color: rgb(255, 28, 65)
 }
 
 
@@ -516,7 +562,7 @@ footer nav ul li a {
         padding-top: 0;
         padding-left: 3%;
         padding-right: 5%;
-        padding-bottom: 0;
+        padding-bottom: 3%;
         margin-top: 30%;
         margin-bottom: 0;
     }
