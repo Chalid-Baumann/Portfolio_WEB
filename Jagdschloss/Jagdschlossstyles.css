@@ -39,7 +39,7 @@ body{
     background-color: #ffffff;
     /*FONT*/
     font-family: "lft-etica-mono", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     display: flex;
     flex-direction: column;
@@ -48,17 +48,15 @@ body{
 main {
     flex: 1;
     margin: 0;
-    padding: 15px 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     text-align: justify;
-    /*height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
     box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
     padding-top: 10px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
-
-
 
 
 
@@ -72,12 +70,11 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
-    background-color: rgba(253, 253, 253, 0);
 }
 
-#header:hover{
+/*#header:hover{
     transform: scale(1.1);
-}
+}*/
 
 nav ul {
     list-style: none;
@@ -93,9 +90,56 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
 }
+
+
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+}
+
+.logo {
+    height: 100px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 17px; /* Space between logo and text */
+}
+
+.logo-container span {
+    font-size: 2rem; /* Adjust font size as needed */
+    color: black; /* Ensure text color is visible */
+}
+
+/* Header unit styling */
+#header-unit {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+/* Kontakt-Link-Stile */
+#contact-link{
+    display: flex;
+    align-items: center;
+}
+
+#contact-link a {
+    color: black; /* Textfarbe des Links */
+    text-decoration: none;
+    font-size: 2rem; /* Schriftgröße des Links */
+}
+
+#contact-link a:hover {
+    transform: scale(1.1); /* Vergrößert den Link beim Hover */
+}
+
+#header-unit a:hover {
+    transform: scale(1.1); /* Vergrößert das gesamte Header-Unit beim Hover */
+}
+
+
 
 
 
@@ -106,11 +150,11 @@ nav ul li a {
     justify-content: space-between;
     font-size: 2rem;
     position: fixed;
-    top: 7%; /* Platz für den ursprünglichen Header */
+    top: 14%; /* Platz für den ursprünglichen Header */
     width: 100%;
     height: 6%;
-    color: rgba(255, 255, 255, 0); 
     z-index: 1000; /* Stellt sicher, dass der Header über dem Inhalt liegt */
+    box-sizing: border-box;
 }
 
 #secondary-header ul {
@@ -134,13 +178,12 @@ nav ul li a {
     display: block;
     height: 100%;
     line-height: 60px; /* Zentriert den Text vertikal */
-    width: 100%;
+
 }
 
 #secondary-header ul li a:hover {
     transform: scale(1.1); /* Vergrößert den Text bei Hover */
 }
-
 
 
 
@@ -184,19 +227,22 @@ footer nav ul li a {
 
 
 
+
 /*PROJEKTINFO*/
 #info-container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: top;
     text-align: left;
     border-bottom: 1px solid blue;
-    margin: 125px 0; /* Abstand zum oberen und unteren Inhalt */
-    margin-bottom: 0;
+    margin: 185px 0; /* Abstand zum oberen und unteren Inhalt */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
     box-sizing: border-box;   
     min-height: auto;
-    overflow: auto;
+    overflow-x: hidden;
     gap: 2px;
 }
 
@@ -221,7 +267,7 @@ footer nav ul li a {
 .info-column h1 {
     font-size: 2rem;
     margin: 0;
-    padding-left: 10px;
+    padding-left: 9px;
     font-weight: normal;
     text-align: left;
 }
@@ -252,6 +298,135 @@ footer nav ul li a {
 
 
 
+
+
+/* Allgemeine Galerie-Stile */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Abstand zwischen den Bildern */
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.gallery-item {
+    /*flex: 1 1 calc(25% - 30px);*/
+    /*box-sizing: border-box;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.gallery-item img,
+.gallery-item video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Verhindert Verzerrung der Bilder */
+    margin: 0;
+    padding: 0;
+}
+
+/* Video-Stile */
+.gallery-item.video {
+    flex: 1 1 100%; /* Volle Breite für das Video */
+}
+
+.gallery-item.video video {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
+    min-height: 300px; /* Mindesthöhe für das Video */
+    max-height: 850px; /* Maximale Höhe für das Video */
+    display: block; /* Verhindert unerwünschte Abstände */
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Sicherstellen, dass der Inhalt nicht abgeschnitten wird */
+}
+
+/* Steuerungselemente des Videos anpassen */
+.gallery-item.video video::-webkit-media-controls {
+    background: transparent; /* Entfernt den Verlauf */
+}
+
+.gallery-item.video video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.7); /* Schwarzer Hintergrund für das Steuerelemente-Panel */
+}
+
+/* Die folgenden Zeilen sorgen für schwarze Steuerelemente */
+.gallery-item.video video::-webkit-media-controls-play-button,
+.gallery-item.video video::-webkit-media-controls-volume-slider,
+.gallery-item.video video::-webkit-media-controls-mute-button,
+.gallery-item.video video::-webkit-media-controls-fullscreen-button,
+.gallery-item.video video::-webkit-media-controls-timeline {
+    background: black; /* Schwarzer Hintergrund für die Steuerelemente */
+}
+
+.gallery-item.video video::-webkit-media-controls-play-button {
+    color: white; /* Weiße Farbe für das Play-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-volume-slider {
+    background: black; /* Schwarzer Hintergrund für den Lautstärkeregler */
+}
+
+.gallery-item.video video::-webkit-media-controls-mute-button {
+    color: white; /* Weiße Farbe für das Stummschalt-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-fullscreen-button {
+    color: white; /* Weiße Farbe für das Vollbild-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-timeline {
+    background: black; /* Schwarzer Hintergrund für die Zeitleiste */
+}
+
+/* Entfernt zusätzliche schwarze Flächen, falls vorhanden */
+.gallery-item.video::before,
+.gallery-item.video::after {
+    display: none; /* Versteckt mögliche Pseudoelemente */
+}
+
+/* Sicherstellen, dass das Video korrekt angezeigt wird */
+.gallery-item.video video {
+    display: block; /* Verhindert unerwünschte Abstände */
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Sicherstellen, dass der Inhalt nicht abgeschnitten wird */
+}
+
+.gallery-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 0.9rem; /* Kleinere Schriftgröße für die Beschreibung */
+    color: #333; /* Dunkle Schriftfarbe */
+    text-align: center; /* Zentriert den Text */
+}
+
+.large {
+    flex: 1 1 30%; /* Breitere Bilder */
+}
+
+.medium {
+    flex: 1 1 40%; /* Mittlere Bilder */
+}
+
+.small {
+    flex: 1 1 40%; /* Kleinere Bilder */
+}
+
+
+
+
 /*PFEILE NAVIGATION*/
 .navigation {
     position: relative;
@@ -266,19 +441,14 @@ footer nav ul li a {
 
 /* Die Stile für das Pfeil-Icon anpassen */
 .navigation img {
-    width: 100px; /* Breite der Pfeile */
-    height: 100px; /* Höhe der Pfeile */
+    width: 100%; /* Breite der Pfeile */
+    height: 100%; /* Höhe der Pfeile */
     /*stroke-width: 1px; /* Strichstärke auf 1px */
 }
-
 
 #PTN:hover{
     transform: scale(1.1); 
 }
-
-
-
-
 
 
 
@@ -312,21 +482,48 @@ footer nav ul li a {
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
 
+    .gallery-item {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+        height: auto; /* Automatische Höhe für kleinere Bildschirme */
+        margin: 0; /* Kein Margin für mobile Geräte */
+        transform: scale(0.95); /* Startposition auf mobilen Geräten */
+    }
+
+    .gallery-container {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        overflow-x: hidden;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        gap: 0; /* Keine Überlappung auf mobilen Geräten */
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .gallery-description {
+        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
+    }
+
+    .project-content {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        gap: 10px; /* Weniger Abstand auf mobilen Geräten */
+    }
+
     #info-container {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
         overflow-y: auto;
-        padding-top: 1%;
+        padding-top: 0;
         padding-left: 3%;
         padding-right: 5%;
         padding-bottom: 0;
+        margin-top: 30%;
+        margin-bottom: 0;
     }
 
     .info-column {
         flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
-        margin: 0 0;
+        margin: 0;
         text-align: left;
         padding: 0;
     }
@@ -337,19 +534,21 @@ footer nav ul li a {
         font-weight: normal;
         margin: 0;
         padding-bottom: 5%;
+        margin-top: 0;
+        padding-top: 0;
         padding-left: 0;
         text-align: left;
     }
 
     .info-column p {
-        font-size: 10px; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 10.5px; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
     }
 
     .info-column button {
-        font-size: 10px; /* Kleinere Schriftgröße für die Buttons */
+        font-size: 10.5px; /* Kleinere Schriftgröße für die Buttons */
         margin: 0;
         padding: 0;
         text-align: left;
@@ -360,10 +559,23 @@ footer nav ul li a {
         margin-bottom: 20px; /* Passe den Wert nach Bedarf an */
     }
 
+.gallery-item {
+    width: 100%;
+}
 
+.gallery-description {
+    font-size: 0.8rem; /* Noch kleinere Schriftgröße für mobile Geräte */
+}
+.large, .medium, .small {
+    width: 100%; /* Vollständige Breite auf mobilen Geräten */
+}
 
-     /* Verkleinert die Pfeile für mobile Geräte */
-     .navigation img {
+body {
+    overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+}
+
+    /* Verkleinert die Pfeile für mobile Geräte */
+    .navigation img {
         width: 60px; /* Breite auf mobilen Geräten */
         height: 60px; /* Höhe auf mobilen Geräten */
     }
@@ -371,8 +583,11 @@ footer nav ul li a {
     .arrow-right {
         stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
     }
+
+
+
     #secondary-header {
-        top: 47px; /* Platz für den ursprünglichen Header */
+        top: 80px; /* Platz für den ursprünglichen Header */
     }
 
     #secondary-header ul {
@@ -388,5 +603,29 @@ footer nav ul li a {
     #secondary-header ul li a {
         font-size: 15px; /* Kleinere Schriftgröße für kleinere Bildschirme */
     }
+
+
+
+
+     /* Anpassen des Logo-Containers für kleine Bildschirme */
+  .logo-container {
+    flex-direction: column; /* Logo und Text vertikal stapeln */
+    align-items: center; /* Zentrieren */
+}
+
+/* Schriftgröße des Textes neben dem Logo */
+.logo-text {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+
+/* Schriftgröße des Kontakt-Links */
+#contact-link a {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+   /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
+   .logo {
+    height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
+}
+
 
 }

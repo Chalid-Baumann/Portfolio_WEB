@@ -39,7 +39,7 @@ body{
     background-color: #ffffff;
     /*FONT*/
     font-family: "lft-etica-mono", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,6 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
-    background-color: rgba(253, 253, 253, 0);
 }
 
 /*#header:hover{
@@ -154,7 +153,6 @@ nav ul li a {
     top: 14%; /* Platz für den ursprünglichen Header */
     width: 100%;
     height: 6%;
-    color: rgba(255, 255, 255, 0); 
     z-index: 1000; /* Stellt sicher, dass der Header über dem Inhalt liegt */
     box-sizing: border-box;
 }
@@ -269,7 +267,7 @@ footer nav ul li a {
 .info-column h1 {
     font-size: 2rem;
     margin: 0;
-    padding-left: 10px;
+    padding-left: 9px;
     font-weight: normal;
     text-align: left;
 }
@@ -543,14 +541,14 @@ footer nav ul li a {
     }
 
     .info-column p {
-        font-size: 10px; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 10.5px; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
     }
 
     .info-column button {
-        font-size: 10px; /* Kleinere Schriftgröße für die Buttons */
+        font-size: 10.5px; /* Kleinere Schriftgröße für die Buttons */
         margin: 0;
         padding: 0;
         text-align: left;
