@@ -58,9 +58,31 @@ main {
     overflow-y: auto;
 }
 
+a:hover{
+    color: rgb(249, 28, 65);
+    cursor: pointer;
+    }
 
 
 
+
+
+/*VIDEO BACKGROUND*/
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+    
+    .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 
 
@@ -101,16 +123,36 @@ nav ul li a {
 
 
 /* Logo container styling */
+/* Logo container styling */
 .logo-container {
     display: flex;
     align-items: center; /* Center items vertically */
     text-decoration: none;
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
 }
 
 .logo {
     height: 100px; /* Adjust height as needed */
     width: auto;
     margin-right: 17px; /* Space between logo and text */
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo-container:hover .logo {
+    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
+    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
+}
+
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
+    }
+    50% {
+        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
+    }
+    100% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
+    }
 }
 
 .logo-container span {
@@ -137,16 +179,34 @@ nav ul li a {
 }
 
 #contact-link a:hover {
-    transform: scale(1.1); /* Vergrößert den Link beim Hover */
+    color: rgb(255, 28, 65)
 }
 
 #header-unit a:hover {
-    transform: scale(1.1); /* Vergrößert das gesamte Header-Unit beim Hover */
+
 }
 
 
 
 
+
+
+/*INTERACTIVE IMAGE*/
+#interactive-image {
+    display: flex;
+    justify-content: center; /* Zentriert das Bild horizontal */
+    align-items: center; /* Zentriert das Bild vertikal */
+    height: 100vh; /* Nutzt die volle Höhe des Viewports */
+    position: relative; /* Positionierung relativ zum übergeordneten Element */
+    overflow: hidden; /* Verhindert, dass das Bild über den Container hinausgeht */
+}
+
+#chalid-image {
+    max-width: 30%; /* Bild nimmt maximal die volle Breite des Containers ein */
+    height: auto; /* Höhe wird proportional zur Breite angepasst */
+    display: block; /* Sicherstellen, dass das Bild angezeigt wird */
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+}
 
 
 
@@ -182,33 +242,8 @@ footer nav ul li a {
 }
 
 #footer:hover {
-    transform: scale(1.1);
+    color: rgb(255, 28, 65)
 }
-
-/*PFEILE NAVIGATION*/
-.navigation {
-    position: relative;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Reduziert die Breite auf mobilen Geräten */
-    box-sizing: border-box;
-}
-
-/* Die Stile für das Pfeil-Icon anpassen */
-.navigation img {
-    width: 100%; /* Breite der Pfeile */
-    height: 100%; /* Höhe der Pfeile */
-    /*stroke-width: 1px; /* Strichstärke auf 1px */
-}
-
-#PTN:hover{
-    transform: scale(1.1); 
-}
-
-
 
 
 
@@ -240,4 +275,161 @@ footer nav ul li a {
         position:static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
+
+    .gallery-item {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+        height: auto; /* Automatische Höhe für kleinere Bildschirme */
+        margin: 0; /* Kein Margin für mobile Geräte */
+        transform: scale(0.95); /* Startposition auf mobilen Geräten */
+    }
+
+    .gallery-container {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        overflow-x: hidden;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        gap: 0; /* Keine Überlappung auf mobilen Geräten */
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .gallery-description {
+        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
+    }
+
+    .project-content {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        gap: 10px; /* Weniger Abstand auf mobilen Geräten */
+    }
+
+    #info-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        overflow-y: auto;
+        padding-top: 5%;
+        padding-left: 3%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+        margin-top: 30%;
+        margin-bottom: 0;
+    }
+
+    .info-column {
+        flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
+        margin: 0;
+        text-align: left;
+        padding: 0;
+    }
+
+
+    .info-column h1 {
+        font-size: 16px; /* Kleinere Schriftgröße für die Headline */
+        font-weight: normal;
+        margin: 0;
+        padding-bottom: 5%;
+        margin-top: 0;
+        padding-top: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .info-column p {
+        font-size: 10.5px; /* Kleinere Schriftgröße für die Textabsätze */
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .info-column button {
+        font-size: 10.5px; /* Kleinere Schriftgröße für die Buttons */
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Spezifischer Abstand zwischen den zwei <p>-Elementen */
+    .info-column .intro-text {
+        margin-bottom: 20px; /* Passe den Wert nach Bedarf an */
+    }
+
+.gallery-item {
+    width: 100%;
+}
+
+.gallery-description {
+    font-size: 0.8rem; /* Noch kleinere Schriftgröße für mobile Geräte */
+}
+.large, .medium, .small {
+    width: 100%; /* Vollständige Breite auf mobilen Geräten */
+}
+
+body {
+    overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+}
+
+    /* Verkleinert die Pfeile für mobile Geräte */
+    .navigation img {
+        width: 60px; /* Breite auf mobilen Geräten */
+        height: 60px; /* Höhe auf mobilen Geräten */
+    }
+
+    .arrow-right {
+        stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
+    }
+
+
+
+    #secondary-header {
+        top: 80px; /* Platz für den ursprünglichen Header */
+    }
+
+    #secondary-header ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #secondary-header ul li {
+        padding: 0 15px; /* Weniger Abstand auf kleinen Bildschirmen */
+        padding-top: 4px;
+    }
+
+    #secondary-header ul li a {
+        font-size: 15px; /* Kleinere Schriftgröße für kleinere Bildschirme */
+    }
+
+
+
+
+     /* Anpassen des Logo-Containers für kleine Bildschirme */
+  .logo-container {
+    flex-direction: column; /* Logo und Text vertikal stapeln */
+    align-items: center; /* Zentrieren */
+}
+
+/* Schriftgröße des Textes neben dem Logo */
+.logo-text {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+
+/* Schriftgröße des Kontakt-Links */
+#contact-link a {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+   /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
+   .logo {
+    height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
+}
+
+
+
+#chalid-image {
+    width: 80%; /* Größere Größe für mobile Geräte */
+    /* Optional: Verhindere, dass das Bild zu groß wird und über den Bildschirm hinausgeht */
+    max-width: 100%;
+}
+
+
+
+
 }

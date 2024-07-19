@@ -58,6 +58,10 @@ main {
     overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
 a:hover{
     color: rgb(249, 28, 65);
     }
@@ -556,7 +560,7 @@ footer nav ul li a {
         align-items: flex-start;
         text-align: left;
         overflow-y: auto;
-        padding-top: 0;
+        padding-top: 5%;
         padding-left: 3%;
         padding-right: 5%;
         padding-bottom: 3%;

@@ -47,6 +47,11 @@ p{
     box-sizing: border-box;
 }
 
+a:hover{
+    color: rgb(249, 28, 65);
+    }
+
+
 
 
 
@@ -87,16 +92,47 @@ nav ul li a {
 
 
 /* Logo container styling */
+
+/* Logo container styling */
 .logo-container {
     display: flex;
     align-items: center; /* Center items vertically */
     text-decoration: none;
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+    outline: none;
 }
 
 .logo {
     height: 100px; /* Adjust height as needed */
     width: auto;
-    margin-right: 17px; /* Space between logo and text */
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+    outline: none;
+}
+
+.logo-container:focus,
+.logo-container:active,
+.logo-container svg:focus,
+.logo-container svg:active,
+.logo:focus,
+.logo:active {
+    outline: none; /* Fokusrahmen entfernen */
+}
+
+.logo-container:hover .logo {
+    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
+    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
+}
+
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
+    }
+    50% {
+        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
+    }
+    100% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
+    }
 }
 
 .logo-container span {
@@ -104,10 +140,20 @@ nav ul li a {
     color: black; /* Ensure text color is visible */
 }
 
+
+
+
+
+
+
+
+
+
 /* Header unit styling */
 #header-unit {
     display: flex;
     align-items: center; /* Center items vertically */
+    gap: 17px;
 }
 
 /* Kontakt-Link-Stile */
@@ -123,12 +169,13 @@ nav ul li a {
 }
 
 #contact-link a:hover {
-    transform: scale(1.1); /* Vergrößert den Link beim Hover */
+    color: rgb(255, 28, 65)
 }
 
+/*
 #header-unit a:hover {
-    transform: scale(1.1); /* Vergrößert das gesamte Header-Unit beim Hover */
-}
+    transform: scale(1.1);
+}*/
 
 
 
