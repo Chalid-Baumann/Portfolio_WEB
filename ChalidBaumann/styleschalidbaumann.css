@@ -35,6 +35,7 @@ body{
     padding: 0;
     font-size: 2rem;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    overflow-y: auto;
     /*BACKGROUND*/
     background-color: #e6e9e5;
     /*FONT*/
@@ -206,6 +207,8 @@ nav ul li a {
     height: auto; /* Höhe wird proportional zur Breite angepasst */
     display: block; /* Sicherstellen, dass das Bild angezeigt wird */
     margin: 0 auto; /* Zentriert das Bild horizontal */
+    transition: opacity 0.5s ease-in-out; /* Übergangseffekt für die Deckkraft */
+    opacity: 1; /* Setzen Sie die Anfangsdeckkraft auf 1 */
 }
 
 
@@ -246,6 +249,113 @@ footer nav ul li a {
 }
 
 
+
+
+
+/* Animated Background Text */
+#animated-background-text {
+    position: fixed;
+    bottom: -100%; /* Start below the viewport */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Ensure the text does not overflow */
+    text-align: left; /* Align text to the left */
+    color: rgb(0, 0, 255); /* Light color for background effect */
+    white-space: normal;
+    z-index: -1; /* Behind all other elements */
+    /*animation: moveUp 30s linear infinite; /* Animation settings */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#animated-background-text span {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-size: 2rem;
+    line-height: 0.9;
+    overflow-wrap: break-word; /* Break long words */
+}
+
+.manual-spacing {
+    height: 1.5rem; /* Adjust this value to control the vertical space */
+}
+
+
+@keyframes moveUp {
+    0% {
+        bottom: -100%; /* Start below the viewport */
+    }
+    100% {
+        bottom: 100%; /* End above the viewport */
+    }
+}
+
+
+
+
+
+
+
+/*Container Lebenslauf-unterhalb Bild*/
+/*.two-column-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin-bottom: 10px;
+    margin-top: -8%;
+    gap: 20px; 
+    padding: 0 20px;
+}
+/*
+
+
+/*
+.column2 p {
+   line-height: 1.2;
+}*/
+
+/*CONTAINER*/
+.container-cv {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Verteilung der Spalten */
+    gap: 10px; /* Abstand zwischen den Spalten */
+    padding: 20px; /* Innenabstand des Containers */
+    margin-top: -5%;
+    line-height: 1.2;
+}
+
+/* GROUP */
+.group {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Jede Gruppe nimmt die Hälfte der Containerbreite ein */
+}
+
+/* STYLING FÜR <p> ELEMENTE */
+.group p {
+    line-height: 1.2; /* Abstand zwischen den Absätzen auf 1.2 Zeilenhöhen setzen */
+    margin: 0; /* Entfernt Standard-Margins */
+    padding: 0; /* Entfernt Standard-Paddings */
+}
+
+/* INNER GROUP */
+.inner-group {
+    margin-bottom: 20px; /* Abstand nach unten */
+    width: 50%;
+}
+
+/* HEADING */
+.heading {
+    margin-bottom: 10px; /* Abstand unter der Überschrift */
+}
+
+/* Zweite Spalte mittig beginnen */
+.group:nth-child(2) {
+    margin-left: auto; /* Verschiebt die zweite Gruppe nach rechts */
+    line-height: 1.2;
+}
 
 
 
@@ -424,11 +534,29 @@ body {
 
 
 #chalid-image {
-    width: 80%; /* Größere Größe für mobile Geräte */
+    width: 90%; /* Größere Größe für mobile Geräte */
     /* Optional: Verhindere, dass das Bild zu groß wird und über den Bildschirm hinausgeht */
     max-width: 100%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+#interactive-image {
+    height: 100%;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    padding-bottom: 0;
 }
 
+
+
+
+
+.container-cv {
+    font-size: 12px;
+    margin-top: 0;
+    padding-top: 0;
+
+}
 
 
 
