@@ -111,9 +111,7 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
-    font-family: "nimbus-sans-dv", sans-serif;
     font-weight: 700;
-    font-style: normal;
 }
 
 /*#header:hover{
@@ -152,7 +150,7 @@ nav ul li a {
 .logo {
     height: 100px; /* Adjust height as needed */
     width: auto;
-    margin-right: 17px; /* Space between logo and text */
+    margin-right: 15px; /* Space between logo and text */
     transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
 }
 
@@ -340,8 +338,7 @@ footer nav ul li a {
     padding-left: 9px;
     font-weight: normal;
     text-align: left;
-    font-family: "nimbus-sans-dv", sans-serif;
-    font-weight: 700;
+
     font-style: normal;
 }
 
@@ -605,7 +602,6 @@ footer nav ul li a {
 
     .info-column h1 {
         font-size: 17px; /* Kleinere Schriftgröße für die Headline */
-        font-weight:700;
         margin: 0;
         padding-bottom: 5%;
         margin-top: 0;
