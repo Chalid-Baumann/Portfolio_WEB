@@ -529,7 +529,7 @@ footer nav ul li a {
     }
 
     body {
-        font-size: 0.9rem;
+        font-size: 17px;
     }
 
     .nav ul li a {
@@ -557,7 +557,7 @@ footer nav ul li a {
     }
 
     .gallery-description {
-        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
+        font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
     }
 
     .project-content {
@@ -575,7 +575,7 @@ footer nav ul li a {
         padding-left: 3%;
         padding-right: 5%;
         padding-bottom: 3%;
-        margin-top: 26%;
+        margin-top: 30%;
         margin-bottom: 0;
     }
 
@@ -588,7 +588,7 @@ footer nav ul li a {
 
 
     .info-column h1 {
-        font-size: 16px; /* Kleinere Schriftgröße für die Headline */
+        font-size: 17px; /* Kleinere Schriftgröße für die Headline */
         font-weight: normal;
         margin: 0;
         padding-bottom: 5%;
@@ -599,14 +599,14 @@ footer nav ul li a {
     }
 
     .info-column p {
-        font-size: 10.5px; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 12x; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
     }
 
     .info-column button {
-        font-size: 10.5px; /* Kleinere Schriftgröße für die Buttons */
+        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
         margin: 0;
         padding: 0;
         text-align: left;
@@ -622,7 +622,7 @@ footer nav ul li a {
 }
 
 .gallery-description {
-    font-size: 0.8rem; /* Noch kleinere Schriftgröße für mobile Geräte */
+    font-size: 12px; /* Noch kleinere Schriftgröße für mobile Geräte */
 }
 .large, .medium, .small {
     width: 100%; /* Vollständige Breite auf mobilen Geräten */
@@ -659,7 +659,7 @@ body {
     }
 
     #secondary-header ul li a {
-        font-size: 15px; /* Kleinere Schriftgröße für kleinere Bildschirme */
+        font-size: 17px; /* Kleinere Schriftgröße für kleinere Bildschirme */
     }
 
 
@@ -669,25 +669,31 @@ body {
   .logo-container {
     flex-direction: column; /* Logo und Text vertikal stapeln */
     align-items: center; /* Zentrieren */
-    outline: none;
 }
 
 /* Schriftgröße des Textes neben dem Logo */
 .logo-text {
-    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+    font-size: 17px; /* Schriftgröße für kleinere Bildschirme */
 }
 
 /* Schriftgröße des Kontakt-Links */
 #contact-link a {
-    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+    font-size: 17px; /* Schriftgröße für kleinere Bildschirme */
 }
    /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
    .logo {
     height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
-    outline: none;
 }
-.logo-container span {
-    font-size: 2rem; /* Größe des Textes "Chalid Baumann" für mobile Darstellung */
+
+
+
+#chalid-image {
+    width: 80%; /* Größere Größe für mobile Geräte */
+    /* Optional: Verhindere, dass das Bild zu groß wird und über den Bildschirm hinausgeht */
+    max-width: 100%;
 }
+
+
+
 
 }

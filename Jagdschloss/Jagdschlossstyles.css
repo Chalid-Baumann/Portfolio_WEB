@@ -15,6 +15,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GT-Planar-Bold';
+    src: url(/font/GT-Planar-Bold-Trial.woff2);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT-Planar-Regular';
+    src: url(/font/ABCGintoNordGreek-Regular-Trial.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 
@@ -74,6 +88,7 @@ color: rgb(249, 28, 65);
     align-items: center;
     flex-direction: row;
     text-decoration: none;
+    color: black;
 }
 
 .bulletpoint-icon {
@@ -96,6 +111,9 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
+    font-family: "nimbus-sans-dv", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 /*#header:hover{
@@ -289,7 +307,7 @@ footer nav ul li a {
     align-items: top;
     text-align: left;
     border-bottom: 1px solid blue;
-    margin: 185px 0; /* Abstand zum oberen und unteren Inhalt */
+    margin: 195px 0; /* Abstand zum oberen und unteren Inhalt */
     margin-bottom: 10px;
     padding-bottom: 5px;
     box-sizing: border-box;   
@@ -322,6 +340,9 @@ footer nav ul li a {
     padding-left: 9px;
     font-weight: normal;
     text-align: left;
+    font-family: "nimbus-sans-dv", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .info-column p {
@@ -512,6 +533,7 @@ footer nav ul li a {
 
 
 
+
 /* Mobile Ansicht */
 @media (max-width: 768px) {
     main {
@@ -523,11 +545,11 @@ footer nav ul li a {
     }
 
     body {
-        font-size: 0.9rem;
+        font-size: 17px;
     }
 
     .nav ul li a {
-        font-size: 20px; /* Kleinere Schriftgröße für die Beschreibung */
+        font-size: 17px; /* Kleinere Schriftgröße für die Beschreibung */
         text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
         width: auto; /* Automatische Breite für kleinere Bildschirme */
         position:static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
@@ -569,7 +591,7 @@ footer nav ul li a {
         padding-left: 3%;
         padding-right: 5%;
         padding-bottom: 3%;
-        margin-top: 30%;
+        margin-top: 29.4%;
         margin-bottom: 0;
     }
 
@@ -582,8 +604,8 @@ footer nav ul li a {
 
 
     .info-column h1 {
-        font-size: 16px; /* Kleinere Schriftgröße für die Headline */
-        font-weight: normal;
+        font-size: 17px; /* Kleinere Schriftgröße für die Headline */
+        font-weight:700;
         margin: 0;
         padding-bottom: 5%;
         margin-top: 0;
@@ -593,14 +615,14 @@ footer nav ul li a {
     }
 
     .info-column p {
-        font-size: 10.5px; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 12px; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
     }
 
     .info-column button {
-        font-size: 10.5px; /* Kleinere Schriftgröße für die Buttons */
+        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
         margin: 0;
         padding: 0;
         text-align: left;
@@ -616,7 +638,7 @@ footer nav ul li a {
 }
 
 .gallery-description {
-    font-size: 0.8rem; /* Noch kleinere Schriftgröße für mobile Geräte */
+    font-size: 02rem; /* Noch kleinere Schriftgröße für mobile Geräte */
 }
 .large, .medium, .small {
     width: 100%; /* Vollständige Breite auf mobilen Geräten */
@@ -653,7 +675,7 @@ body {
     }
 
     #secondary-header ul li a {
-        font-size: 15px; /* Kleinere Schriftgröße für kleinere Bildschirme */
+        font-size: 17px; /* Kleinere Schriftgröße für kleinere Bildschirme */
     }
 
 
@@ -672,7 +694,7 @@ body {
 
 /* Schriftgröße des Kontakt-Links */
 #contact-link a {
-    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+    font-size: 17px; /* Schriftgröße für kleinere Bildschirme */
 }
    /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
    .logo {
