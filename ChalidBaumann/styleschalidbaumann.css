@@ -229,8 +229,12 @@ nav ul li a {
     height: auto;
     margin-right: 8px; /* Space between icon and text */
     margin-bottom: 5px;
+    transition: transform 1s ease; /* Für sanfte Bewegung */
 }
 
+.bulletpoint-icon:hover {
+    transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
+}
 
 
 
@@ -656,5 +660,10 @@ body {
 .heading {
     margin-bottom: 2rem; /* Erhöhten Abstand bei mobilen Geräten */
 }
+
+.bulletpoint-icon.clicked {
+    transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
+}
+
 
 }
