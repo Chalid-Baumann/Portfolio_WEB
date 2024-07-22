@@ -59,10 +59,27 @@ main {
     overflow-y: auto;
 }
 
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
 a:hover{
     color: rgb(249, 28, 65);
     cursor: pointer;
     }
+
+
+    p, div, span {
+        hyphens: auto;
+        -webkit-hyphens: auto; /* Für WebKit-Browser wie Chrome und Safari */
+        -ms-hyphens: auto;     /* Für Internet Explorer */
+        -moz-hyphens: auto;    /* Für Mozilla Firefox */
+        word-wrap: break-word; /* Erlaubt das Umbrechen langer Wörter */
+    }
+
+
 
 
 
@@ -167,6 +184,14 @@ nav ul li a {
     align-items: center; /* Center items vertically */
 }
 
+
+
+
+
+
+
+
+
 /* Kontakt-Link-Stile */
 #contact-link{
     display: flex;
@@ -183,9 +208,68 @@ nav ul li a {
     color: rgb(255, 28, 65)
 }
 
-#header-unit a:hover {
 
+
+
+/*BulletPoint*/
+.kontakt-link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: black;
 }
+
+.kontakt-link p,
+.kontakt-link a {
+    margin: 0 5px;
+}
+
+.bulletpoint-icon {
+    width: 10%; /* Adjust size as needed */
+    height: auto;
+    margin-right: 8px; /* Space between icon and text */
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+.container {
+    display: flex;
+    align-items: center; /* Zentriert die Elemente vertikal */
+    justify-content: center; /* Verteilung der Elemente */
+    flex-direction: row;
+    padding: 0 20px; /* Innenabstand auf beiden Seiten */
+    margin-top: 7rem; /* Abstand vom Header */
+}
+
+/* Textblöcke */
+.text-block {
+    width: 25%; /* Textblöcke nehmen 30% der Containerbreite ein */
+    box-sizing: border-box; /* Verhindert Überlappung durch Padding/Borders */
+    font-size: 1rem;
+}
+
+/* Spezifische Stile für die Textblöcke links und rechts */
+.text-block.left {
+    text-align:left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    word-break: break-word; /* Ermöglicht das Umbrechen von Wörtern am Rand des Containers */
+    overflow-wrap: break-word; /* Alternativer Weg für die Worttrennung */
+}
+
+.text-block.right {
+    text-align: left;
+    padding-right: 1%;
+}
+
 
 
 
@@ -200,15 +284,17 @@ nav ul li a {
     height: 100vh; /* Nutzt die volle Höhe des Viewports */
     position: relative; /* Positionierung relativ zum übergeordneten Element */
     overflow: hidden; /* Verhindert, dass das Bild über den Container hinausgeht */
+    margin-top: -3%;
+    flex: 1;
 }
 
 #chalid-image {
-    max-width: 30%; /* Bild nimmt maximal die volle Breite des Containers ein */
-    height: auto; /* Höhe wird proportional zur Breite angepasst */
-    display: block; /* Sicherstellen, dass das Bild angezeigt wird */
-    margin: 0 auto; /* Zentriert das Bild horizontal */
+    max-width: 70%;
+    max-height: 100vh;
+    object-fit: cover;
     transition: opacity 0.5s ease-in-out; /* Übergangseffekt für die Deckkraft */
     opacity: 1; /* Setzen Sie die Anfangsdeckkraft auf 1 */
+    position: relative;
 }
 
 
@@ -322,8 +408,8 @@ footer nav ul li a {
     justify-content: space-between; /* Verteilung der Spalten */
     gap: 10px; /* Abstand zwischen den Spalten */
     padding: 20px; /* Innenabstand des Containers */
-    margin-top: -5%;
     line-height: 1.2;
+    margin-top: -2%;
 }
 
 /* GROUP */
@@ -342,8 +428,9 @@ footer nav ul li a {
 
 /* INNER GROUP */
 .inner-group {
-    margin-bottom: 20px; /* Abstand nach unten */
-    width: 50%;
+    flex: 1;
+    /*margin-bottom: 20px;
+    width: 50%;*/
 }
 
 /* HEADING */
@@ -489,28 +576,6 @@ body {
     }
 
 
-
-    #secondary-header {
-        top: 80px; /* Platz für den ursprünglichen Header */
-    }
-
-    #secondary-header ul {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #secondary-header ul li {
-        padding: 0 15px; /* Weniger Abstand auf kleinen Bildschirmen */
-        padding-top: 4px;
-    }
-
-    #secondary-header ul li a {
-        font-size: 17px; /* Kleinere Schriftgröße für kleinere Bildschirme */
-    }
-
-
-
-
      /* Anpassen des Logo-Containers für kleine Bildschirme */
   .logo-container {
     flex-direction: column; /* Logo und Text vertikal stapeln */
@@ -542,14 +607,11 @@ body {
 }
 #interactive-image {
     height: 100%;
-    margin-top: 30%;
-    margin-bottom: 3%;
+    margin-top: 0;
+    margin-bottom: 0%;
     padding-bottom: 0;
+    position: relative;
 }
-
-
-
-
 
 .container-cv {
     font-size: 12px;
@@ -559,5 +621,40 @@ body {
 }
 
 
+.container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25%;
+}
+
+.text-block {
+    width: 90%;
+    margin-bottom: 1rem;
+}
+.text-block.right{
+    margin-top: 2%;
+    margin-bottom: 10%;
+    font-size: 12px;
+}
+
+.text-block.left{
+    font-size: 12px;
+    margin-bottom: 2%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.group {
+    flex-direction: column;
+}
+
+.inner-group {
+    padding: 0;
+    margin-bottom: 0.5rem;
+}
+
+.heading {
+    margin-bottom: 2rem; /* Erhöhten Abstand bei mobilen Geräten */
+}
 
 }

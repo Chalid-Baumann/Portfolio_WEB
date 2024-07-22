@@ -86,15 +86,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const height = rect.height;
 
         if (x < width / 3) {
-            imageElement.src = '/images/Chalid_Baumann_1.png';
+            imageElement.src = '/images/ChalidBaumann/ChalidLeft.png';
         } else if (x > 2 * width / 3) {
-            imageElement.src = '/images/Chalid_Baumann_3.png';
+            imageElement.src = '/images/ChalidBaumann/Chalidright.png';
         } else if (y < height / 3) {
-            imageElement.src = '/images/Chalid_Baumann_2.png';
+            imageElement.src = '/images/ChalidBaumann/ChalidUp.png';
         } else if (y > 2 * height / 3) {
-            imageElement.src = '/images/Chalid_Baumann_4.png';
+            imageElement.src = '/images/ChalidBaumann/ChalidDown.png';
         } else {
-            imageElement.src = '/images/Chalid_Baumann_5.png';
+            imageElement.src = '/images/ChalidBaumann/ChalidStraight.png';
+        }
+    });
+
+    // Touchstart- und Touchend-Event-Listener für Tap
+    imageElement.addEventListener('touchstart', (e) => {
+        // Tap handling
+        const touch = e.touches[0];
+        const rect = imageElement.getBoundingClientRect();
+        const x = touch.clientX - rect.left; 
+        const y = touch.clientY - rect.top; 
+        const width = rect.width;
+        const height = rect.height;
+
+        if (x < width / 3) {
+            imageElement.src = '/images/ChalidBaumann/ChalidLeft.png';
+        } else if (x > 2 * width / 3) {
+            imageElement.src = '/images/ChalidBaumann/Chalidright.png';
+        } else if (y < height / 3) {
+            imageElement.src = '/images/ChalidBaumann/ChalidUp.png';
+        } else if (y > 2 * height / 3) {
+            imageElement.src = '/images/ChalidBaumann/ChalidDown.png';
+        } else {
+            imageElement.src = '/images/ChalidBaumann/ChalidStraight.png';
         }
     });
 });

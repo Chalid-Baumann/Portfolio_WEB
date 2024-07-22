@@ -60,11 +60,24 @@ main {
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 a:hover{
     color: rgb(249, 28, 65);
     }
+
+
+    p, div, span {
+        hyphens: auto;
+        -webkit-hyphens: auto; /* Für WebKit-Browser wie Chrome und Safari */
+        -ms-hyphens: auto;     /* Für Internet Explorer */
+        -moz-hyphens: auto;    /* Für Mozilla Firefox */
+        word-wrap: break-word; /* Erlaubt das Umbrechen langer Wörter */
+    }
+
+
+
 
 
 
