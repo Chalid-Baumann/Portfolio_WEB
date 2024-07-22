@@ -30,6 +30,7 @@ body{
     padding: 0;
     font-size: 2rem;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    overflow-y: hidden;
     /*BACKGROUND*/
     background-color: #e6e9e5;
     /*FONT*/
@@ -109,8 +110,8 @@ nav ul li a {
 }
 
 .logo-container:hover .logo {
-    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
-    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Sicherstellen, dass der Drop-Shadow auf Hover gesetzt wird */
+    animation: changeShadowColor 2s infinite alternate;
 }
 
 @keyframes changeShadowColor {
@@ -131,6 +132,59 @@ nav ul li a {
 }
 
 
+
+
+
+
+
+/*BULLETPOINT*/
+#bulletpoint-container {
+    position: relative;
+    left: 50;
+    top: 50%; /* Vertikale Zentrierung */
+    transform: translateY(-50%); /* Vertikale Zentrierung */
+    z-index: 10;
+    pointer-events: auto; /* Muss auf auto gesetzt sein */
+    width: 100%;
+}
+
+.bulletpoint-icon {
+    width: 90%; /* Anpassen nach Bedarf */
+    height: auto;
+    transition: transform 3s ease; /* Weiche Übergänge für die Rotation */
+    pointer-events: auto;
+}
+
+.bulletpoint-icon.hover-rotate {
+    transform: rotate(360deg); /* Rotation beim Hover */
+}
+
+.bulletpoint-icon.rotate {
+    animation: rotate 3s forwards; /* Animation beim Klick */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Zurückdrehen nach der Rotation (wenn benötigt) */
+.bulletpoint-icon.reset {
+    animation: reset 2s forwards; /* Zurückdrehen nach der Rotation */
+}
+
+@keyframes reset {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
 
 
 
@@ -259,6 +313,67 @@ main {
 
 
 
+
+
+
+
+/* Animated SVG Logo Styles */
+#animated-logo {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    z-index: 200;
+}
+
+#animated-logo svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+#b-logo {
+    width: 750px; /* Adjust as needed */
+    height: auto;
+    transition: stroke-width 0.3s ease;
+    cursor: pointer;
+    stroke: rgba(0, 0, 255,1); /* Farbe der Kontur */
+    stroke-width: 1px; /* Standard-Konturstärke */
+    fill: none; /* Keine Füllfarbe */
+    padding-top: 20%;
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Anfangs ohne Schatten */
+}
+
+/* Schattenanimation */
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 1.5rem rgba(0, 0, 255, 1)); /* Blau */
+    }
+    100% {
+        filter: drop-shadow(0 0 1.5rem rgba(0, 0, 255, 1)); /* Blau */
+    }
+}
+
+
+
+
+
+.container-startseite {
+    display: flex;
+    flex-direction: row; /* Nebeneinander auf großen Bildschirmen */
+    align-items: center; /* Zentrierung entlang der Querachse */
+    justify-content: space-between; /* Abstand zwischen den Elementen */
+    width: 100%;
+    height: 100vh; /* Vollbildhöhe für das Container */
+    overflow: hidden; /* Verhindert Scrollen */
+}
+
+
+
+
+
+
 /* Mobile Ansicht */
 @media (max-width: 768px) {
     main {
@@ -267,10 +382,14 @@ main {
         height: auto;
         box-sizing: border-box;
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     body {
         font-size: 17px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .project {
@@ -330,43 +449,6 @@ main {
         margin-bottom: 0;
     }
 
-    .info-column {
-        flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
-        margin: 0;
-        text-align: left;
-        padding: 0;
-    }
-
-
-    .info-column h1 {
-        font-size: 17px; /* Kleinere Schriftgröße für die Headline */
-        font-weight: normal;
-        margin: 0;
-        padding-bottom: 5%;
-        margin-top: 0;
-        padding-top: 0;
-        padding-left: 0;
-        text-align: left;
-    }
-
-    .info-column p {
-        font-size: 12px; /* Kleinere Schriftgröße für die Textabsätze */
-        text-align: left;
-        margin: 0;
-        padding: 0;
-    }
-
-    .info-column button {
-        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
-        margin: 0;
-        padding: 0;
-        text-align: left;
-    }
-
-    /* Spezifischer Abstand zwischen den zwei <p>-Elementen */
-    .info-column .intro-text {
-        margin-bottom: 20px; /* Passe den Wert nach Bedarf an */
-    }
 
   /* Anpassen des Logo-Containers für kleine Bildschirme */
   .logo-container {
@@ -388,8 +470,78 @@ main {
     height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
 }
 
+#b-logo {
+    width: 200px;
+    justify-self: center;
+}
+
+.container-startseite {
+    flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+    height: auto; /* Höhe automatisch anpassen */
+    padding-top: 50%;
+}
+
+#animated-logo{
+    width: 100vw; /* Volle Breite für beide Abschnitte */
+    height: auto;
+    padding-bottom: 20%;
+}
+
+#bulletpoint-container {
+     display: flex;
+    justify-content: center; /* Zentrierung horizontal */
+    padding-bottom: 35%;
+}
+
+.bulletpoint-icon {
+    width: 85%; /* Breite der Bulletpoint-Icons auf mobilen Geräten */
+    height: auto; /* Höhe automatisch anpassen */
+    transition: transform 0.3s ease; /* Sanfter Übergang für Hover und Klick */
+    cursor: pointer; /* Cursor als Pointer anzeigen */
+}
+
+.bulletpoint-icon.hover-rotate,
+.bulletpoint-icon.rotate {
+    transition: transform 0.3s ease; /* Sanfter Übergang für Klick */
+}
+.bulletpoint-icon.hover-rotate {
+    animation: rotate-reset 3s forwards; /* Animation für Hover-Effekt */
+}
+
+.bulletpoint-icon.rotate {
+    animation: rotate 1s forwards, reset 2s 1s forwards; /* Rotation und Rückdreh-Animation beim Klick */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 
+@keyframes rotate-reset {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.container-startseite {
+    flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+    height: 100vh; /* Höhe automatisch anpassen */
+    justify-content: space-between;
+}
+
+#animated-logo {
+    width: 100vw; /* Volle Breite für den Logo-Container */
+    height: auto; /* Höhe automatisch anpassen */
+    margin-top: 10vh; /* Abstand vom oberen Rand des Viewports */
+}
 
 }
 
