@@ -225,15 +225,38 @@ nav ul li a {
 }
 
 .bulletpoint-icon {
+    display: inline;
     width: 10%; /* Adjust size as needed */
     height: auto;
     margin-right: 8px; /* Space between icon and text */
     margin-bottom: 5px;
-    transition: transform 1s ease; /* Für sanfte Bewegung */
+    transition: transform 1s; /* Sanfter Übergang für die Rotation */
 }
 
-.bulletpoint-icon:hover {
-    transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
+.bulletpoint-icon.rotate {
+    animation: rotate 0.5s forwards; /* Rotation bei Klick oder Hover */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bulletpoint-icon.reset {
+    animation: reset 1s forwards; /* Zurückdrehen nach der Rotation */
+}
+
+@keyframes reset {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 
@@ -385,24 +408,6 @@ footer nav ul li a {
 
 
 
-
-/*Container Lebenslauf-unterhalb Bild*/
-/*.two-column-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
-    margin-bottom: 10px;
-    margin-top: -8%;
-    gap: 20px; 
-    padding: 0 20px;
-}
-/*
-
-
-/*
-.column2 p {
-   line-height: 1.2;
-}*/
 
 /*CONTAINER*/
 .container-cv {

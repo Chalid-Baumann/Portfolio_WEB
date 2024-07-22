@@ -94,8 +94,35 @@ a:hover{
     width: 5%; /* Adjust size as needed */
     height: auto;
     margin-right: 8px; /* Space between icon and text */
+    transition: transform 1s; /* Sanfter Übergang für die Rotation */
 }
 
+
+.bulletpoint-icon.rotate {
+    animation: rotate 0.5s forwards; /* Rotation bei Klick oder Hover */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bulletpoint-icon.reset {
+    animation: reset 1s forwards; /* Zurückdrehen nach der Rotation */
+}
+
+@keyframes reset {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
 
 
 
@@ -685,6 +712,10 @@ body {
    /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
    .logo {
     height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
+}
+
+.bulletpoint-icon.clicked {
+    transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
 }
 
 

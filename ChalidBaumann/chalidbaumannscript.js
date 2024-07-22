@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const imageElement = document.getElementById('chalid-image');
+    const icons = document.querySelectorAll('.bulletpoint-icon');
 
+    // Funktion zum Anordnen der Galerie
     const arrangeGallery = () => {
         let lastItemWasVertical = false;
 
@@ -98,26 +100,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Touchstart- und Touchend-Event-Listener für Tap
-    imageElement.addEventListener('touchstart', (e) => {
-        // Tap handling
-        const touch = e.touches[0];
-        const rect = imageElement.getBoundingClientRect();
-        const x = touch.clientX - rect.left; 
-        const y = touch.clientY - rect.top; 
-        const width = rect.width;
-        const height = rect.height;
+    // Hilfsfunktion zum Zurücksetzen aller Icons
+    const resetIcons = () => {
+        icons.forEach(icon => {
+            icon.classList.remove('active');
+            icon.style.transform = 'rotate(0deg)';
+        });
+    };
 
-        if (x < width / 3) {
-            imageElement.src = '/images/ChalidBaumann/ChalidLeft.png';
-        } else if (x > 2 * width / 3) {
-            imageElement.src = '/images/ChalidBaumann/Chalidright.png';
-        } else if (y < height / 3) {
-            imageElement.src = '/images/ChalidBaumann/ChalidUp.png';
-        } else if (y > 2 * height / 3) {
-            imageElement.src = '/images/ChalidBaumann/ChalidDown.png';
-        } else {
-            imageElement.src = '/images/ChalidBaumann/ChalidStraight.png';
-        }
+    // Rotieren des Icons beim Hover und Touch
+    icons.forEach(icon => {
+        icon.addEventListener('mouseover', () => {
+            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
+                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+                icon.style.transform = 'rotate(360deg)'; // Desktop Hover-Effekt
+            }
+        });
+
+        icon.addEventListener('mouseout', () => {
+            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
+                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+                icon.style.transform = 'rotate(0deg)'; // Zurücksetzen der Rotation
+            }
+        });
+
+        icon.addEventListener('touchstart', (event) => {
+            event.preventDefault(); // Verhindert die Standardaktion des Touchs
+            resetIcons(); // Alle Icons zurücksetzen
+            icon.classList.add('active');
+            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+            icon.style.transform = 'rotate(360deg)'; // Mobile Touch-Effekt
+
+            // Nach der Animation zurücksetzen
+            setTimeout(() => {
+                icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
+                icon.classList.remove('active'); // Entfernen der Aktiv-Klasse
+            }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
+        });
+
+        icon.addEventListener('click', () => {
+            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
+                resetIcons(); // Alle Icons zurücksetzen
+                icon.classList.add('active');
+                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+                icon.style.transform = 'rotate(360deg)'; // Klick-Effekt
+
+                // Nach der Animation zurücksetzen
+                setTimeout(() => {
+                    icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
+                    icon.classList.remove('active'); // Entfernen der Aktiv-Klasse
+                }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
+            }
+        });
     });
 });

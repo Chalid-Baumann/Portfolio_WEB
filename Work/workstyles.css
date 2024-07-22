@@ -1,0 +1,395 @@
+/*SCHRIFT*/
+@import url("https://use.typekit.net/ikm7jrk.css");
+
+@font-face {
+    font-family: 'akzidenzgrotesk_regular';
+    src: url(/font/AkzidenzGrotesk-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GazetteLTStd-Roman';
+    src: url(/font/GazetteLTStd-Roman.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+/*GENERAL*/
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    /*BACKGROUND*/
+    background-color: #e6e9e5;
+    /*FONT*/
+    font-family: "lft-etica-mono", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    /*text-align: justify;*/
+    text-justify: inter-word;
+    box-sizing: border-box;
+}
+
+a:hover{
+    color: rgb(249, 28, 65);
+    }
+
+
+
+
+
+
+/*HEADER*/
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0); 
+    z-index: 1100;
+    background-color: rgba(253, 253, 253, 0);
+}
+
+/*
+#header:hover{
+    transform: scale(1.1);
+}*/
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+    border-bottom: 1px solid blue;
+}
+
+nav ul li {
+    padding: 15px 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
+/* Logo container styling */
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo {
+    height: 100px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 17px; /* Space between logo and text */
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo-container:hover .logo {
+    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
+    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
+}
+
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
+    }
+    50% {
+        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
+    }
+    100% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
+    }
+}
+
+.logo-container span {
+    font-size: 2rem; /* Adjust font size as needed */
+    color: black; /* Ensure text color is visible */
+}
+
+
+
+
+
+
+
+
+
+
+/* Header unit styling */
+#header-unit {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+/* Kontakt-Link-Stile */
+#contact-link{
+    display: flex;
+    align-items: center;
+}
+
+#contact-link a {
+    color: black; /* Textfarbe des Links */
+    text-decoration: none;
+    font-size: 2rem; /* Schriftgröße des Links */
+}
+
+#contact-link a:hover {
+    color: rgb(255, 28, 65)
+}
+
+/*
+#header-unit a:hover {
+    transform: scale(1.1);
+}*/
+
+
+
+main {
+    margin: 0;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
+    box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
+    padding-top: 10px;
+}
+
+
+
+
+/* Galerie-Stile */
+#gallery {
+    /*margin-top: 10px;*/
+    padding-top: 10%;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
+    width: 100%;
+    /*height: calc(100vh - 10px); /* Höhe des Headers abziehen */
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-container {
+    /*justify-content: center;*/
+    align-items: center;
+    z-index: 1;
+    margin: 0 0 0 5%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 89%;
+    gap: 0;
+    position: relative;
+}
+
+
+.gallery-item {
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0s; /* Rotation und z-index für das Hover- und Click-Verhalten */
+    object-fit: contain;
+    width: 25%; /* Breite der Galerie-Items */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
+    margin-left: -10%; /* Verschiebt das Item nach links für Überlappung */
+    transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
+    z-index: 1; /* Z-Index für die Überlappung */
+}
+
+.gallery-item.active {
+    z-index: 1020; /* Höherer z-index für das aktive Item */
+    transform: scale(1.1) rotate3d(1, 1, 0, 0deg); /* Vergrößert das aktive Item und setzt die Rotation auf 0 Grad */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate3d(1, 1, 0, 0deg); /* Vergrößert das Bild beim Hover und richtet es gerade aus */
+    /*box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
+    z-index: 1030; /* Setzt den z-index höher beim Hover */
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-description {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #000;
+    border: 1px solid blue;
+    padding-left: 1px;
+    padding-right: 0;
+    background-color: #e6e9e5;
+}
+
+
+.gallery-item:hover,
+.gallery-item:active {
+    transform: rotate3d(1, 1, 0, 0deg) scale(1.05); /* Rotation und Vergrößerung beim Hover oder Click */
+}
+
+
+
+
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+    main {
+        margin-top: 1%; /* Platz für den fixierten Header */
+        display: block;
+        height: auto;
+        box-sizing: border-box;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+    }
+
+    body {
+        font-size: 17px;
+    }
+
+    .project {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+    }
+
+    .project-description {
+        font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
+        text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
+        width: auto; /* Automatische Breite für kleinere Bildschirme */
+        position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
+        left: auto; /* Entfernt die horizontale Verschiebung */
+    }
+
+    .nav ul li a {
+        font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
+        text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
+        width: auto; /* Automatische Breite für kleinere Bildschirme */
+        position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
+        left: auto; /* Entfernt die horizontale Verschiebung */
+    }
+
+    .gallery-item {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+        height: auto; /* Automatische Höhe für kleinere Bildschirme */
+        margin: 0; /* Kein Margin für mobile Geräte */
+        transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Startposition auf mobilen Geräten */
+        padding-right: 7%;
+        box-sizing: border-box;
+    }
+
+    /* Neue Regel für mobile Darstellung der Galerie-Items */
+    .gallery-container {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        overflow-x: hidden;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        gap: 0; /* Keine Überlappung auf mobilen Geräten */
+        margin-top: 7%;
+    }
+
+    .gallery-description {
+        font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
+        box-sizing: border-box; /* Stellt sicher, dass die Border innerhalb der Box-Dimensionen liegt */
+    }
+
+    #info-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        overflow-y: auto;
+        padding-top: 5%;
+        padding-left: 3%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+        margin-top: 26%;
+        margin-bottom: 0;
+    }
+
+    .info-column {
+        flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
+        margin: 0;
+        text-align: left;
+        padding: 0;
+    }
+
+
+    .info-column h1 {
+        font-size: 17px; /* Kleinere Schriftgröße für die Headline */
+        font-weight: normal;
+        margin: 0;
+        padding-bottom: 5%;
+        margin-top: 0;
+        padding-top: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .info-column p {
+        font-size: 12px; /* Kleinere Schriftgröße für die Textabsätze */
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .info-column button {
+        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Spezifischer Abstand zwischen den zwei <p>-Elementen */
+    .info-column .intro-text {
+        margin-bottom: 20px; /* Passe den Wert nach Bedarf an */
+    }
+
+  /* Anpassen des Logo-Containers für kleine Bildschirme */
+  .logo-container {
+    flex-direction: column; /* Logo und Text vertikal stapeln */
+    align-items: center; /* Zentrieren */
+}
+
+/* Schriftgröße des Textes neben dem Logo */
+.logo-text {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+
+/* Schriftgröße des Kontakt-Links */
+#contact-link a {
+    font-size: 17px; /* Schriftgröße für kleinere Bildschirme */
+}
+   /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
+   .logo {
+    height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
+}
+
+
+
+
+}
+
