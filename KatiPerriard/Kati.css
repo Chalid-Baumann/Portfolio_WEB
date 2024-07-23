@@ -1,0 +1,730 @@
+/*SCHRIFT*/
+@import url("https://use.typekit.net/ikm7jrk.css");
+
+@font-face {
+    font-family: 'akzidenzgrotesk_regular';
+    src: url(/font/AkzidenzGrotesk-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GazetteLTStd-Roman';
+    src: url(/font/GazetteLTStd-Roman.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*GENERAL*/
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+p{
+    text-align: left;
+    text-justify: inter-word;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    /*BACKGROUND*/
+    background-color: #ffffff;
+    /*FONT*/
+    font-family: "lft-etica-mono", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
+    padding-top: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: rgb(249, 28, 65);
+    }
+
+
+    p, div, span {
+        hyphens: auto;
+        -webkit-hyphens: auto; /* Für WebKit-Browser wie Chrome und Safari */
+        -ms-hyphens: auto;     /* Für Internet Explorer */
+        -moz-hyphens: auto;    /* Für Mozilla Firefox */
+        word-wrap: break-word; /* Erlaubt das Umbrechen langer Wörter */
+    }
+
+
+
+
+
+
+
+
+/*BulletPoint*/
+.kontakt-link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.bulletpoint-icon {
+    width: 5%; /* Adjust size as needed */
+    height: auto;
+    margin-right: 8px; /* Space between icon and text */
+    transition: transform 1s; /* Sanfter Übergang für die Rotation */
+}
+
+
+.bulletpoint-icon.rotate {
+    animation: rotate 0.5s forwards; /* Rotation bei Klick oder Hover */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bulletpoint-icon.reset {
+    animation: reset 1s forwards; /* Zurückdrehen nach der Rotation */
+}
+
+@keyframes reset {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+
+
+
+/*HEADER*/
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 1%;
+    color: rgba(255, 255, 255, 0); 
+    z-index: 1100;
+}
+
+/*#header:hover{
+    transform: scale(1.1);
+}*/
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid blue;
+}
+
+nav ul li {
+    padding: 15px 15px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo {
+    height: 100px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 17px; /* Space between logo and text */
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo-container:hover .logo {
+    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
+    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
+}
+
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
+    }
+    50% {
+        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
+    }
+    100% {
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
+    }
+}
+
+.logo-container span {
+    font-size: 2rem; /* Adjust font size as needed */
+    color: black; /* Ensure text color is visible */
+}
+
+/* Header unit styling */
+#header-unit {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+/* Kontakt-Link-Stile */
+#contact-link{
+    display: flex;
+    align-items: center;
+}
+
+#contact-link a {
+    color: black; /* Textfarbe des Links */
+    text-decoration: none;
+    font-size: 2rem; /* Schriftgröße des Links */
+}
+
+#contact-link a:hover {
+    color: rgb(255, 28, 65)
+}
+
+#header-unit a:hover {
+
+}
+
+
+
+
+
+/*secondary header*/
+#secondary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    position: fixed;
+    top: 14%; /* Platz für den ursprünglichen Header */
+    width: 100%;
+    height: 6%;
+    z-index: 1000; /* Stellt sicher, dass der Header über dem Inhalt liegt */
+    box-sizing: border-box;
+}
+
+#secondary-header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#secondary-header ul li {
+    padding: 0 15px; /* Abstand der Links innerhalb des Listenelements */
+}
+
+#secondary-header ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    line-height: 60px; /* Zentriert den Text vertikal */
+
+}
+
+#secondary-header ul li a:hover {
+    color: rgb(255, 28, 65)
+}
+
+
+
+
+
+
+/*FOOTER*/
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Höhe des Footers */
+    color: rgba(255, 255, 255, 0); 
+    z-index: 1100;
+    background-color: rgba(253, 253, 253, 0.8); /* Hintergrundfarbe des Footers */
+}
+
+footer nav ul {
+    border-top: 1px solid blue;
+    border-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul li {
+    padding: 15px 15px;
+}
+
+footer nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#footer:hover {
+    color: rgb(255, 28, 65)
+}
+
+
+
+
+
+/*PROJEKTINFO*/
+#info-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+    text-align: left;
+    border-bottom: 1px solid blue;
+    margin: 185px 0; /* Abstand zum oberen und unteren Inhalt */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    box-sizing: border-box;   
+    min-height: auto;
+    overflow-x: hidden;
+    gap: 2px;
+}
+
+/* Hier stellen wir sicher, dass es keinen zusätzlichen Abstand beim Scrollen gibt */
+#info-container::-webkit-scrollbar {
+    width: 8px; /* Breite des Scrollbalkens */
+}
+
+#info-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Farbe des Scrollbalkens */
+    border-radius: 10px; /* Ecken des Scrollbalkens abrunden */
+}
+
+.info-column {
+    flex: 1 1 20%;
+    margin-top: 10px;
+    margin-left: 8px;
+    text-align: left;
+    align-items: center;
+}
+
+.info-column h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding-left: 9px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.info-column p {
+    margin: 0;
+    font-size: 1rem; /* Textgröße */
+    line-height: 1.2; /* Zeilenhöhe */
+    padding-right: 5px;
+}
+
+.info-column p, .info-column button {
+    margin: 5px 0; /* Margin for spacing between text and button */
+}
+
+/* Anpassung für die dritte Spalte */
+.info-column:nth-of-type(3) {
+    flex: 1 1 50vw; /* Setzt die dritte Spalte auf 50% der Viewport-Breite */
+    max-width: 100vw; /* Beschränkt die Breite der dritten Spalte auf 50% des Viewports */
+    text-align: left;
+}
+
+#nummerierung{
+    font-size: 2rem;
+    padding-left: 10px;
+    color: blue;
+}
+
+
+
+
+
+
+/* Allgemeine Galerie-Stile */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Abstand zwischen den Bildern */
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.gallery-item {
+    /*flex: 1 1 calc(25% - 30px);*/
+    /*box-sizing: border-box;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Positioniert das letzte Bild in der Mitte der letzten Reihe */
+.gallery-item:last-child {
+    flex: 0 0 33%; /* Setzt eine feste Breite für das letzte Element */
+    margin: 0 auto; /* Zentriert das letzte Bild innerhalb der Galerie */
+}
+
+.gallery-item img,
+.gallery-item video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Verhindert Verzerrung der Bilder */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Video-Stile */
+.gallery-item.video {
+    flex: 1 1 100%; /* Volle Breite für das Video */
+}
+
+.gallery-item.video video {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
+    min-height: 300px; /* Mindesthöhe für das Video */
+    max-height: 850px; /* Maximale Höhe für das Video */
+    display: block; /* Verhindert unerwünschte Abstände */
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Sicherstellen, dass der Inhalt nicht abgeschnitten wird */
+}
+
+/* Steuerungselemente des Videos anpassen */
+.gallery-item.video video::-webkit-media-controls {
+    background: transparent; /* Entfernt den Verlauf */
+}
+
+.gallery-item.video video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.7); /* Schwarzer Hintergrund für das Steuerelemente-Panel */
+}
+
+/* Die folgenden Zeilen sorgen für schwarze Steuerelemente */
+.gallery-item.video video::-webkit-media-controls-play-button,
+.gallery-item.video video::-webkit-media-controls-volume-slider,
+.gallery-item.video video::-webkit-media-controls-mute-button,
+.gallery-item.video video::-webkit-media-controls-fullscreen-button,
+.gallery-item.video video::-webkit-media-controls-timeline {
+    background: black; /* Schwarzer Hintergrund für die Steuerelemente */
+}
+
+.gallery-item.video video::-webkit-media-controls-play-button {
+    color: white; /* Weiße Farbe für das Play-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-volume-slider {
+    background: black; /* Schwarzer Hintergrund für den Lautstärkeregler */
+}
+
+.gallery-item.video video::-webkit-media-controls-mute-button {
+    color: white; /* Weiße Farbe für das Stummschalt-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-fullscreen-button {
+    color: white; /* Weiße Farbe für das Vollbild-Icon */
+}
+
+.gallery-item.video video::-webkit-media-controls-timeline {
+    background: black; /* Schwarzer Hintergrund für die Zeitleiste */
+}
+
+/* Entfernt zusätzliche schwarze Flächen, falls vorhanden */
+.gallery-item.video::before,
+.gallery-item.video::after {
+    display: none; /* Versteckt mögliche Pseudoelemente */
+}
+
+/* Sicherstellen, dass das Video korrekt angezeigt wird */
+.gallery-item.video video {
+    display: block; /* Verhindert unerwünschte Abstände */
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Sicherstellen, dass der Inhalt nicht abgeschnitten wird */
+}
+
+.gallery-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 0.9rem; /* Kleinere Schriftgröße für die Beschreibung */
+    color: #333; /* Dunkle Schriftfarbe */
+    text-align: center; /* Zentriert den Text */
+}
+
+.large {
+    flex: 1 1 30%; /* Breitere Bilder */
+}
+
+.medium {
+    flex: 1 1 40%; /* Mittlere Bilder */
+}
+
+.small {
+    flex: 1 1 40%; /* Kleinere Bilder */
+}
+
+
+
+
+/*PFEILE NAVIGATION*/
+.navigation {
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Reduziert die Breite auf mobilen Geräten */
+    box-sizing: border-box;
+}
+
+/* Die Stile für das Pfeil-Icon anpassen */
+.navigation img {
+    width: 100%; /* Breite der Pfeile */
+    height: 100%; /* Höhe der Pfeile */
+    /*stroke-width: 1px; /* Strichstärke auf 1px */
+}
+
+#PTN:hover{
+    transform: scale(1.1); 
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+    main {
+        margin-top: 1%; /* Platz für den fixierten Header */
+        display:block;
+        height: auto;
+        box-sizing: border-box;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+    }
+
+    body {
+        font-size: 17px;
+    }
+
+    .nav ul li a {
+        font-size: 17px; /* Kleinere Schriftgröße für die Beschreibung */
+        text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
+        width: auto; /* Automatische Breite für kleinere Bildschirme */
+        position:static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
+        left: auto; /* Entfernt die horizontale Verschiebung */
+    }
+
+    .gallery-item {
+        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
+        height: auto; /* Automatische Höhe für kleinere Bildschirme */
+        margin: 0; /* Kein Margin für mobile Geräte */
+        transform: scale(0.95); /* Startposition auf mobilen Geräten */
+    }
+
+    .gallery-container {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        overflow-x: hidden;
+        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+        gap: 0; /* Keine Überlappung auf mobilen Geräten */
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .gallery-description {
+        font-size: 10px; /* Kleinere Schriftgröße für die Beschreibung */
+    }
+
+    .project-content {
+        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
+        gap: 10px; /* Weniger Abstand auf mobilen Geräten */
+    }
+
+    #info-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        overflow-y: auto;
+        padding-top: 5%;
+        padding-left: 3%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+        margin-top: 26%;
+        margin-bottom: 0;
+    }
+
+    .info-column {
+        flex: 1; /* Vollständige Breite auf kleinen Bildschirmen */
+        margin: 0;
+        text-align: left;
+        padding: 0;
+    }
+
+
+    .info-column h1 {
+        font-size: 17px; /* Kleinere Schriftgröße für die Headline */
+        font-weight: normal;
+        margin: 0;
+        padding-bottom: 5%;
+        margin-top: 0;
+        padding-top: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .info-column p {
+        font-size: 12px; /* Kleinere Schriftgröße für die Textabsätze */
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .info-column button {
+        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Spezifischer Abstand zwischen den zwei <p>-Elementen */
+    .info-column .intro-text {
+        margin-bottom: 20px; /* Passe den Wert nach Bedarf an */
+    }
+
+.gallery-item {
+    width: 100%;
+}
+
+.gallery-description {
+    font-size: 02rem; /* Noch kleinere Schriftgröße für mobile Geräte */
+}
+.large, .medium, .small {
+    width: 100%; /* Vollständige Breite auf mobilen Geräten */
+}
+
+body {
+    overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+}
+
+    /* Verkleinert die Pfeile für mobile Geräte */
+    .navigation img {
+        width: 60px; /* Breite auf mobilen Geräten */
+        height: 60px; /* Höhe auf mobilen Geräten */
+    }
+
+    .arrow-right {
+        stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
+    }
+
+
+
+    #secondary-header {
+        top: 80px; /* Platz für den ursprünglichen Header */
+    }
+
+    #secondary-header ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #secondary-header ul li {
+        padding: 0 15px; /* Weniger Abstand auf kleinen Bildschirmen */
+        padding-top: 4px;
+    }
+
+    #secondary-header ul li a {
+        font-size: 17px; /* Kleinere Schriftgröße für kleinere Bildschirme */
+    }
+
+
+
+
+     /* Anpassen des Logo-Containers für kleine Bildschirme */
+  .logo-container {
+    flex-direction: column; /* Logo und Text vertikal stapeln */
+    align-items: center; /* Zentrieren */
+}
+
+/* Schriftgröße des Textes neben dem Logo */
+.logo-text {
+    font-size: 0.9rem; /* Schriftgröße für kleinere Bildschirme */
+}
+
+/* Schriftgröße des Kontakt-Links */
+#contact-link a {
+    font-size: 17px; /* Schriftgröße für kleinere Bildschirme */
+}
+   /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
+   .logo {
+    height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
+}
+
+.bulletpoint-icon.clicked {
+    transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
+}
+
+
+}

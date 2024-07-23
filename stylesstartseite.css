@@ -215,10 +215,8 @@ nav ul li a {
     color: rgb(255, 28, 65)
 }
 
-/*
-#header-unit a:hover {
-    transform: scale(1.1);
-}*/
+
+
 
 
 
@@ -330,18 +328,19 @@ main {
 
 #animated-logo svg {
     transition: transform 0.3s ease-in-out;
+    min-height: fit-content;
 }
 
 
 #b-logo {
-    width: 750px; /* Adjust as needed */
+    width: 60%; /* Adjust as needed */
     height: auto;
     transition: stroke-width 0.3s ease;
     cursor: pointer;
     stroke: rgba(0, 0, 255,1); /* Farbe der Kontur */
     stroke-width: 1px; /* Standard-Konturstärke */
     fill: none; /* Keine Füllfarbe */
-    padding-top: 20%;
+    top:12%;
     filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Anfangs ohne Schatten */
 }
 
@@ -471,20 +470,18 @@ main {
 }
 
 #b-logo {
-    width: 200px;
+    width: 260px;
     justify-self: center;
 }
 
 .container-startseite {
     flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
     height: auto; /* Höhe automatisch anpassen */
-    padding-top: 50%;
 }
 
 #animated-logo{
     width: 100vw; /* Volle Breite für beide Abschnitte */
     height: auto;
-    padding-bottom: 20%;
 }
 
 #bulletpoint-container {

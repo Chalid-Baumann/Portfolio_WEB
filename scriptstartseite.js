@@ -102,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = touch.pageY - offsetY;
             bLogo.style.left = `${x}px`;
             bLogo.style.top = `${y}px`;
+            
+            // Prevent scrolling while dragging
+            e.preventDefault();
         } else if (e.touches.length === 1) {
             const touch = e.touches[0];
             adjustStrokeWidth(touch.clientX, touch.clientY);
@@ -115,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     bLogo.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
-    document.addEventListener('touchend', handleTouchEnd);
+    bLogo.addEventListener('touchmove', handleTouchMove);
+    bLogo.addEventListener('touchend', handleTouchEnd);
 
     bulletpointIcons.forEach(icon => {
         let isAnimating = false;
