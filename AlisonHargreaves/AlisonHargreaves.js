@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const arrangeGallery = () => {
         let lastItemWasVertical = false;
 
-        galleryItems.forEach((item, index) => {
+        galleryItems.forEach((item) => {
             const aspectRatio = item.getAttribute('data-aspect-ratio');
 
             // Entfernen von vorherigen Klassen
@@ -89,6 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Video-Steuerung hinzufügen
+    const videos = document.querySelectorAll('.gallery-item.video video');
+
+    videos.forEach(video => {
+        // Setze das Attribut 'controlsList' auf 'nodownload'
+        video.setAttribute('controlsList', 'nodownload');
+
+        // Event listener to toggle play/pause on video click
+        video.addEventListener('click', function(event) {
+            event.stopPropagation(); // Verhindert das Auslösen von Klick-Events auf übergeordneten Elementen
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    });
 });
 
 // Fancybox Initialisierung
@@ -99,11 +117,49 @@ $(document).ready(function() {
             "share",
             "slideShow",
             "fullScreen",
-            "download",
             "thumbs",
             "close"
         ],
         loop: false,
-        protect: true
+        protect: true,
+        beforeLoad: function(instance, current) {
+            if (current.type === 'video') {
+                current.opts.video = {
+                    autoStart: false,
+                    controlsList: 'nodownload'
+                };
+            }
+        }
+    });
+
+    // Video-Links zum Öffnen in Fancybox hinzufügen
+    $('.gallery-item.video').on('click', function(event) {
+        event.preventDefault(); // Verhindert Standard-Click-Aktion
+
+        // Hole das Video-Element
+        const videoElement = $(this).find('video')[0];
+        const videoSrc = videoElement.getAttribute('src');
+
+        // Öffne das Video in Fancybox
+        $.fancybox.open({
+            src: videoSrc,
+            type: 'video',
+            opts: {
+                buttons: [
+                    "zoom",
+                    "share",
+                    "slideShow",
+                    "fullScreen",
+                    "thumbs",
+                    "close"
+                ],
+                loop: false,
+                protect: true,
+                video: {
+                    autoStart: false,
+                    controlsList: 'nodownload'
+                }
+            }
+        });
     });
 });

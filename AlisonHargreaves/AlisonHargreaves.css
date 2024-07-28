@@ -419,6 +419,7 @@ footer nav ul li a {
 /* Video-Stile */
 .gallery-item.video {
     flex: 1 1 100%; /* Volle Breite für das Video */
+    width: 100%;
 }
 
 .gallery-item.video video {
@@ -510,28 +511,7 @@ footer nav ul li a {
 
 
 
-/*PFEILE NAVIGATION*/
-.navigation {
-    position: relative;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Reduziert die Breite auf mobilen Geräten */
-    box-sizing: border-box;
-}
 
-/* Die Stile für das Pfeil-Icon anpassen */
-.navigation img {
-    width: 100%; /* Breite der Pfeile */
-    height: 100%; /* Höhe der Pfeile */
-    /*stroke-width: 1px; /* Strichstärke auf 1px */
-}
-
-#PTN:hover{
-    transform: scale(1.1); 
-}
 
 
 
