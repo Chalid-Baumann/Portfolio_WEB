@@ -84,7 +84,6 @@ a:hover{
 
 
 
-
 /*VIDEO BACKGROUND*/
     .video-background {
         position: absolute;
@@ -453,6 +452,38 @@ footer nav ul li a {
     line-height: 1.2;
 }
 
+.entry {
+    padding-bottom: 3%;
+    padding-top: 3%;
+    border-bottom: 1px solid rgb(0, 0, 255);
+}
+
+.date {
+    padding-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 0;
+    padding-right: 3%;
+}
+
+.description {
+    display: inline-block; /* Ermöglicht den Zeilenumbruch innerhalb des span */
+    text-align: left;
+    white-space: normal; /* Ermöglicht Zeilenumbruch */
+    hyphens: auto; /* Ermöglicht die Silbentrennung */
+    -webkit-hyphens: auto; /* Silbentrennung für WebKit-Browser */
+    -ms-hyphens: auto; /* Silbentrennung für Internet Explorer */
+    -moz-hyphens: auto; /* Silbentrennung für Firefox */
+    word-wrap: break-word; /* Lässt lange Wörter umbrechen */
+    word-break: break-word; /* Ermöglicht das Umbrechen von Wörtern an beliebigen Punkten */
+    overflow-wrap: break-word; /* Stellt sicher, dass Wortumbrüche korrekt gehandhabt werden */
+}
+
+
+
+
+
+
+
 
 
 
@@ -670,5 +701,8 @@ body {
     transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
 }
 
+.heading{
+    font-size: 1rem;
+}
 
 }
