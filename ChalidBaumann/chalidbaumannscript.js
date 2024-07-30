@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll-zu-Top-Funktionalität hinzufügen
     const scrollTopButton = document.getElementById('scrollTop');
     if (scrollTopButton) {
-        scrollTopButton.addEventListener('click', () => {
+        scrollTopButton.addEventListener('click', (event) => {
+            event.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Touchmove-Event-Listener für Mobile
+    // Touchmove-Event-Listener für Mobile (schneller reagieren)
     document.addEventListener('touchmove', function (e) {
         if (!imageElement) return; // Überprüfen, ob das Bild-Element vorhanden ist
 
