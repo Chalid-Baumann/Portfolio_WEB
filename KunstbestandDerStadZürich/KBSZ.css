@@ -15,6 +15,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SuisseIntl-Bold';
+    src: url(/font/SuisseIntl-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
 
 
 
@@ -140,6 +151,10 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
+            /*FONT*/
+            font-family: "SuisseIntl-Bold", sans-serif;
+            font-weight: 500;
+            font-style: normal;
 }
 
 /*#header:hover{
@@ -360,6 +375,11 @@ footer nav ul li a {
     padding-left: 9px;
     font-weight: normal;
     text-align: left;
+        /*FONT*/
+        font-family: "SuisseIntl-Bold", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        text-align: left;
 }
 
 .info-column p {
@@ -629,6 +649,7 @@ footer nav ul li a {
         padding-top: 0;
         padding-left: 0;
         text-align: left;
+    
     }
 
     .info-column p {
