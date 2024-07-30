@@ -15,6 +15,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SuisseIntl-Bold';
+    src: url(/font/SuisseIntl-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Regular';
+    src: url(/font/SuisseIntl-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 
 
@@ -38,7 +53,7 @@ body{
     /*BACKGROUND*/
     background-color: #ffffff;
     /*FONT*/
-    font-family: "lft-etica-mono", sans-serif;
+    font-family: "lft-etica-mono";
     font-weight: 500;
     font-style: normal;
     display: flex;
@@ -88,12 +103,20 @@ a:hover{
     display: flex;
     align-items: center;
     flex-direction: row;
+    color: black;
+}
+
+.kontakt-link p,
+.kontakt-link a {
+    margin: 0 5px;
 }
 
 .bulletpoint-icon {
+    display: inline-block;
     width: 5%; /* Adjust size as needed */
     height: auto;
     margin-right: 8px; /* Space between icon and text */
+    padding-bottom: 1%;
     transition: transform 1s; /* Sanfter Übergang für die Rotation */
 }
 
@@ -137,6 +160,10 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
+        /*FONT*/
+        font-family: "SuisseIntl-Bold", sans-serif;
+        font-weight: 500;
+        font-style: normal;
 }
 
 /*#header:hover{
@@ -232,6 +259,10 @@ nav ul li a {
 
 /*secondary header*/
 #secondary-header {
+    /*FONT*/
+    font-family: "SuisseIntl-Bold", sans-serif;
+    font-weight: 500;
+    font-style: normal;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -355,7 +386,10 @@ footer nav ul li a {
     font-size: 2rem;
     margin: 0;
     padding-left: 9px;
-    font-weight: normal;
+    /*FONT*/
+    font-family: "SuisseIntl-Bold", sans-serif;
+    font-weight: 500;
+    font-style: normal;
     text-align: left;
 }
 

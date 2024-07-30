@@ -111,6 +111,7 @@ p, div, span {
     height: auto;
     margin-right: 10px; /* Space between icon and text */
     margin-top: 10px;
+    padding-bottom: 1%;
     transition: transform 1s; /* Sanfter Übergang für die Rotation */
  }
 

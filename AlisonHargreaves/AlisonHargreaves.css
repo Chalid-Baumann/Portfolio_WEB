@@ -579,7 +579,7 @@ footer nav ul li a {
         padding-top: 5%;
         padding-left: 3%;
         padding-right: 5%;
-        padding-bottom: 3%;
+        padding-bottom: 0;
         margin-top: 26%;
         margin-bottom: 0;
     }
@@ -608,13 +608,7 @@ footer nav ul li a {
         text-align: left;
         margin: 0;
         padding: 0;
-    }
-
-    .info-column button {
-        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
-        margin: 0;
-        padding: 0;
-        text-align: left;
+        margin-bottom: 0;
     }
 
     /* Spezifischer Abstand zwischen den zwei <p>-Elementen */
