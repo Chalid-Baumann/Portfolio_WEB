@@ -22,7 +22,12 @@
     font-style: normal;
 }
 
-
+@font-face {
+    font-family: 'SuisseIntl-Regular';
+    src: url(/font/SuisseIntl-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 
@@ -333,6 +338,8 @@ footer nav ul li a {
 
 
 
+
+
 /*PROJEKTINFO*/
 #info-container {
     width: 100%;
@@ -387,11 +394,20 @@ footer nav ul li a {
     font-size: 1rem; /* Textgröße */
     line-height: 1.2; /* Zeilenhöhe */
     padding-right: 5px;
+            /*FONT*/
+            font-family: "SuisseIntl-Regular", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            text-align: left;
 }
 
 .info-column p, .info-column button {
     margin: 5px 0; /* Margin for spacing between text and button */
 }
+
+
+
+
 
 /* Anpassung für die dritte Spalte */
 .info-column:nth-of-type(3) {
@@ -405,6 +421,11 @@ footer nav ul li a {
     padding-left: 10px;
     color: blue;
 }
+
+
+
+
+
 
 
 
