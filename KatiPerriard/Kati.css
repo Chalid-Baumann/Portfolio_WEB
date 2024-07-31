@@ -29,6 +29,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SuisseIntl-Medium';
+    src: url(/font/SuisseIntl-Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 
@@ -48,15 +55,10 @@ p{
 body{
     margin: 0;
     padding: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     /*BACKGROUND*/
     background-color: #ffffff;
-    /*FONT*/
-    font-family: "lft-etica-mono";
-    font-weight: 500;
-    font-style: normal;
-    display: flex;
     flex-direction: column;
 }
 
@@ -80,7 +82,9 @@ a{
 
 a:hover{
     color: rgb(249, 28, 65);
+    font-style: italic;
     }
+
 
 
     p, div, span {
@@ -223,7 +227,7 @@ nav ul li a {
 }
 
 .logo-container span {
-    font-size: 2rem; /* Adjust font size as needed */
+    font-size: 2.2rem; /* Adjust font size as needed */
     color: black; /* Ensure text color is visible */
 }
 
@@ -242,7 +246,7 @@ nav ul li a {
 #contact-link a {
     color: black; /* Textfarbe des Links */
     text-decoration: none;
-    font-size: 2rem; /* Schriftgröße des Links */
+    font-size: 2.2rem; /* Schriftgröße des Links */
 }
 
 #contact-link a:hover {
@@ -266,7 +270,7 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 2rem;
+    font-size: 2.2rem;
     position: fixed;
     top: 14%; /* Platz für den ursprünglichen Header */
     width: 100%;
@@ -387,7 +391,7 @@ footer nav ul li a {
 }
 
 .info-column h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 0;
     padding-left: 9px;
     /*FONT*/
@@ -402,6 +406,11 @@ footer nav ul li a {
     font-size: 1rem; /* Textgröße */
     line-height: 1.2; /* Zeilenhöhe */
     padding-right: 5px;
+            /*FONT*/
+            font-family: "SuisseIntl-Medium", sans-serif;
+            font-weight: 500;
+            font-style:normal;
+            text-align: left;
 }
 
 .info-column p, .info-column button {
@@ -415,11 +424,6 @@ footer nav ul li a {
     text-align: left;
 }
 
-#nummerierung{
-    font-size: 2rem;
-    padding-left: 10px;
-    color: blue;
-}
 
 
 
@@ -579,11 +583,6 @@ footer nav ul li a {
     /*stroke-width: 1px; /* Strichstärke auf 1px */
 }
 
-#PTN:hover{
-    transform: scale(1.1); 
-}
-
-
 
 
 
@@ -605,6 +604,10 @@ footer nav ul li a {
 
     body {
         font-size: 17px;
+    }
+
+    #header-unit{
+        font-size: 17px; 
     }
 
     .nav ul li a {
@@ -674,14 +677,14 @@ footer nav ul li a {
     }
 
     .info-column p {
-        font-size: 12px; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 13px; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
     }
 
     .info-column button {
-        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
+        font-size: 13px; /* Kleinere Schriftgröße für die Buttons */
         margin: 0;
         padding: 0;
         text-align: left;
@@ -713,11 +716,7 @@ body {
         height: 60px; /* Höhe auf mobilen Geräten */
     }
 
-    .arrow-right {
-        stroke-width: 1px; /* Strichstärke auf 1px für mobile Geräte */
-    }
-
-
+   
 
     #secondary-header {
         top: 80px; /* Platz für den ursprünglichen Header */
@@ -755,6 +754,10 @@ body {
 #contact-link a {
     font-size: 17px; /* Schriftgröße für kleinere Bildschirme */
 }
+
+.kontakt-link{
+    font-size: 13px;
+}
    /* Anpassung der Höhe des Logos für sehr kleine Bildschirme */
    .logo {
     height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
@@ -764,5 +767,8 @@ body {
     transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
 }
 
+#footer{
+    font-size: 17px;
+}
 
 }

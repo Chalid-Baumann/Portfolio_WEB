@@ -387,6 +387,20 @@ footer nav ul li a {
     padding-left: 10px;
 }
 
+.info-column h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    padding-left: 9px;
+    font-weight: normal;
+    text-align: left;
+        /*FONT*/
+        font-family: "SuisseIntl-Bold", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        text-align: left;
+        line-height: 1;
+}
+
 .info-column p {
     /*color: rgb(249, 28, 65);*/
     /*color: rgb(255, 192, 189);*/

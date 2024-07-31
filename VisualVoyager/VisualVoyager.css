@@ -15,6 +15,30 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SuisseIntl-Bold';
+    src: url(/font/SuisseIntl-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Regular';
+    src: url(/font/SuisseIntl-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Medium';
+    src: url(/font/SuisseIntl-Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
 
 
 
@@ -37,10 +61,6 @@ body{
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     /*BACKGROUND*/
     background-color: #ffffff;
-    /*FONT*/
-    font-family: "lft-etica-mono", sans-serif;
-    font-weight: 500;
-    font-style: normal;
     display: flex;
     flex-direction: column;
 }
@@ -65,6 +85,7 @@ a{
 
 a:hover{
     color: rgb(249, 28, 65);
+    font-style: italic;
     }
 
 
@@ -137,6 +158,10 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
+        /*FONT*/
+        font-family: "SuisseIntl-Bold", sans-serif;
+        font-weight: 500;
+        font-style: normal;
 }
 
 /*#header:hover{
@@ -196,7 +221,7 @@ nav ul li a {
 }
 
 .logo-container span {
-    font-size: 2rem; /* Adjust font size as needed */
+    font-size: 2.2rem; /* Adjust font size as needed */
     color: black; /* Ensure text color is visible */
 }
 
@@ -215,16 +240,13 @@ nav ul li a {
 #contact-link a {
     color: black; /* Textfarbe des Links */
     text-decoration: none;
-    font-size: 2rem; /* Schriftgröße des Links */
+    font-size: 2.2rem; /* Schriftgröße des Links */
 }
 
 #contact-link a:hover {
     color: rgb(255, 28, 65)
 }
 
-#header-unit a:hover {
-
-}
 
 
 
@@ -235,7 +257,7 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 2rem;
+    font-size: 2.2rem;
     position: fixed;
     top: 14%; /* Platz für den ursprünglichen Header */
     width: 100%;
@@ -286,6 +308,11 @@ footer {
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
     background-color: rgba(253, 253, 253, 0.8); /* Hintergrundfarbe des Footers */
+                /*FONT*/
+                font-family: "SuisseIntl-Bold", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                 font-size: 2.2rem;
 }
 
 footer nav ul {
@@ -352,11 +379,17 @@ footer nav ul li a {
 }
 
 .info-column h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 0;
     padding-left: 9px;
     font-weight: normal;
     text-align: left;
+        /*FONT*/
+        font-family: "SuisseIntl-Bold", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        text-align: left;
+        line-height: 1;
 }
 
 .info-column p {
@@ -364,6 +397,11 @@ footer nav ul li a {
     font-size: 1rem; /* Textgröße */
     line-height: 1.2; /* Zeilenhöhe */
     padding-right: 5px;
+            /*FONT*/
+            font-family: "SuisseIntl-Medium", sans-serif;
+            font-weight: 500;
+            font-style:normal;
+            text-align: left;
 }
 
 .info-column p, .info-column button {
@@ -377,11 +415,7 @@ footer nav ul li a {
     text-align: left;
 }
 
-#nummerierung{
-    font-size: 2rem;
-    padding-left: 10px;
-    color: blue;
-}
+
 
 
 
@@ -515,29 +549,6 @@ footer nav ul li a {
 
 
 
-/*PFEILE NAVIGATION*/
-.navigation {
-    position: relative;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Reduziert die Breite auf mobilen Geräten */
-    box-sizing: border-box;
-}
-
-/* Die Stile für das Pfeil-Icon anpassen */
-.navigation img {
-    width: 100%; /* Breite der Pfeile */
-    height: 100%; /* Höhe der Pfeile */
-    /*stroke-width: 1px; /* Strichstärke auf 1px */
-}
-
-#PTN:hover{
-    transform: scale(1.1); 
-}
-
 
 
 
@@ -560,6 +571,11 @@ footer nav ul li a {
 
     body {
         font-size: 17px;
+    }
+
+
+    #header-unit{
+        font-size: 17px; 
     }
 
     .nav ul li a {
@@ -629,14 +645,14 @@ footer nav ul li a {
     }
 
     .info-column p {
-        font-size: 12px; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 13px; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
     }
 
     .info-column button {
-        font-size: 12px; /* Kleinere Schriftgröße für die Buttons */
+        font-size: 13px; /* Kleinere Schriftgröße für die Buttons */
         margin: 0;
         padding: 0;
         text-align: left;
@@ -717,6 +733,10 @@ body {
 
 .bulletpoint-icon.clicked {
     transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
+}
+
+#footer{
+    font-size: 17px;
 }
 
 

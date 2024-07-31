@@ -610,7 +610,7 @@ footer nav ul li a {
     }
 
     .info-column p {
-        font-size: 12x; /* Kleinere Schriftgröße für die Textabsätze */
+        font-size: 13px; /* Kleinere Schriftgröße für die Textabsätze */
         text-align: left;
         margin: 0;
         padding: 0;
@@ -692,7 +692,7 @@ body {
 }
 
 .container-cv {
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 0;
     padding-top: 0;
 
@@ -712,11 +712,11 @@ body {
 .text-block.right{
     margin-top: 2%;
     margin-bottom: 20%;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .text-block.left{
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 2%;
     margin-top: 0;
     padding-top: 0;
@@ -741,10 +741,20 @@ body {
     transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
 }
 
+.description{
+    font-size: 13px;
+}
+
+.date{
+    font-size: 13px;
+}
 
 #footer{
     font-size: 17px;
 }
 
+.kontakt-link{
+    font-size: 13px;
+}
 
 }
