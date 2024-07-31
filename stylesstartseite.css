@@ -15,6 +15,27 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SuisseIntl-Bold';
+    src: url(/font/SuisseIntl-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Regular';
+    src: url(/font/SuisseIntl-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Medium';
+    src: url(/font/SuisseIntl-Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 
@@ -28,15 +49,10 @@ html{
 body{
     margin: 0;
     padding: 0;
-    font-size: 2rem;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     overflow-y: hidden;
     /*BACKGROUND*/
     background-color: #e6e9e5;
-    /*FONT*/
-    font-family: "lft-etica-mono", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -48,10 +64,15 @@ p{
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 a:hover{
     color: rgb(249, 28, 65);
+    font-style: italic;
     }
-
 
 
 
@@ -65,6 +86,11 @@ header{
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
     background-color: rgba(253, 253, 253, 0);
+            /*FONT*/
+            font-family: "SuisseIntl-Bold", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 2.2rem;
 }
 
 /*
@@ -127,7 +153,7 @@ nav ul li a {
 }
 
 .logo-container span {
-    font-size: 2rem; /* Adjust font size as needed */
+    font-size: 2.2rem; /* Adjust font size as needed */
     color: black; /* Ensure text color is visible */
 }
 
@@ -197,18 +223,20 @@ nav ul li a {
 #header-unit {
     display: flex;
     align-items: center; /* Center items vertically */
+    font-size: 2.2rem;
 }
 
 /* Kontakt-Link-Stile */
 #contact-link{
     display: flex;
     align-items: center;
+    font-size: 2.2rem; /* Schriftgröße des Links */
 }
 
 #contact-link a {
     color: black; /* Textfarbe des Links */
     text-decoration: none;
-    font-size: 2rem; /* Schriftgröße des Links */
+    font-size: 2.2rem; /* Schriftgröße des Links */
 }
 
 #contact-link a:hover {
@@ -373,6 +401,13 @@ main {
 
 
 
+
+
+
+
+
+
+
 /* Mobile Ansicht */
 @media (max-width: 768px) {
     main {
@@ -389,6 +424,10 @@ main {
         font-size: 17px;
         margin-bottom: 0;
         padding-bottom: 0;
+    }
+
+    #header-unit{
+    font-size: 17px;
     }
 
     .project {
@@ -487,7 +526,7 @@ main {
 #bulletpoint-container {
      display: flex;
     justify-content: center; /* Zentrierung horizontal */
-    padding-bottom: 35%;
+    padding-bottom: 37%;
 }
 
 .bulletpoint-icon {

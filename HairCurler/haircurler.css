@@ -383,18 +383,8 @@ footer nav ul li a {
     align-items: center;
 }
 
-.info-column h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    padding-left: 9px;
-    font-weight: normal;
-    text-align: left;
-        /*FONT*/
-        font-family: "SuisseIntl-Bold", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        text-align: left;
-        line-height: 1;
+.titelprojekt{
+    padding-left: 10px;
 }
 
 .info-column p {
@@ -474,9 +464,31 @@ footer nav ul li a {
     padding: 0;
 }
 
+/* Neue Klasse für das Bild, das 100% der Viewport-Breite nutzen soll */
+.full-width-image {
+    width: 100vw; /* Volle Viewport-Breite */
+    height: auto; /* Automatische Höhe für das Bild */
+    display: block; /* Verhindert unerwünschte Abstände */
+    overflow: hidden;
+    position: relative; /* Falls du später noch Positionierungen ändern möchtest */
+}
 
+.full-width-image img {
+    width: 100%; /* Bild nimmt die volle Breite des Containers ein */
+    height: auto; /* Automatische Höhe für das Bild */
+    display: block; /* Verhindert unerwünschte Abstände */
+    object-fit: cover; /* Verhindert Verzerrung der Bilder */
+}
 
+.gallery-item.large {
+    max-width: 30%; /* Maximale Breite der großen Bilder */
+}
 
+.gallery-item.center {
+    display: flex;
+    justify-content: center; /* Zentriert das Bild horizontal */
+    align-items: center; /* Zentriert das Bild vertikal */
+}
 
 
 
