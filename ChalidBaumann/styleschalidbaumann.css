@@ -15,6 +15,27 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SuisseIntl-Bold';
+    src: url(/font/SuisseIntl-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Regular';
+    src: url(/font/SuisseIntl-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Medium';
+    src: url(/font/SuisseIntl-Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 
@@ -38,12 +59,15 @@ body{
     overflow-y: auto;
     /*BACKGROUND*/
     background-color: #e6e9e5;
-    /*FONT*/
-    font-family: "lft-etica-mono", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     display: flex;
     flex-direction: column;
+    font-size: 1rem; /* Textgröße */
+    line-height: 1.2; /* Zeilenhöhe */
+            /*FONT*/
+            font-family: "SuisseIntl-Medium", sans-serif;
+            font-weight: 500;
+            font-style:normal;
+            text-align: left;
 }
 
 main {
@@ -61,13 +85,13 @@ main {
 
 
 a{
-    color: black;
     text-decoration: none;
+    color: black;
 }
 
 a:hover{
     color: rgb(249, 28, 65);
-    cursor: pointer;
+    font-style: italic;
     }
 
 
@@ -114,6 +138,10 @@ header{
     height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
+                /*FONT*/
+                font-family: "SuisseIntl-Bold", sans-serif;
+                font-weight: 500;
+                font-style: normal;
 }
 
 /*#header:hover{
@@ -173,7 +201,7 @@ nav ul li a {
 }
 
 .logo-container span {
-    font-size: 2rem; /* Adjust font size as needed */
+    font-size: 2.2rem; /* Adjust font size as needed */
     color: black; /* Ensure text color is visible */
 }
 
@@ -181,6 +209,7 @@ nav ul li a {
 #header-unit {
     display: flex;
     align-items: center; /* Center items vertically */
+    font-size: 2.2rem;
 }
 
 
@@ -200,7 +229,7 @@ nav ul li a {
 #contact-link a {
     color: black; /* Textfarbe des Links */
     text-decoration: none;
-    font-size: 2rem; /* Schriftgröße des Links */
+    font-size: 2.2rem; /* Schriftgröße des Links */
 }
 
 #contact-link a:hover {
@@ -335,6 +364,11 @@ footer {
     height: 50px; /* Höhe des Footers */
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
+                    /*FONT*/
+                    font-family: "SuisseIntl-Bold", sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 2.2rem;
 }
 
 footer nav ul {
@@ -503,6 +537,10 @@ footer nav ul li a {
 
     body {
         font-size: 17px;
+    }
+
+    #header-unit{
+        font-size: 17px; 
     }
 
     .nav ul li a {
@@ -695,14 +733,18 @@ body {
 
 .heading {
     margin-bottom: 2rem; /* Erhöhten Abstand bei mobilen Geräten */
+    font-size: 17px;
+    font-family: "SuisseIntl-Bold";
 }
 
 .bulletpoint-icon.clicked {
     transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
 }
 
-.heading{
-    font-size: 1rem;
+
+#footer{
+    font-size: 17px;
 }
+
 
 }

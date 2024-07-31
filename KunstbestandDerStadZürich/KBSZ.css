@@ -792,5 +792,9 @@ body {
     transform: rotate(360deg); /* Dreht das Icon um 360 Grad */
 }
 
+#footer{
+    font-size: 17px;
+}
+
 
 }
