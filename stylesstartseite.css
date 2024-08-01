@@ -524,7 +524,7 @@ main {
 }
 
 #bulletpoint-container {
-     display: flex;
+    display: flex;
     justify-content: center; /* Zentrierung horizontal */
     padding-bottom: 37%;
 }
@@ -534,6 +534,7 @@ main {
     height: auto; /* Höhe automatisch anpassen */
     transition: transform 0.3s ease; /* Sanfter Übergang für Hover und Klick */
     cursor: pointer; /* Cursor als Pointer anzeigen */
+    stroke:rgb(249, 28, 65);
 }
 
 .bulletpoint-icon.hover-rotate,

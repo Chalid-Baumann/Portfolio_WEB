@@ -82,9 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return color;
     }
 
-    // Funktion zur Änderung der Stroke-Farbe
+    // Funktion zur Änderung der Stroke-Farbe des b-logos und der bulletpoint-icons
     function changeStrokeColor() {
-        bLogo.style.stroke = getRandomColor();
+        const newColor = getRandomColor();
+        bLogo.style.stroke = newColor;
+
+        // Ändert die Farbe und Kontur der bulletpoint-icons
+        bulletpointIcons.forEach(icon => {
+            icon.style.stroke = newColor; // Für SVGs: Stroke-Farbe ändern
+        });
     }
 
     // Funktion zum Starten des Ziehens
@@ -185,9 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
     bLogo.addEventListener('touchmove', handleTouchMove);
     bLogo.addEventListener('touchend', handleTouchEnd);
 
-    // Event-Listener für Klicks und Taps, um die Stroke-Farbe zu ändern
+    // Event-Listener für Klicks auf das b-logo
     bLogo.addEventListener('click', changeStrokeColor);
-    bLogo.addEventListener('touchend', changeStrokeColor);
+
+    // Setze die Startfarbe des bulletpoint-icons
+    bulletpointIcons.forEach(icon => {
+        icon.style.stroke = 'rgb(249, 28, 65)'; // Setze die Startfarbe
+        icon.style.fill = 'none'; // Entferne die Füllfarbe
+    });
 
     bulletpointIcons.forEach(icon => {
         let isAnimating = false;
