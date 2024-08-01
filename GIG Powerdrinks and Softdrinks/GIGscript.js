@@ -39,54 +39,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hilfsfunktion zum Zurücksetzen aller Icons
     const resetIcons = () => {
         icons.forEach(icon => {
-            icon.classList.remove('active');
             icon.style.transform = 'rotate(0deg)';
+            icon.style.transition = 'none'; // Übergang vorübergehend entfernen
         });
     };
 
     // Rotieren des Icons beim Hover und Touch
     icons.forEach(icon => {
         icon.addEventListener('mouseover', () => {
-            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
-                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-                icon.style.transform = 'rotate(360deg)'; // Desktop Hover-Effekt
-            }
+            resetIcons(); // Alle Icons zurücksetzen
+            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+            icon.style.transform = 'rotate(360deg)'; // Desktop Hover-Effekt
         });
 
         icon.addEventListener('mouseout', () => {
-            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
-                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-                icon.style.transform = 'rotate(0deg)'; // Zurücksetzen der Rotation
-            }
+            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+            icon.style.transform = 'rotate(0deg)'; // Zurücksetzen der Rotation
         });
 
         icon.addEventListener('touchstart', (event) => {
             event.preventDefault(); // Verhindert die Standardaktion des Touchs
             resetIcons(); // Alle Icons zurücksetzen
-            icon.classList.add('active');
             icon.style.transition = 'transform 1s'; // Übergang hinzufügen
             icon.style.transform = 'rotate(360deg)'; // Mobile Touch-Effekt
 
             // Nach der Animation zurücksetzen
             setTimeout(() => {
                 icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
-                icon.classList.remove('active'); // Entfernen der Aktiv-Klasse
             }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
         });
 
         icon.addEventListener('click', () => {
-            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
-                resetIcons(); // Alle Icons zurücksetzen
-                icon.classList.add('active');
-                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-                icon.style.transform = 'rotate(360deg)'; // Klick-Effekt
+            resetIcons(); // Alle Icons zurücksetzen
+            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
+            icon.style.transform = 'rotate(360deg)'; // Klick-Effekt
 
-                // Nach der Animation zurücksetzen
-                setTimeout(() => {
-                    icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
-                    icon.classList.remove('active'); // Entfernen der Aktiv-Klasse
-                }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
-            }
+            // Nach der Animation zurücksetzen
+            setTimeout(() => {
+                icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
+            }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
         });
     });
 });

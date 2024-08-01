@@ -109,18 +109,25 @@ a:hover{
     flex-direction: row;
 }
 
+.kontakt-link p,
+.kontakt-link a {
+    margin: 0 5px;
+}
+
 .bulletpoint-icon {
+    display: inline-block;
     width: 5%; /* Adjust size as needed */
     height: auto;
     margin-right: 8px; /* Space between icon and text */
     padding-bottom: 1%;
-    transition: transform 1s; /* Sanfter Übergang für die Rotation */
+    transition: transform 1s ease-in-out;
 }
 
 
 .bulletpoint-icon.rotate {
     animation: rotate 0.5s forwards; /* Rotation bei Klick oder Hover */
 }
+
 
 @keyframes rotate {
     from {

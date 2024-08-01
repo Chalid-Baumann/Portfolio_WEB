@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const scaleX = x / viewportWidth;
         const scaleY = y / viewportHeight;
 
-        // Skalierungsfaktoren berechnen
-        const scaleFactorX = 0.5 + (scaleX * 1.0); // 50% bis 150% Skalierung
-        const scaleFactorY = 0.5 + (scaleY * 1.0); // 50% bis 150% Skalierung
+        // Skalierungsfaktoren berechnen (schnellerer Effekt)
+        const scaleFactorX = 0.5 + (scaleX * 2.0); // 50% bis 250% Skalierung
+        const scaleFactorY = 0.5 + (scaleY * 2.0); // 50% bis 250% Skalierung
 
         // Die kleinere Skalierung von beiden Achsen verwenden
-        const scaleFactor = Math.max(0.5, Math.min(1.5, Math.min(scaleFactorX, scaleFactorY)));
+        const scaleFactor = Math.max(0.5, Math.min(2.5, Math.min(scaleFactorX, scaleFactorY)));
 
         bLogo.style.transform = `scale(${scaleFactor})`;
     }
