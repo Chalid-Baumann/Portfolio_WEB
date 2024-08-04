@@ -36,6 +36,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'neonsign-regular-webfont';
+    src: url(/font/neonsign-regular-webfont.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 
 
 
@@ -52,7 +61,7 @@ body{
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
     overflow-y: hidden;
     /*BACKGROUND*/
-    background-color: #e6e9e5;
+    /*background-color: rgb(0, 0, 255);*/
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -78,6 +87,9 @@ a:hover{
 
 
 
+
+
+
 /*HEADER*/
 header{
     position: fixed;
@@ -85,7 +97,6 @@ header{
     width: 100%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
-    background-color: rgba(253, 253, 253, 0);
             /*FONT*/
             font-family: "SuisseIntl-Bold", sans-serif;
             font-weight: 500;
@@ -163,33 +174,55 @@ nav ul li a {
 
 
 
+
+
 /*BULLETPOINT*/
 #bulletpoint-container {
-    position: relative;
-    left: 50;
-    top: 50%; /* Vertikale Zentrierung */
-    transform: translateY(-50%); /* Vertikale Zentrierung */
-    z-index: 199;
-    pointer-events: auto; /* Muss auf auto gesetzt sein */
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .bulletpoint-icon {
-    width: 90%; /* Anpassen nach Bedarf */
-    height: auto;
-    transition: transform 3s ease; /* Weiche Übergänge für die Rotation */
+    position: relative;
+    width: 15%;
+    height: 15%;
     pointer-events: auto;
+    transition: transform 1s ease-in-out, fill 0.1s ease;
+    padding-right: 15px;
 }
 
-.bulletpoint-icon.hover-rotate {
-    transform: rotate(360deg); /* Rotation beim Hover */
+.bulletpoint-icon:hover, 
+.bulletpoint-icon:active {
+    animation: rotate-fast 1s linear infinite;
+    fill: rgb(249, 28, 65);
 }
 
-.bulletpoint-icon.rotate {
-    animation: rotate 3s forwards; /* Animation beim Klick */
+.top-left {
+    top: 15%; /* Adjusted to be below the header */
+    left: 0;
 }
 
-@keyframes rotate {
+.top-right {
+    top: 15%; /* Adjusted to be below the header */
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 1%;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 1%;
+    right: 0;
+}
+
+@keyframes rotate-slow {
     from {
         transform: rotate(0deg);
     }
@@ -198,19 +231,20 @@ nav ul li a {
     }
 }
 
-/* Zurückdrehen nach der Rotation (wenn benötigt) */
-.bulletpoint-icon.reset {
-    animation: reset 2s forwards; /* Zurückdrehen nach der Rotation */
-}
-
-@keyframes reset {
+@keyframes rotate-fast {
     from {
-        transform: rotate(360deg);
-    }
-    to {
         transform: rotate(0deg);
     }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
+/* Apply the slow rotation animation to all bullet point icons */
+.bulletpoint-icon {
+    animation: rotate-slow 20s linear infinite;
+}
+
 
 
 
@@ -252,89 +286,16 @@ main {
     margin: 0;
     padding: 15px 20px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     text-align: justify;
     height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
     box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
     padding-top: 10px;
-}
-
-
-
-
-/* Galerie-Stile */
-#gallery {
-    /*margin-top: 10px;*/
-    padding-top: 10%;
-    padding-left: 0;
-    padding-right: 0;
     overflow: hidden;
-    /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
-    width: 100%;
-    /*height: calc(100vh - 10px); /* Höhe des Headers abziehen */
-    position: relative;
-    z-index: 1;
-}
-
-.gallery-container {
-    /*justify-content: center;*/
-    align-items: center;
-    z-index: 1;
-    margin: 0 0 0 5%;
-    padding-left: 5%;
-    display: flex;
-    flex-direction: row;
-    width: 89%;
-    gap: 0;
-    position: relative;
 }
 
 
-.gallery-item {
-    text-align: left;
-    cursor: pointer;
-    transition: transform 0.3s ease, z-index 0s; /* Rotation und z-index für das Hover- und Click-Verhalten */
-    object-fit: contain;
-    width: 25%; /* Breite der Galerie-Items */
-    height: auto; /* Automatische Höhe basierend auf der Breite */
-    margin-left: -10%; /* Verschiebt das Item nach links für Überlappung */
-    transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
-    z-index: 1; /* Z-Index für die Überlappung */
-}
-
-.gallery-item.active {
-    z-index: 1020; /* Höherer z-index für das aktive Item */
-    transform: scale(1.1) rotate3d(1, 1, 0, 0deg); /* Vergrößert das aktive Item und setzt die Rotation auf 0 Grad */
-}
-
-.gallery-item:hover {
-    transform: scale(1.05) rotate3d(1, 1, 0, 0deg); /* Vergrößert das Bild beim Hover und richtet es gerade aus */
-    /*box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
-    z-index: 1030; /* Setzt den z-index höher beim Hover */
-}
-
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.gallery-description {
-    margin-top: 0;
-    font-size: 1rem;
-    color: #000;
-    border: 1px solid blue;
-    padding-left: 1px;
-    padding-right: 0;
-    background-color: #e6e9e5;
-}
-
-
-.gallery-item:hover,
-.gallery-item:active {
-    transform: rotate3d(1, 1, 0, 0deg) scale(1.05); /* Rotation und Vergrößerung beim Hover oder Click */
-}
 
 
 
@@ -359,19 +320,6 @@ main {
     min-height: fit-content;
 }
 
-
-#b-logo {
-    position: absolute;
-    width: 60%; /* Adjust as needed */
-    height: auto;
-    transition: stroke-width 0.3s ease;
-    cursor: grab;
-    stroke: rgba(0, 0, 255,1); /* Farbe der Kontur */
-    stroke-width: 1px; /* Standard-Konturstärke */
-    fill: none; /* Keine Füllfarbe */
-    top:12%;
-    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Anfangs ohne Schatten */
-}
 
 /* Schattenanimation */
 @keyframes changeShadowColor {
@@ -400,7 +348,74 @@ main {
 
 
 
+/* Video container styling */
+.video {
+    margin: 7rem 0;
+    max-width: 18%; /* Setzt die maximale Breite des Videos auf 80% der Viewport-Breite */
+    height: auto; /* Erhält das Seitenverhältnis des Videos */
+    display: block; /* Entfernt unerwünschte Abstände unter dem Video */
+    margin-left: auto; /* Zentriert das Video */
+    margin-right: auto; /* Zentriert das Video */
+    z-index: 20; /* Hintergrund hinter dem Text */
+}
 
+
+.video video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+.text-container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Überlagert das Video */
+    /*background-color: rgb(255, 192, 189);*/
+    text-align: center;
+    flex-direction: row;
+    /*gap: 10px;*/
+    justify-content: space-between;
+}
+
+.portfoliotitelone{
+    font-size: 20rem;
+    color: rgb(0, 0, 0);
+    font-family: "SuisseIntl-Bold", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    z-index: 0;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap; /* Verhindert Umbruch im Text */
+}
+
+.portfoliotiteltwo{
+font-family: "SuisseIntl-Bold", sans-serif;
+font-size: 2.2rem;
+line-height: 1;
+margin: 0;
+padding: 0;
+margin-bottom: var(--text-spacing); /* Abstand nach unten */
+margin-left: 20px;
+}
+
+.portfoliotitelone .port,
+.portfoliotitelone .folio {
+    display: inline; /* Stellt sicher, dass beide Teile nebeneinander bleiben */
+}
+
+:root {
+    --text-spacing: 0;
+}
 
 
 
@@ -421,6 +436,7 @@ main {
         overflow-y: auto; /* Ermöglicht vertikales Scrollen */
         margin-bottom: 0;
         padding-bottom: 0;
+        overflow: hidden;
     }
 
     body {
@@ -429,6 +445,7 @@ main {
         padding-bottom: 0;
     }
 
+ 
     #header-unit{
     font-size: 17px;
     }
@@ -437,13 +454,7 @@ main {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
     }
 
-    .project-description {
-        font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
-        text-align: justify; /* Linksbündiger Text auf kleinen Bildschirmen */
-        width: auto; /* Automatische Breite für kleinere Bildschirme */
-        position: static; /* Position auf `static`, um horizontale Zentrierung zu entfernen */
-        left: auto; /* Entfernt die horizontale Verschiebung */
-    }
+   
 
     .nav ul li a {
         font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
@@ -453,43 +464,7 @@ main {
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
 
-    .gallery-item {
-        width: 100%; /* Volle Breite auf kleineren Bildschirmen */
-        height: auto; /* Automatische Höhe für kleinere Bildschirme */
-        margin: 0; /* Kein Margin für mobile Geräte */
-        transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Startposition auf mobilen Geräten */
-        padding-right: 7%;
-        box-sizing: border-box;
-    }
-
-    /* Neue Regel für mobile Darstellung der Galerie-Items */
-    .gallery-container {
-        flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
-        overflow-x: hidden;
-        overflow-y: auto; /* Ermöglicht vertikales Scrollen */
-        gap: 0; /* Keine Überlappung auf mobilen Geräten */
-        margin-top: 7%;
-    }
-
-    .gallery-description {
-        font-size: 12px; /* Kleinere Schriftgröße für die Beschreibung */
-        box-sizing: border-box; /* Stellt sicher, dass die Border innerhalb der Box-Dimensionen liegt */
-    }
-
-    #info-container {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        overflow-y: auto;
-        padding-top: 5%;
-        padding-left: 3%;
-        padding-right: 5%;
-        padding-bottom: 3%;
-        margin-top: 26%;
-        margin-bottom: 0;
-    }
-
+  
 
   /* Anpassen des Logo-Containers für kleine Bildschirme */
   .logo-container {
@@ -511,48 +486,27 @@ main {
     height: 50px; /* Noch kleinere Höhe des Logos für sehr kleine Bildschirme */
 }
 
-#b-logo {
-    width: 260px;
-    justify-self: center;
-}
 
-.container-startseite {
-    flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
-    height: auto; /* Höhe automatisch anpassen */
-}
 
 #animated-logo{
     width: 100vw; /* Volle Breite für beide Abschnitte */
     height: auto;
 }
 
-#bulletpoint-container {
-    display: flex;
-    justify-content: center; /* Zentrierung horizontal */
-    padding-bottom: 37%;
-}
-
 .bulletpoint-icon {
-    width: 85%; /* Breite der Bulletpoint-Icons auf mobilen Geräten */
-    height: auto; /* Höhe automatisch anpassen */
-    transition: transform 0.3s ease; /* Sanfter Übergang für Hover und Klick */
-    cursor: pointer; /* Cursor als Pointer anzeigen */
-    stroke:rgb(249, 28, 65);
+    pointer-events: none; /* Macht das Icon nicht anwählbar von Anfang an */
+    padding-right: 15px;
 }
 
-.bulletpoint-icon.hover-rotate,
-.bulletpoint-icon.rotate {
-    transition: transform 0.3s ease; /* Sanfter Übergang für Klick */
-}
-.bulletpoint-icon.hover-rotate {
-    animation: rotate-reset 3s forwards; /* Animation für Hover-Effekt */
+.bulletpoint-icon.rotated {
+    pointer-events: none; /* Macht das Icon weiterhin nicht anwählbar, auch während der Animation */
 }
 
-.bulletpoint-icon.rotate {
-    animation: rotate 1s forwards, reset 2s 1s forwards; /* Rotation und Rückdreh-Animation beim Klick */
-}
 
-@keyframes rotate {
+
+
+/* Animation für die Rotation */
+@keyframes rotate-on-click {
     from {
         transform: rotate(0deg);
     }
@@ -561,27 +515,46 @@ main {
     }
 }
 
-
-@keyframes rotate-reset {
-    0% {
-        transform: rotate(360deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+.bulletpoint-icon.no-repeat {
+    animation: none;
 }
 
-.container-startseite {
-    flex-direction: column; /* Ändert die Richtung von Zeile zu Spalte */
-    height: 100vh; /* Höhe automatisch anpassen */
-    justify-content: space-between;
-}
 
 #animated-logo {
     width: 100vw; /* Volle Breite für den Logo-Container */
     height: auto; /* Höhe automatisch anpassen */
     margin-top: 10vh; /* Abstand vom oberen Rand des Viewports */
 }
+
+.bulletpoint-icon{
+    height: 15%;
+    width: 15%;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+.video{
+    max-width: 80%;
+    padding: 0;
+}
+
+.text-container{
+    flex-direction: row;
+    align-items: end;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 30px;
+    justify-content:space-around;
+    margin-right: 10px;
+    gap: 2%;
+}
+
+.portfoliotitelone {
+    font-size: 3rem; /* Kleinere Textgröße für mobile Geräte */
+    margin: 0;
+  }
+
+
 
 }
 

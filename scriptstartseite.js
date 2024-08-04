@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funktion zum Beenden des Ziehens
     function handleMouseUp() {
         isDragging = false;
-        bLogo.style.cursor = 'pointer';
+        bLogo.style.cursor = 'grab';
     }
 
     // Funktion beim Verlassen des Containers
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleTouchEnd() {
         isDragging = false;
-        bLogo.style.cursor = 'pointer';
+        bLogo.style.cursor = 'grab';
     }
 
     bLogo.addEventListener('mousedown', handleMouseDown);
