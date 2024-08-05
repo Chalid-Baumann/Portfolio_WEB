@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const bulletpointIcon = document.querySelector('.bulletpoint-icon');
+    const logoContainer = document.getElementById('logo-clickable');
 
     function isMobile() {
         return window.matchMedia("(max-width: 768px)").matches; // Oder eine andere Grenze für mobile Geräte
     }
 
+    // Bulletpoint Icon Rotation
     if (isMobile()) {
         bulletpointIcon.addEventListener('click', function() {
             // Stelle sicher, dass die vorherige Animation entfernt wird
@@ -26,4 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500); // 500ms = 0.5s für die Rotation
         });
     }
+
+    // Logo Wechsel auf Mobile
+    if (logoContainer) {
+        logoContainer.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    }
 });
+

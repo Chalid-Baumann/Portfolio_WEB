@@ -1,12 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const icons = document.querySelectorAll('.bulletpoint-icon');
+    const bulletpointIcon = document.querySelector('.bulletpoint-icon');
+    const logoContainer = document.getElementById('logo-clickable');
+
+    function isMobile() {
+        return window.matchMedia("(max-width: 768px)").matches; // Oder eine andere Grenze für mobile Geräte
+    }
 
     // Funktion zum Anordnen der Galerie
     const arrangeGallery = () => {
         let lastItemWasVertical = false;
 
-        galleryItems.forEach((item, index) => {
+        galleryItems.forEach((item) => {
             const aspectRatio = item.getAttribute('data-aspect-ratio');
 
             // Entfernen von vorherigen Klassen
@@ -32,54 +38,44 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', arrangeGallery);
 
     // Scroll-zu-Top-Funktionalität hinzufügen
-    document.getElementById('scrollTop').addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Hilfsfunktion zum Zurücksetzen aller Icons
-    const resetIcons = () => {
-        icons.forEach(icon => {
-            icon.style.transform = 'rotate(0deg)';
-            icon.style.transition = 'none'; // Übergang vorübergehend entfernen
+    const scrollTopButton = document.getElementById('scrollTop');
+    if (scrollTopButton) {
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    };
+    }
 
-    // Rotieren des Icons beim Hover und Touch
+    // Entfernen der Hover-, Touch- und Click-Ereignisse für die Icons
     icons.forEach(icon => {
-        icon.addEventListener('mouseover', () => {
-            resetIcons(); // Alle Icons zurücksetzen
-            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-            icon.style.transform = 'rotate(360deg)'; // Desktop Hover-Effekt
-        });
-
-        icon.addEventListener('mouseout', () => {
-            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-            icon.style.transform = 'rotate(0deg)'; // Zurücksetzen der Rotation
-        });
-
-        icon.addEventListener('touchstart', (event) => {
-            event.preventDefault(); // Verhindert die Standardaktion des Touchs
-            resetIcons(); // Alle Icons zurücksetzen
-            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-            icon.style.transform = 'rotate(360deg)'; // Mobile Touch-Effekt
-
-            // Nach der Animation zurücksetzen
-            setTimeout(() => {
-                icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
-            }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
-        });
-
-        icon.addEventListener('click', () => {
-            resetIcons(); // Alle Icons zurücksetzen
-            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-            icon.style.transform = 'rotate(360deg)'; // Klick-Effekt
-
-            // Nach der Animation zurücksetzen
-            setTimeout(() => {
-                icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
-            }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
-        });
+        icon.style.animation = 'continuousRotate 10s linear infinite';
     });
+
+    // Bulletpoint Icon Rotation für mobile Geräte
+    if (bulletpointIcon && isMobile()) {
+        bulletpointIcon.addEventListener('click', function() {
+            // Stelle sicher, dass die vorherige Animation entfernt wird
+            bulletpointIcon.classList.remove('rotate', 'reset-color', 'no-repeat');
+
+            // Triggern der Reflow, um die Animation neu zu starten
+            void bulletpointIcon.offsetWidth; // Triggern des Reflows
+
+            // Starte die Rotation
+            bulletpointIcon.classList.add('rotate');
+
+            // Nach der Rotation wird die Farbe zurückgesetzt und das Icon wird gesperrt
+            setTimeout(() => {
+                bulletpointIcon.classList.remove('rotate');
+                bulletpointIcon.classList.add('reset-color', 'no-repeat');
+            }, 500); // 500ms = 0.5s für die Rotation
+        });
+    }
+
+    // Logo Wechsel auf Mobile
+    if (logoContainer && isMobile()) {
+        logoContainer.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    }
 });
 
 // Fancybox Initialisierung

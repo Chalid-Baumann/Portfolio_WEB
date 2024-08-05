@@ -131,7 +131,6 @@ nav ul li a {
 
 
 /* Logo container styling */
-/* Logo container styling */
 .logo-container {
     display: flex;
     align-items: center; /* Center items vertically */
@@ -144,23 +143,6 @@ nav ul li a {
     width: auto;
     margin-right: 17px; /* Space between logo and text */
     transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
-}
-
-.logo-container:hover .logo {
-    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Sicherstellen, dass der Drop-Shadow auf Hover gesetzt wird */
-    animation: changeShadowColor 2s infinite alternate;
-}
-
-@keyframes changeShadowColor {
-    0% {
-        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
-    }
-    50% {
-        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
-    }
-    100% {
-        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
-    }
 }
 
 .logo-container span {
@@ -280,19 +262,27 @@ nav ul li a {
 
 
 
+/*HOVER LOGO*/
+#header-unit .logo-container:hover img {
+    content: url('/LogoChalid_k.png'); /* Pfad zum neuen Bild */
+}
 
+#header-unit .logo-container img.hover-image {
+    opacity: 0;
+}
 
-main {
-    margin: 0;
-    padding: 15px 20px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    text-align: justify;
-    height: calc(100vh - 10px); /* Höhe des Hauptbereichs */
-    box-sizing: border-box; /* Bezieht Padding in die Höhe mit ein */
-    padding-top: 10px;
-    overflow: hidden;
+#header-unit .logo-container:hover img.original-image {
+    opacity: 0;
+}
+
+#header-unit .logo-container:hover img.hover-image {
+    opacity: 1;
+}
+
+/* Um sicherzustellen, dass der Hover-Effekt auf das gesamte Container-Element wirkt */
+#header-unit .logo-container span {
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -321,15 +311,7 @@ main {
 }
 
 
-/* Schattenanimation */
-@keyframes changeShadowColor {
-    0% {
-        filter: drop-shadow(0 0 1.5rem rgba(0, 0, 255, 1)); /* Blau */
-    }
-    100% {
-        filter: drop-shadow(0 0 1.5rem rgba(0, 0, 255, 1)); /* Blau */
-    }
-}
+
 
 
 
@@ -426,6 +408,9 @@ margin-left: 20px;
 
 
 
+
+
+
 /* Mobile Ansicht */
 @media (max-width: 768px) {
     main {
@@ -496,6 +481,7 @@ margin-left: 20px;
 .bulletpoint-icon {
     pointer-events: none; /* Macht das Icon nicht anwählbar von Anfang an */
     padding-right: 15px;
+    margin-right: 25px;
 }
 
 .bulletpoint-icon.rotated {
@@ -527,10 +513,11 @@ margin-left: 20px;
 }
 
 .bulletpoint-icon{
-    height: 15%;
-    width: 15%;
+    height: 12%;
+    width: 12%;
     cursor: pointer;
     padding-right: 15px;
+    padding-bottom: 3px;
 }
 
 .video{
@@ -543,10 +530,9 @@ margin-left: 20px;
     align-items: end;
     padding-bottom: 5px;
     padding-left: 15px;
-    padding-right: 30px;
-    justify-content:space-around;
-    margin-right: 10px;
-    gap: 2%;
+    padding-right: 10px;
+    justify-content:space-between;
+    margin-right: 20px;
 }
 
 .portfoliotitelone {
@@ -554,7 +540,13 @@ margin-left: 20px;
     margin: 0;
   }
 
+  #header-unit .logo-container.active img.original-image {
+    opacity: 0; /* Versteckt das ursprüngliche Bild beim Klick auf mobile Geräten */
+}
 
+#header-unit .logo-container.active img.hover-image {
+    opacity: 1; /* Zeigt das zweite Bild beim Klick auf mobile Geräten */
+}
 
 }
 

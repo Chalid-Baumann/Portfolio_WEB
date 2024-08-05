@@ -120,16 +120,15 @@ a:hover{
     height: auto;
     margin-right: 8px; /* Space between icon and text */
     padding-bottom: 1%;
-    transition: transform 1s ease-in-out;
+    animation: continuousRotate 15s linear infinite;
 }
 
 
 .bulletpoint-icon.rotate {
-    animation: rotate 0.5s forwards; /* Rotation bei Klick oder Hover */
+    animation: rotate 1s forwards; /* Rotation bei Klick oder Hover */
 }
 
-
-@keyframes rotate {
+@keyframes continuousRotate {
     from {
         transform: rotate(0deg);
     }
@@ -137,20 +136,6 @@ a:hover{
         transform: rotate(360deg);
     }
 }
-
-.bulletpoint-icon.reset {
-    animation: reset 1s forwards; /* Zurückdrehen nach der Rotation */
-}
-
-@keyframes reset {
-    from {
-        transform: rotate(360deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
-}
-
 
 
 
@@ -209,22 +194,7 @@ nav ul li a {
     transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
 }
 
-.logo-container:hover .logo {
-    filter: drop-shadow(0 0 0.75rem rgba(249, 28, 65, 1)); /* Roter drop-shadow mit Transparenz */
-    animation: changeShadowColor 2s infinite alternate; /* Animationsname, Dauer, Endlosschleife und Alternativen  */
-}
 
-@keyframes changeShadowColor {
-    0% {
-        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Roter drop-shadow mit Transparenz */
-    }
-    50% {
-        filter: drop-shadow(0 0 0.75rem rgb(175, 4, 175, 1)); /* Grüner drop-shadow mit Transparenz */
-    }
-    100% {
-        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 255, 1)); /* Blauer drop-shadow mit Transparenz */
-    }
-}
 
 .logo-container span {
     font-size: 2rem; /* Adjust font size as needed */
@@ -254,9 +224,38 @@ nav ul li a {
     color: rgb(255, 28, 65)
 }
 
-#header-unit a:hover {
 
+
+
+/*HOVER LOGO*/
+#header-unit .logo-container {
+    position: relative;
+    display: inline-block;
 }
+
+#header-unit .logo-container:hover img {
+    content: url('/LogoChalid_k.png'); /* Pfad zum neuen Bild */
+    z-index: 1000;
+}
+
+#header-unit .logo-container img.hover-image {
+    opacity: 0;
+}
+
+#header-unit .logo-container:hover img.original-image {
+    opacity: 0;
+}
+
+#header-unit .logo-container:hover img.hover-image {
+    opacity: 1;
+}
+
+/* Um sicherzustellen, dass der Hover-Effekt auf das gesamte Container-Element wirkt */
+#header-unit .logo-container span {
+    position: relative;
+    z-index: 2;
+}
+
 
 
 
@@ -748,6 +747,24 @@ body {
 
 #footer{
     font-size: 17px;
+}
+
+#logo-clickable {
+    /* Anpassungen für mobile Geräte */
+    /* Beispielsweise: größere Abstände, andere Positionierung, etc. */
+}
+
+#logo-clickable.active {
+    /* Stile für das aktive Logo */
+    /* Beispielsweise: Farbe ändern, Vergrößern, etc. */
+}
+
+#header-unit .logo-container.active img.original-image {
+    opacity: 0; /* Versteckt das ursprüngliche Bild beim Klick auf mobile Geräten */
+}
+
+#header-unit .logo-container.active img.hover-image {
+    opacity: 1; /* Zeigt das zweite Bild beim Klick auf mobile Geräten */
 }
 
 
