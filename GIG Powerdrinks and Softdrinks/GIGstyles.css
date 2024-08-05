@@ -146,18 +146,15 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 1%;
     color: rgba(255, 255, 255, 0); 
     z-index: 1100;
-                /*FONT*/
-                font-family: "SuisseIntl-Bold", sans-serif;
-                font-weight: 500;
-                font-style: normal;
+            /*FONT*/
+            font-family: "SuisseIntl-Bold", sans-serif;
+            font-weight: 500;
+             font-style: normal;
 }
 
-/*#header:hover{
-    transform: scale(1.1);
-}*/
+
 
 nav ul {
     list-style: none;
@@ -201,6 +198,9 @@ nav ul li a {
     color: black; /* Ensure text color is visible */
 }
 
+
+
+
 /* Header unit styling */
 #header-unit {
     display: flex;
@@ -212,6 +212,7 @@ nav ul li a {
 #contact-link{
     display: flex;
     align-items: center;
+    font-size: 2.2rem; /* Schriftgröße des Links */
 }
 
 #contact-link a {
@@ -227,15 +228,10 @@ nav ul li a {
 
 
 
-/*HOVER LOGO*/
-#header-unit .logo-container {
-    position: relative;
-    display: inline-block;
-}
 
+/*HOVER LOGO*/
 #header-unit .logo-container:hover img {
     content: url('/LogoChalid_k.png'); /* Pfad zum neuen Bild */
-    z-index: 1000;
 }
 
 #header-unit .logo-container img.hover-image {
@@ -749,15 +745,6 @@ body {
     font-size: 17px;
 }
 
-#logo-clickable {
-    /* Anpassungen für mobile Geräte */
-    /* Beispielsweise: größere Abstände, andere Positionierung, etc. */
-}
-
-#logo-clickable.active {
-    /* Stile für das aktive Logo */
-    /* Beispielsweise: Farbe ändern, Vergrößern, etc. */
-}
 
 #header-unit .logo-container.active img.original-image {
     opacity: 0; /* Versteckt das ursprüngliche Bild beim Klick auf mobile Geräten */
