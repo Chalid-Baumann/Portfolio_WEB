@@ -1,87 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
-    let isDragging = false;
+    const icons = document.querySelectorAll('.bulletpoint-icon');
+    const bulletpointIcon = document.querySelector('.bulletpoint-icon');
+    const logoContainer = document.getElementById('logo-clickable');
 
-    // Ermitteln, ob der Benutzer auf einem mobilen Gerät ist
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    function isMobile() {
+        return window.matchMedia("(max-width: 768px)").matches; // Oder eine andere Grenze für mobile Geräte
+    }
 
-    galleryItems.forEach(item => {
-        if (!isMobile) {
-            // Nur für Desktop: Hover-Effekte
-            item.addEventListener('mouseenter', () => {
-                item.style.transform = 'scale(1.05) rotate3d(1, 1, 0, 0deg)'; // Vergrößert das Item beim Hover
-                item.style.zIndex = '1030'; // Setzt den z-index höher beim Hover
-            });
+    // Funktion zum Anordnen der Galerie
+    const arrangeGallery = () => {
+        let lastItemWasVertical = false;
 
-            item.addEventListener('mouseleave', () => {
-                if (!item.classList.contains('active')) {
-                    item.style.transform = 'scale(0.95) rotate3d(1, 1, 0, 45deg)'; // Setzt die ursprüngliche Transformation zurück
-                    item.style.zIndex = '1'; // Setzt den z-index auf Standard zurück
-                }
-            });
+        galleryItems.forEach((item) => {
+            const aspectRatio = item.getAttribute('data-aspect-ratio');
 
-            item.addEventListener('click', () => {
-                galleryItems.forEach(i => i.classList.remove('active')); // Entfernt `active` von allen Items
-                item.classList.add('active'); // Fügt `active` zum geklickten Item hinzu
-
-                // Öffne die neue HTML-Seite, wenn der Text „01 GIG Powerdrinks and Softdrinks“ geklickt wird
-                const link = item.getAttribute('data-link');
-                if (link) {
-                    window.location.href = link; // Leitet auf die angegebene HTML-Seite weiter
-                }
-            });
-        } else {
-            // Nur für mobile Geräte: Touch-Events
-            item.addEventListener('touchstart', () => {
-                item.style.transform = 'scale(1.05) rotate3d(1, 1, 0, 0deg)'; // Vergrößert das Item beim Tippen
-                item.style.zIndex = '1030'; // Setzt den z-index höher beim Tippen
-            });
-
-            item.addEventListener('touchend', () => {
-                if (!item.classList.contains('active')) {
-                    item.style.transform = 'scale(0.95) rotate3d(1, 1, 0, 45deg)'; // Setzt die ursprüngliche Transformation zurück
-                    item.style.zIndex = '1'; // Setzt den z-index auf Standard zurück
-                }
-            });
-
-            item.addEventListener('click', () => {
-                galleryItems.forEach(i => i.classList.remove('active')); // Entfernt `active` von allen Items
-                item.classList.add('active'); // Fügt `active` zum geklickten Item hinzu
-
-                // Öffne die neue HTML-Seite, wenn der Text „01 GIG Powerdrinks and Softdrinks“ geklickt wird
-                const link = item.getAttribute('data-link');
-                if (link) {
-                    window.location.href = link; // Leitet auf die angegebene HTML-Seite weiter
-                }
-            });
-        }
-    });
-
-    // Erlaubt das Scrollen durch Ziehen auf der Galerie (nur für Desktop)
-    if (!isMobile) {
-        const galleryContainer = document.querySelector('.gallery-container');
-        let startX, scrollLeft;
-
-        galleryContainer.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - galleryContainer.offsetLeft;
-            scrollLeft = galleryContainer.scrollLeft;
+            // Entfernen von vorherigen Klassen
+            item.classList.remove('large', 'medium', 'small');
+            
+            // Layout-Logik
+            if (aspectRatio === 'vertical') {
+                item.classList.add('large');
+                lastItemWasVertical = true;
+            } else if (aspectRatio === 'horizontal' && lastItemWasVertical) {
+                item.classList.add('medium');
+                lastItemWasVertical = false;
+            } else if (aspectRatio === 'horizontal' && !lastItemWasVertical) {
+                item.classList.add('small');
+                lastItemWasVertical = false;
+            } else if (aspectRatio === 'square') {
+                item.classList.add('small');
+            }
         });
+    };
 
-        galleryContainer.addEventListener('mouseleave', () => {
-            isDragging = false;
-        });
+    arrangeGallery();
+    window.addEventListener('resize', arrangeGallery);
 
-        galleryContainer.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-        galleryContainer.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - galleryContainer.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll speed
-            galleryContainer.scrollLeft = scrollLeft - walk;
+    // Scroll-zu-Top-Funktionalität hinzufügen
+    const scrollTopButton = document.getElementById('scrollTop');
+    if (scrollTopButton) {
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // Entfernen der Hover-, Touch- und Click-Ereignisse für die Icons
+    icons.forEach(icon => {
+        icon.style.animation = 'continuousRotate 10s linear infinite';
+    });
+
+    // Bulletpoint Icon Rotation für mobile Geräte
+    if (bulletpointIcon && isMobile()) {
+        bulletpointIcon.addEventListener('click', function() {
+            // Stelle sicher, dass die vorherige Animation entfernt wird
+            bulletpointIcon.classList.remove('rotate', 'reset-color', 'no-repeat');
+
+            // Triggern der Reflow, um die Animation neu zu starten
+            void bulletpointIcon.offsetWidth; // Triggern des Reflows
+
+            // Starte die Rotation
+            bulletpointIcon.classList.add('rotate');
+
+            // Nach der Rotation wird die Farbe zurückgesetzt und das Icon wird gesperrt
+            setTimeout(() => {
+                bulletpointIcon.classList.remove('rotate');
+                bulletpointIcon.classList.add('reset-color', 'no-repeat');
+            }, 500); // 500ms = 0.5s für die Rotation
+        });
+    }
+
+    // Logo Wechsel auf Mobile
+    if (logoContainer && isMobile()) {
+        logoContainer.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    }
+});
+
+// Fancybox Initialisierung
+$(document).ready(function() {
+    $('[data-fancybox]').fancybox({
+        buttons: [
+            "zoom",
+            "share",
+            "slideShow",
+            "fullScreen",
+            "download",
+            "thumbs",
+            "close"
+        ],
+        loop: false,
+        protect: true
+    });
 });
