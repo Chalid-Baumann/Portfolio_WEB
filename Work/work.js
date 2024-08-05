@@ -76,21 +76,72 @@ document.addEventListener('DOMContentLoaded', () => {
             this.classList.toggle('active');
         });
     }
-});
 
-// Fancybox Initialisierung
-$(document).ready(function() {
-    $('[data-fancybox]').fancybox({
-        buttons: [
-            "zoom",
-            "share",
-            "slideShow",
-            "fullScreen",
-            "download",
-            "thumbs",
-            "close"
-        ],
-        loop: false,
-        protect: true
+    // Berührungseffekte und Drag für mobile Geräte
+    if (isMobile()) {
+        galleryItems.forEach(item => {
+            let isDragging = false;
+            let startX = 0;
+
+            item.addEventListener('touchstart', (event) => {
+                isDragging = false;
+                startX = event.touches[0].clientX;
+                item.classList.add('touch-active'); // Bild gerade ausrichten bei Touchstart
+            });
+
+            item.addEventListener('touchmove', (event) => {
+                if (!isDragging) {
+                    const currentX = event.touches[0].clientX;
+                    const threshold = 10; // Schwelle für Drag-Ereignis
+
+                    if (Math.abs(currentX - startX) > threshold) {
+                        isDragging = true;
+                        item.classList.add('touch-active'); // Bild gerade ausrichten bei Drag
+                    }
+                }
+            });
+
+            item.addEventListener('touchend', (event) => {
+                if (!isDragging) {
+                    // Falls ein Link im Galerie-Item vorhanden ist, öffnen
+                    const link = item.getAttribute('data-link');
+                    if (link) {
+                        // Öffnen des Links
+                        window.location.href = link;
+                    }
+                }
+                // Rücksetzen des Drag-Status
+                isDragging = false;
+                item.classList.remove('touch-active'); // Entfernen der Justierung nach Touchend
+            });
+        });
+    } else {
+        // Für Desktop
+        galleryItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                const link = item.getAttribute('data-link');
+                if (link) {
+                    // Öffnen des Links bei Desktop-Klick
+                    window.location.href = link;
+                }
+            });
+        });
+    }
+
+    // Fancybox Initialisierung
+    $(document).ready(function() {
+        $('[data-fancybox]').fancybox({
+            buttons: [
+                "zoom",
+                "share",
+                "slideShow",
+                "fullScreen",
+                "download",
+                "thumbs",
+                "close"
+            ],
+            loop: false,
+            protect: true
+        });
     });
 });

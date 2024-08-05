@@ -273,6 +273,9 @@ main {
     z-index: 1030; /* Setzt den z-index höher beim Hover */
 }
 
+.gallery-item.touch-active {
+    transform: scale(1.05) rotate3d(1, 1, 0, 0deg)
+}
 
 .gallery-item img {
     width: 100%;
