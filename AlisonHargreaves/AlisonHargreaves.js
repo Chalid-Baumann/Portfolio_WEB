@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const icons = document.querySelectorAll('.bulletpoint-icon');
+    const bulletpointIcon = document.querySelector('.bulletpoint-icon');
+    const logoContainer = document.getElementById('logo-clickable');
+
+    function isMobile() {
+        return window.matchMedia("(max-width: 768px)").matches; // Oder eine andere Grenze für mobile Geräte
+    }
 
     // Funktion zum Anordnen der Galerie
     const arrangeGallery = () => {
@@ -32,81 +38,44 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', arrangeGallery);
 
     // Scroll-zu-Top-Funktionalität hinzufügen
-    document.getElementById('scrollTop').addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Hilfsfunktion zum Zurücksetzen aller Icons
-    const resetIcons = () => {
-        icons.forEach(icon => {
-            icon.classList.remove('active');
-            icon.style.transform = 'rotate(0deg)';
+    const scrollTopButton = document.getElementById('scrollTop');
+    if (scrollTopButton) {
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    };
+    }
 
-    // Rotieren des Icons beim Hover und Touch
+    // Entfernen der Hover-, Touch- und Click-Ereignisse für die Icons
     icons.forEach(icon => {
-        icon.addEventListener('mouseover', () => {
-            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
-                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-                icon.style.transform = 'rotate(360deg)'; // Desktop Hover-Effekt
-            }
-        });
+        icon.style.animation = 'continuousRotate 10s linear infinite';
+    });
 
-        icon.addEventListener('mouseout', () => {
-            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
-                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-                icon.style.transform = 'rotate(0deg)'; // Zurücksetzen der Rotation
-            }
-        });
+    // Bulletpoint Icon Rotation für mobile Geräte
+    if (bulletpointIcon && isMobile()) {
+        bulletpointIcon.addEventListener('click', function() {
+            // Stelle sicher, dass die vorherige Animation entfernt wird
+            bulletpointIcon.classList.remove('rotate', 'reset-color', 'no-repeat');
 
-        icon.addEventListener('touchstart', (event) => {
-            event.preventDefault(); // Verhindert die Standardaktion des Touchs
-            resetIcons(); // Alle Icons zurücksetzen
-            icon.classList.add('active');
-            icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-            icon.style.transform = 'rotate(360deg)'; // Mobile Touch-Effekt
+            // Triggern der Reflow, um die Animation neu zu starten
+            void bulletpointIcon.offsetWidth; // Triggern des Reflows
 
-            // Nach der Animation zurücksetzen
+            // Starte die Rotation
+            bulletpointIcon.classList.add('rotate');
+
+            // Nach der Rotation wird die Farbe zurückgesetzt und das Icon wird gesperrt
             setTimeout(() => {
-                icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
-                icon.classList.remove('active'); // Entfernen der Aktiv-Klasse
-            }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
+                bulletpointIcon.classList.remove('rotate');
+                bulletpointIcon.classList.add('reset-color', 'no-repeat');
+            }, 500); // 500ms = 0.5s für die Rotation
         });
+    }
 
-        icon.addEventListener('click', () => {
-            if (!icon.classList.contains('active')) { // Verhindert Rotation, wenn schon aktiv
-                resetIcons(); // Alle Icons zurücksetzen
-                icon.classList.add('active');
-                icon.style.transition = 'transform 1s'; // Übergang hinzufügen
-                icon.style.transform = 'rotate(360deg)'; // Klick-Effekt
-
-                // Nach der Animation zurücksetzen
-                setTimeout(() => {
-                    icon.style.transform = 'rotate(0deg)'; // Nach dem Klick zurücksetzen
-                    icon.classList.remove('active'); // Entfernen der Aktiv-Klasse
-                }, 1000); // Verzögerung um sicherzustellen, dass die Rotation abgeschlossen ist
-            }
+    // Logo Wechsel auf Mobile
+    if (logoContainer && isMobile()) {
+        logoContainer.addEventListener('click', function() {
+            this.classList.toggle('active');
         });
-    });
-
-    // Video-Steuerung hinzufügen
-    const videos = document.querySelectorAll('.gallery-item.video video');
-
-    videos.forEach(video => {
-        // Setze das Attribut 'controlsList' auf 'nodownload'
-        video.setAttribute('controlsList', 'nodownload');
-
-        // Event listener to toggle play/pause on video click
-        video.addEventListener('click', function(event) {
-            event.stopPropagation(); // Verhindert das Auslösen von Klick-Events auf übergeordneten Elementen
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    });
+    }
 });
 
 // Fancybox Initialisierung
@@ -117,49 +86,11 @@ $(document).ready(function() {
             "share",
             "slideShow",
             "fullScreen",
+            "download",
             "thumbs",
             "close"
         ],
         loop: false,
-        protect: true,
-        beforeLoad: function(instance, current) {
-            if (current.type === 'video') {
-                current.opts.video = {
-                    autoStart: false,
-                    controlsList: 'nodownload'
-                };
-            }
-        }
-    });
-
-    // Video-Links zum Öffnen in Fancybox hinzufügen
-    $('.gallery-item.video').on('click', function(event) {
-        event.preventDefault(); // Verhindert Standard-Click-Aktion
-
-        // Hole das Video-Element
-        const videoElement = $(this).find('video')[0];
-        const videoSrc = videoElement.getAttribute('src');
-
-        // Öffne das Video in Fancybox
-        $.fancybox.open({
-            src: videoSrc,
-            type: 'video',
-            opts: {
-                buttons: [
-                    "zoom",
-                    "share",
-                    "slideShow",
-                    "fullScreen",
-                    "thumbs",
-                    "close"
-                ],
-                loop: false,
-                protect: true,
-                video: {
-                    autoStart: false,
-                    controlsList: 'nodownload'
-                }
-            }
-        });
+        protect: true
     });
 });
