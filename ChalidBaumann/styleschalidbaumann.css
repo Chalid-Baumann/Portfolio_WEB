@@ -299,6 +299,12 @@ nav ul li a {
 
 
 
+.word-spacing{
+    word-spacing: 8px;
+}
+
+
+
 
 .container {
     display: flex;
