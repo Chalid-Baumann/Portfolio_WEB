@@ -163,6 +163,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid blue;
+    background-color: #ffffff;
 }
 
 nav ul li {
@@ -258,11 +259,11 @@ nav ul li a {
     justify-content: space-between;
     font-size: 2.2rem;
     position: fixed;
-    top: 14%; /* Platz für den ursprünglichen Header */
     width: 100%;
     height: 6%;
     z-index: 1000; /* Stellt sicher, dass der Header über dem Inhalt liegt */
     box-sizing: border-box;
+    border-top: 0.8px solid blue;
 }
 
 #secondary-header ul {
@@ -745,6 +746,7 @@ body {
 
     #secondary-header {
         top: 80px; /* Platz für den ursprünglichen Header */
+        border-top: 1.5px solid blue;
     }
 
     #secondary-header ul {
