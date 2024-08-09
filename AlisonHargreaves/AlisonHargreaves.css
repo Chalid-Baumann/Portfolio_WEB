@@ -277,6 +277,7 @@ nav ul li a {
     z-index: 900; /* Stellt sicher, dass der Header über dem Inhalt liegt */
     background-color: #ffffff;
     box-sizing: border-box;
+    border-top: 0.8px solid blue;
 }
 
 
