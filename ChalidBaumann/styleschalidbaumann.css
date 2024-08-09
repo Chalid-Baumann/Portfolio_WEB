@@ -144,10 +144,6 @@ header{
                 font-style: normal;
 }
 
-/*#header:hover{
-    transform: scale(1.1);
-}*/
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -155,6 +151,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid blue;
+    background-color:  #e6e9e5;
 }
 
 nav ul li {
@@ -194,6 +191,7 @@ nav ul li a {
     display: flex;
     align-items: center; /* Center items vertically */
     font-size: 2.2rem;
+    background-color:  #e6e9e5;
 }
 
 

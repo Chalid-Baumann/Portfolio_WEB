@@ -176,6 +176,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid blue;
+    background-color:  #ffffff;
 }
 
 nav ul li {
@@ -214,6 +215,7 @@ nav ul li a {
 #header-unit {
     display: flex;
     align-items: center; /* Center items vertically */
+    background-color:  #ffffff;
 }
 
 /* Kontakt-Link-Stile */
@@ -272,11 +274,15 @@ nav ul li a {
     font-size: 2.2rem;
     position: fixed;
     top: 14%; /* Platz für den ursprünglichen Header */
+    padding: 0;
     width: 100%;
     height: 6%;
     z-index: 1000; /* Stellt sicher, dass der Header über dem Inhalt liegt */
+    background-color: #ffffff;
     box-sizing: border-box;
 }
+
+
 
 #secondary-header ul {
     display: flex;
@@ -299,7 +305,6 @@ nav ul li a {
     display: block;
     height: 100%;
     line-height: 60px; /* Zentriert den Text vertikal */
-
 }
 
 #secondary-header ul li a:hover {
@@ -587,8 +592,13 @@ footer nav ul li a {
         font-size: 17px;
     }
 
+    header{
+        border-bottom: 1px blue;
+    }
+
     #header-unit{
         font-size: 17px; 
+        border-bottom: 1px blue;
     }
 
     .nav ul li a {
@@ -599,6 +609,7 @@ footer nav ul li a {
         left: auto; /* Entfernt die horizontale Verschiebung */
     }
 
+  
     .gallery-item {
         width: 100%; /* Volle Breite auf kleineren Bildschirmen */
         height: auto; /* Automatische Höhe für kleinere Bildschirme */
