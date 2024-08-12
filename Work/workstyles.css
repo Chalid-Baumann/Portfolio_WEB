@@ -108,7 +108,7 @@ nav ul {
     justify-content: space-between;
     /*align-items: center;*/
     background-color: #e6e9e5;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 nav ul li {
@@ -288,7 +288,7 @@ main {
     margin-top: 0;
     font-size: 1rem;
     color: #000;
-    border: 1px solid blue;
+    border: 1px solid rgb(0, 0, 0);
     padding-left: 1px;
     padding-right: 0;
     background-color: #e6e9e5;

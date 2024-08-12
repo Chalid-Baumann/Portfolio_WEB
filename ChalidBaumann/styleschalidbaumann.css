@@ -150,7 +150,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid rgb(0, 0, 0);
     background-color:  #e6e9e5;
 }
 
@@ -384,7 +384,7 @@ footer {
 }
 
 footer nav ul {
-    border-top: 1px solid blue;
+    border-top: 1px solid rgb(0, 0, 0);
     border-bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -501,14 +501,14 @@ footer nav ul li a {
 .entry {
     padding-bottom: 3%;
     padding-top: 3%;
-    border-bottom: 1px solid rgb(0, 0, 255);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .date {
     padding-top: 1%;
     margin-bottom: 1%;
     margin-left: 0;
-    padding-right: 3%;
+    padding-right: 6%;
 }
 
 .description {
@@ -757,8 +757,26 @@ body {
     font-size: 13px;
 }
 
+.entry {
+    display: flex;
+    flex-direction: column; /* Stapelt die .date und .description vertikal */
+    padding-bottom: 3%;
+    padding-top: 3%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
 .date{
     font-size: 13px;
+}
+
+.description {
+    display: inline-block;
+    text-align: left;
+    white-space: normal; /* Ermöglicht Zeilenumbruch */
+    hyphens: auto; /* Ermöglicht die Silbentrennung */
+    word-wrap: break-word; /* Lässt lange Wörter umbrechen */
+    word-break: break-word; /* Ermöglicht das Umbrechen von Wörtern an beliebigen Punkten */
+    overflow-wrap: break-word; /* Stellt sicher, dass Wortumbrüche korrekt gehandhabt werden */
 }
 
 #footer{

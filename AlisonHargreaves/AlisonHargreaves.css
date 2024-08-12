@@ -167,7 +167,7 @@ header{
 }
 
 nav ul {
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid rgb(0, 0, 0);
     list-style: none;
     padding: 0;
     margin: 0;
@@ -277,7 +277,7 @@ nav ul li a {
     z-index: 900; /* Stellt sicher, dass der Header über dem Inhalt liegt */
     background-color: #ffffff;
     box-sizing: border-box;
-    border-top: 0.8px solid blue;
+    border-top: 0.8px solid rgb(0, 0, 0);
 }
 
 
@@ -331,7 +331,7 @@ footer {
 }
 
 footer nav ul {
-    border-top: 1px solid blue;
+    border-top: 1px solid rgb(0, 0, 0);
     border-bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -365,7 +365,7 @@ footer nav ul li a {
     justify-content: space-between;
     align-items: top;
     text-align: left;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid rgb(0, 0, 0);
     margin: 185px 0; /* Abstand zum oberen und unteren Inhalt */
     margin-bottom: 10px;
     padding-bottom: 5px;
@@ -596,7 +596,7 @@ footer nav ul li a {
     }
 
     nav ul {
-        border-bottom: 1px solid blue;
+        border-bottom: 1px solid rgb(0, 0, 0);
         padding-bottom: 0;
         margin-bottom: 0;
     }
@@ -710,7 +710,7 @@ body {
 
     #secondary-header {
         top: 80px; /* Platz für den ursprünglichen Header */
-        border-top: 1.5px solid blue;
+        border-top: 1.5px solid rgb(0, 0, 0);
     }
 
     #secondary-header ul {
