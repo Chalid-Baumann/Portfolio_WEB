@@ -584,10 +584,4 @@ main {
 }
 
 #animated-logo {
-    width: 100vw; /* Volle Breite für den Logo-Container */
-    height: auto; /* Höhe automatisch anpassen */
-    margin-top: 10vh; /* Abstand vom oberen Rand des Viewports */
-}
-
-}
-
+    width: 100vw; /* Volle Breite für den Logo-Con
