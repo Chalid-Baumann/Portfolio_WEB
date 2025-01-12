@@ -371,6 +371,7 @@ nav ul li a {
 }
 
 .portfoliotitelone{
+    display: flex;
     font-size: 16vw;
     color: rgb(0, 0, 0);
     font-family: "franganic", sans-serif;
@@ -402,6 +403,21 @@ margin-left: 20px;
     --text-spacing: 0;
 }
 
+
+
+
+
+/*Buchstaben einzeln verändern bei hover*/
+.portfoliotitelone .letter {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfoliotitelone .letter:hover,
+.portfoliotitelone .letter:hover {
+    transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
+    color: #f91c41; /* Optional: Farbe ändern */
+}
 
 
 
@@ -544,4 +560,5 @@ margin-left: 20px;
   }
 
   #header-unit .logo-container.active img.original-image {
-    opacity: 0; /
+    opacity: 0; 
+}

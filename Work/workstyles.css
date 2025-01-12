@@ -229,7 +229,7 @@ main {
     padding-top: 10%;
     padding-left: 0;
     padding-right: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
     /*white-space: nowrap; /* Elemente in einer Zeile anordnen */
     width: 100%;
     /*height: calc(100vh - 10px); /* Höhe des Headers abziehen */
@@ -286,6 +286,7 @@ main {
 
 .gallery-description {
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 1rem;
     color: #000;
     border: 1px solid rgb(0, 0, 0);

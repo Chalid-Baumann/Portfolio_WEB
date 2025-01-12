@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const bulletpointIcon = document.querySelector('.bulletpoint-icon');
     const logoContainer = document.getElementById('logo-clickable');
+    const letters = document.querySelectorAll('.portfoliotitelone .letter');
 
     function isMobile() {
         return window.matchMedia("(max-width: 768px)").matches; // Oder eine andere Grenze für mobile Geräte
@@ -35,5 +36,36 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.toggle('active');
         });
     }
-});
 
+    // Effekt für Buchstaben bei Hover und Touch/Drag
+    letters.forEach(letter => {
+        // Für Touch-Interaktionen (Touchstart)
+        letter.addEventListener('touchstart', function() {
+            letter.classList.add('active');
+        });
+
+        // Entfernen der 'active' Klasse beim Beenden des Touchs
+        letter.addEventListener('touchend', function() {
+            letter.classList.remove('active');
+        });
+
+        letter.addEventListener('touchcancel', function() {
+            letter.classList.remove('active');
+        });
+
+        // Für Drag-Interaktionen
+        letter.addEventListener('dragstart', function() {
+            letter.classList.add('active');
+        });
+
+        letter.addEventListener('dragend', function() {
+            letter.classList.remove('active');
+        });
+
+        // Sicherstellen, dass die Klasse entfernt wird, wenn der Finger den Bildschirm verlässt (für mobile Geräte)
+        letter.addEventListener('touchmove', function() {
+            // Optionale Funktion, falls der Benutzer den Finger bewegt, um die Interaktion zu beenden
+            letter.classList.remove('active');
+        });
+    });
+});
