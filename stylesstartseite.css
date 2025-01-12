@@ -43,6 +43,12 @@
     font-style: normal;
 }
 
+@font-face{
+    font-family: 'franganic';
+    src: url(/font/CHBWide-Regular.otf);
+    font-weight: bold;
+    font-style: normal;
+}
 
 
 
@@ -166,7 +172,28 @@ nav ul li a {
 
 
 
+.portfoliotitelone{
+    display:inline-block;
+    font-size: 70vw;
+    color: rgb(0, 0, 0);
+    font-family: "franganic", sans-serif;
+    font-style: normal;
+    line-height: 0.8;
+    z-index: 0;
+    margin: 0;
+    white-space: normal;
+    animation: moveText 60s linear infinite;
+}
 
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%); /* Startposition des Textes rechts außerhalb des Viewports */
+    }
+    100% {
+        transform: translateX(-100%); /* Endposition des Textes links außerhalb des Viewports */
+    }
+}
 
 
 /*BULLETPOINT*/

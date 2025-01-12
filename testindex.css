@@ -416,6 +416,7 @@ margin-left: 20px;
 .portfoliotitelone .letter.active {
     transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
     color: #f91c41; /* Optional: Farbe ändern */
+    cursor: default;
 }
 
 
