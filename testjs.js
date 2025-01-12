@@ -39,33 +39,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Effekt für Buchstaben bei Hover und Touch/Drag
     letters.forEach(letter => {
-        // Für Touch-Interaktionen (Touchstart)
+        // Effekt bei Hover für Desktop
+        letter.addEventListener('mouseenter', function() {
+            if (!isMobile()) { // Nur für Desktop
+                letter.classList.add('active'); // Effekt aktivieren
+            }
+        });
+
+        letter.addEventListener('mouseleave', function() {
+            if (!isMobile()) { // Nur für Desktop
+                letter.classList.remove('active'); // Effekt zurücksetzen
+            }
+        });
+
+        // Effekt bei Touchstart für Mobile
         letter.addEventListener('touchstart', function() {
-            letter.classList.add('active');
+            if (isMobile()) { // Nur für Mobile
+                letter.classList.add('active'); // Effekt aktivieren
+            }
         });
 
-        // Entfernen der 'active' Klasse beim Beenden des Touchs
+        // Effekt bei Touchend für Mobile
         letter.addEventListener('touchend', function() {
-            letter.classList.remove('active');
+            if (isMobile()) { // Nur für Mobile
+                letter.classList.remove('active'); // Effekt zurücksetzen
+            }
         });
 
+        // Wenn der Benutzer die Berührung unterbricht (z.B. beim Verlassen des Elements)
         letter.addEventListener('touchcancel', function() {
-            letter.classList.remove('active');
+            if (isMobile()) { // Nur für Mobile
+                letter.classList.remove('active'); // Effekt zurücksetzen
+            }
         });
 
         // Für Drag-Interaktionen
         letter.addEventListener('dragstart', function() {
-            letter.classList.add('active');
+            letter.classList.add('active'); // Effekt aktivieren
         });
 
         letter.addEventListener('dragend', function() {
-            letter.classList.remove('active');
-        });
-
-        // Sicherstellen, dass die Klasse entfernt wird, wenn der Finger den Bildschirm verlässt (für mobile Geräte)
-        letter.addEventListener('touchmove', function() {
-            // Optionale Funktion, falls der Benutzer den Finger bewegt, um die Interaktion zu beenden
-            letter.classList.remove('active');
+            letter.classList.remove('active'); // Effekt zurücksetzen
         });
     });
 });

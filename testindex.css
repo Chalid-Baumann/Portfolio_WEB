@@ -413,8 +413,7 @@ margin-left: 20px;
     transition: transform 0.3s ease-in-out;
 }
 
-.portfoliotitelone .letter:hover,
-.portfoliotitelone .letter:hover {
+.portfoliotitelone .letter.active {
     transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
     color: #f91c41; /* Optional: Farbe ändern */
 }
@@ -536,7 +535,7 @@ margin-left: 20px;
     width: 12%;
     cursor: pointer;
     padding-right: 15px;
-    padding-bottom: 3px;
+    padding-bottom: 8px;
 }
 
 .video{
@@ -555,7 +554,7 @@ margin-left: 20px;
 }
 
 .portfoliotitelone {
-    font-size: 3rem; /* Kleinere Textgröße für mobile Geräte */
+    font-size: 3.3rem; /* Kleinere Textgröße für mobile Geräte */
     margin: 0;
   }
 
