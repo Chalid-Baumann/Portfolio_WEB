@@ -74,6 +74,12 @@ body{
     flex-direction: column;
 }
 
+/*
+main{
+    background-color: rgb(255, 192, 189);
+}*/
+
+
 p{
     /*text-align: justify;*/
     text-justify: inter-word;
@@ -162,6 +168,15 @@ nav ul li a {
 
 
 /*BULLETPOINT*/
+@keyframes rotate-fast {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #bulletpoint-container {
     position: fixed;
     display: flex;
@@ -173,12 +188,13 @@ nav ul li a {
 }
 
 .bulletpoint-icon {
-    position: relative;
-    width: 15%;
-    height: 15%;
-    pointer-events: auto;
-    transition: transform 1s ease-in-out, fill 0.1s ease;
-    padding-right: 15px;
+    position: fixed;  /* SVG bleibt an einer festen Position */
+    bottom: 1%;  /* Passen Sie die Position an, je nachdem, wo Sie das SVG haben möchten */
+    right: 1%;  /* Beispielwert */
+    width: 25vw;  /* Breite des SVG */
+    z-index: 1000;  /* Sicherstellen, dass es immer sichtbar ist */
+    pointer-events: auto;  /* Macht das SVG klickbar */
+    transition: transform 1s linear, fill 0.3s ease;
 }
 
 .bulletpoint-icon:hover, 
@@ -186,6 +202,17 @@ nav ul li a {
     animation: rotate-fast 1s linear infinite;
     fill: rgb(249, 28, 65);
 }
+
+/* Wenn die Rotation zurückgesetzt werden soll */
+.bulletpoint-icon.reset-color {
+    fill: initial;  /* Zurück zur ursprünglichen Farbe */
+}
+
+/* Verhindert wiederholte Animationen */
+.bulletpoint-icon.no-repeat {
+    animation: none;
+}
+
 
 .top-left {
     top: 15%; /* Adjusted to be below the header */
@@ -322,33 +349,29 @@ nav ul li a {
 
 .container-startseite {
     display: flex;
-    flex-direction: row; /* Nebeneinander auf großen Bildschirmen */
-    align-items: center; /* Zentrierung entlang der Querachse */
-    justify-content: space-between; /* Abstand zwischen den Elementen */
+    flex-direction: row; /* Video und Text nebeneinander anordnen */
+    align-items: flex-end; /* Beide Elemente am unteren Rand ausrichten */
+    justify-content: center; /* Horizontal zentrieren */
     width: 100%;
-    height: 100vh; /* Vollbildhöhe für das Container */
-    overflow: hidden; /* Verhindert Scrollen */
+    height: 100vh; /* Volle Bildschirmhöhe */
+    overflow: hidden;
+    position: relative;
 }
 
 
 
-
-/* Video container styling */
 .video {
-    margin: 7rem 0;
-    max-width: 18%; /* Setzt die maximale Breite des Videos auf 80% der Viewport-Breite */
-    height: auto; /* Erhält das Seitenverhältnis des Videos */
-    display: block; /* Entfernt unerwünschte Abstände unter dem Video */
-    margin-left: auto; /* Zentriert das Video */
-    margin-right: auto; /* Zentriert das Video */
-    z-index: 20; /* Hintergrund hinter dem Text */
+    width: 30%; /* Setzt die Breite des Video-Containers auf 30% */
+    max-width: 400px; /* Setzt eine maximale Breite für das Video */
+    height: auto; /* Höhe wird automatisch an die Breite angepasst */
+    display: block;
+    margin-right: 0; /* Kleiner Abstand zum Text */
 }
-
 
 .video video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    width: 100%; /* Video in voller Breite */
+    height: auto; /* Höhe anpassen */
+    object-fit: contain;
 }
 
 
@@ -356,32 +379,27 @@ nav ul li a {
 
 
 
+/* Text Container */
 .text-container {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Überlagert das Video */
-    /*background-color: rgb(255, 192, 189);*/
-    text-align: center;
-    flex-direction: row;
-    /*gap: 10px;*/
-    justify-content: space-between;
+    flex-direction: column; /* Text untereinander anordnen */
+    justify-content: flex-end; /* Text nach unten ausrichten */
+    align-items: center; /* Horizontale Zentrierung */
+    position: relative; /* Sicherstellen, dass der Text korrekt positioniert wird */
+    width: 60%; /* Stellt sicher, dass der Text-Container genug Platz bekommt */
+    z-index: 1; /* Text über dem Video */
 }
 
-.portfoliotitelone{
-    display: flex;
-    font-size: 16vw;
+/* Portfoliotitelone Styles */
+.portfoliotitelone {
+    font-size: 58vw; /* Schriftgröße an Bildschirmgröße anpassen */
     color: rgb(0, 0, 0);
     font-family: "franganic", sans-serif;
-    /*font-weight: 500;*/
-    font-style: normal;
-    z-index: 0;
+    font-weight: normal;
     line-height: 1;
-    margin: 0;
-    padding-bottom: 10px;
-    white-space: nowrap; /* Verhindert Umbruch im Text */
+    margin-bottom: 5%;
+    padding-bottom: 0;
+    white-space: nowrap; /* Kein Umbruch */
 }
 
 .portfoliotiteltwo{
@@ -406,6 +424,25 @@ margin-left: 20px;
 
 
 
+/*Buchstaben klickbar machen*/
+#logo-clickable {
+    cursor: pointer;
+}
+
+#logo-clickable .hover-image {
+    display: none;
+}
+
+#logo-clickable.active .original-image {
+    display: none;
+}
+
+#logo-clickable.active .hover-image {
+    display: block;
+}
+
+
+
 
 /*Buchstaben einzeln verändern bei hover*/
 .portfoliotitelone .letter {
@@ -416,7 +453,7 @@ margin-left: 20px;
 .portfoliotitelone .letter.active {
     transform: scale(0.95) rotate3d(1, 1, 0, 45deg); /* Initiale leichte Rotation */
     color: #f91c41; /* Optional: Farbe ändern */
-    cursor: default;
+    cursor: pointer;
 }
 
 
@@ -532,33 +569,68 @@ margin-left: 20px;
 }
 
 .bulletpoint-icon{
-    height: 12%;
-    width: 12%;
+    height: 20%;
+    width: 20%;
     cursor: pointer;
-    padding-right: 15px;
-    padding-bottom: 8px;
+    padding: 0;
+    margin-right: 2%;
 }
 
 .video{
-    max-width: 80%;
-    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
+    /* Text Container Anpassung für Mobile */
+    .text-container {
+        display: flex;
+        flex-direction: column; /* Stellt sicher, dass der Text untereinander angeordnet wird */
+        justify-content: flex-end; /* Text nach unten ausrichten */
+        align-items: center; /* Horizontale Zentrierung */
+        width: 80%; /* Gib dem Text-Container genug Platz */
+        z-index: 1; /* Stellt sicher, dass der Text vor anderen Elementen bleibt */
+    }
 
-.text-container{
-    flex-direction: row;
-    align-items: end;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 10px;
-    justify-content:space-between;
-    margin-right: 20px;
-}
+    /* Anpassung der Portfoliotitel für Mobile */
+    .portfoliotitelone {
+        font-size: 30rem; /* Kleinere Textgröße für mobile Geräte */
+        margin: 0;
+        padding: 0;
+        text-align: center; /* Zentriert den Text */
+    }
 
-.portfoliotitelone {
-    font-size: 3.3rem; /* Kleinere Textgröße für mobile Geräte */
-    margin: 0;
-  }
+    /* Schriftgröße der Bullet-Icons für mobile */
+    .bulletpoint-icon:hover,
+    .bulletpoint-icon:active {
+        animation: rotate-fast 1s linear infinite;
+        fill: rgb(249, 28, 65);  /* Farbe während der Rotation */
+    }
+
+    /* Anpassung für kleinere Bildschirme */
+    #logo-clickable {
+        font-size: 1.5rem;
+    }
+
+
+
+    /* Sicherstellen, dass das SVG und der Text im richtigen Verhältnis nebeneinander reagieren */
+    .container-startseite {
+        display: flex;
+        flex-direction: column; /* Um auf kleineren Geräten den Text unter das Video zu verschieben */
+        align-items: center; /* Zentriert beide Elemente */
+        justify-content: center; /* Positioniert beide vertikal in der Mitte */
+        width: 100%;
+        height: 100vh; /* Volle Bildschirmhöhe */
+        position: relative;
+    }
 
   #header-unit .logo-container.active img.original-image {
     opacity: 0; 
+}
+
+#logo-clickable {
+    font-size: 1.5rem;
+}
+
+
 }
