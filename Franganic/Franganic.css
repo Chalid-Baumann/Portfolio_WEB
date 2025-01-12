@@ -647,6 +647,7 @@ footer nav ul li a {
     }
 
 
+
     #header-unit{
         font-size: 17px; 
     }
@@ -688,6 +689,20 @@ footer nav ul li a {
         flex: 1 1 100%; /* Volle Breite auf kleineren Bildschirmen */
         max-width: 100%; /* Maximale Breite auf kleineren Bildschirmen */
     }
+
+    .half-width-image {
+        width: 100%; /* Container nimmt volle Breite des Bildschirms ein */
+        height: auto; /* Höhe automatisch anpassen, um das Seitenverhältnis zu wahren */
+        display: block; /* Block-Element für volle Breite */
+        overflow: hidden; /* Verhindert, dass das Bild aus dem Container herausragt */
+    }
+
+    .half-width-image img {
+        width: 100%; /* Bild nimmt volle Breite des Containers ein */
+        height: 100%; /* Bild nimmt volle Höhe des Containers ein, um den Raum auszufüllen */
+        object-fit: cover; /* Bild passt sich an, ohne das Seitenverhältnis zu verlieren */
+    }
+
 
     #info-container {
         width: 100%;
