@@ -472,8 +472,11 @@ footer nav ul li a {
 }
 
 .gallery-item.video video {
-    width: 100%; /* Volle Breite */
-    height: auto; /* Automatische Höhe basierend auf der Breite */
+    /*475-477 ursprünglicher Zustand*/
+    /*width: 100%;*/ /* Volle Breite */
+    /*height: auto;*/ /* Automatische Höhe basierend auf der Breite */
+    width: auto;
+    height: 100%;
     min-height: 300px; /* Mindesthöhe für das Video */
     max-height: 850px; /* Maximale Höhe für das Video */
     display: block; /* Verhindert unerwünschte Abstände */
