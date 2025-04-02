@@ -312,8 +312,8 @@ nav ul li a {
 /* Mobile Specific Adjustments */
 @media (max-width: 768px) {
     .grid-item {
-        width: 15px;
-        height: 15px;
+        width: 5mm;
+        height: 5mm;
     }
 
     #canvas {

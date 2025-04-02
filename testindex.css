@@ -718,7 +718,7 @@ margin-left: 20px;
 
 #secondary-header ul {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
 }
 
 #secondary-header ul li {
