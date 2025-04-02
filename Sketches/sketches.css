@@ -95,6 +95,44 @@ a:hover{
 
 
 
+
+/*BulletPoint*/
+.kontakt-link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.bulletpoint-icon {
+    display: inline-block;
+    width: 5%; /* Adjust size as needed */
+    height: auto;
+    margin-right: 8px; /* Space between icon and text */
+    padding-bottom: 1%;
+    transition: transform 1s; /* Sanfter Übergang für die Rotation */
+    transform-origin: center;
+}
+
+.bulletpoint-icon.rotate {
+    animation: rotate 1s forwards; /* Rotation bei Klick oder Hover */
+}
+
+@keyframes continuousRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
 /*HEADER*/
 header{
     position: fixed;
@@ -152,6 +190,60 @@ nav ul li a {
 }
 
 
+/* Header unit styling */
+#header-unit {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    font-size: 2.2rem;
+}
+
+/* Kontakt-Link-Stile */
+#contact-link{
+    display: flex;
+    align-items: center;
+}
+
+#contact-link a {
+    color: black; /* Textfarbe des Links */
+    text-decoration: none;
+    font-size: 2.2rem; /* Schriftgröße des Links */
+}
+
+#contact-link a:hover {
+    color: rgb(255, 28, 65)
+}
+
+
+
+
+
+
+
+/*HOVER LOGO*/
+#header-unit .logo-container:hover img {
+    content: url('/LogoChalid_k.png'); /* Pfad zum neuen Bild */
+}
+
+#header-unit .logo-container img.hover-image {
+    opacity: 0;
+}
+
+#header-unit .logo-container:hover img.original-image {
+    opacity: 0;
+}
+
+#header-unit .logo-container:hover img.hover-image {
+    opacity: 1;
+}
+
+/* Um sicherzustellen, dass der Hover-Effekt auf das gesamte Container-Element wirkt */
+#header-unit .logo-container span {
+    position: relative;
+    z-index: 2;
+}
+
+
+
 
 
 
@@ -175,7 +267,7 @@ nav ul li a {
 .grid-item {
     width: 5mm;
     height: 5mm;
-    border: 0.5px solid rgba(255, 255, 255, 0.41);
+    border: 0.5px solid rgba(255, 255, 255, 0.337);
     box-sizing: border-box;
 }
 
@@ -205,5 +297,33 @@ nav ul li a {
     height: auto;
     object-fit:contain;
     position: absolute;
-    padding: 15px; /*Abstand zwischen den Bilder*/
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    .grid-item {
+        width: 15px;
+        height: 15px;
+    }
+
+    #canvas {
+        width: 3000px; /* or adjust as needed for mobile */
+        height: 3000px;
+    }
+
+    /* Ensure canvas-container is responsive */
+    #canvas-container {
+        width: 100%;
+        height: 100%;
+    }
 }
