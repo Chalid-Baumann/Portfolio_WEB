@@ -1,0 +1,209 @@
+/*SCHRIFT*/
+@import url("https://use.typekit.net/ikm7jrk.css");
+
+@font-face {
+    font-family: 'akzidenzgrotesk_regular';
+    src: url(/font/AkzidenzGrotesk-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GazetteLTStd-Roman';
+    src: url(/font/GazetteLTStd-Roman.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Bold';
+    src: url(/font/SuisseIntl-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Regular';
+    src: url(/font/SuisseIntl-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-Medium';
+    src: url(/font/SuisseIntl-Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'neonsign-regular-webfont';
+    src: url(/font/neonsign-regular-webfont.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: 'franganic';
+    src: url(/font/CHBWide-Regular.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+
+
+/*GENERAL*/
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+
+p{
+    /*text-align: justify;*/
+    text-justify: inter-word;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: rgb(249, 28, 65);
+    font-style: italic;
+    }
+
+
+
+
+
+
+
+
+/*HEADER*/
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0); 
+    z-index: 1100;
+            /*FONT*/
+            font-family: "SuisseIntl-Bold", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 2.2rem;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    /*border-bottom: 1px solid rgb(0, 0, 0);*/
+}
+
+nav ul li {
+    padding: 15px 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo {
+    height: 100px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 17px; /* Space between logo and text */
+    transition: filter 0.5s ease; /* Animiere die Filtereigenschaft */
+}
+
+.logo-container span {
+    font-size: 2.2rem; /* Adjust font size as needed */
+    color: black; /* Ensure text color is visible */
+}
+
+
+
+
+
+
+
+
+.grid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 5mm);
+    grid-template-rows: repeat(auto-fill, 5mm);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Grid squares */
+.grid-item {
+    width: 5mm;
+    height: 5mm;
+    border: 0.5px solid rgba(255, 255, 255, 0.41);
+    box-sizing: border-box;
+}
+
+/* Dragging Canvas */
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+
+/* Infinite Canvas */
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5000px;
+    height: 5000px;
+    /*background-color: black;*/
+    transform-origin: 0 0; /* Ensures proper scaling */
+}
+
+/* Image Styling */
+.image {
+    max-width: 300px;
+    height: auto;
+    object-fit:contain;
+    position: absolute;
+    padding: 15px; /*Abstand zwischen den Bilder*/
+}
