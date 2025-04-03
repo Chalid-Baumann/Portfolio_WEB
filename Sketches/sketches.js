@@ -169,13 +169,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Example imagesData structure with projects
     const imagesData = [
-        { project: 'Project1', src: '/images/AlisonHargreaves/Ausruestung.png' },
-        { project: 'Project1', src: '/images/AlisonHargreaves/Ausruestung.png' },
-        { project: 'Project1', src: '/images/AlisonHargreaves/Ausruestung.png' },
-        { project: 'Project2', src: '/images/Franganic/fg.png' },
-        { project: 'Project2', src: '/images/Franganic/fg.png' },
-        { project: 'Project2', src: '/images/Franganic/fg.png' },
-        { project: 'Project3', src: 'https://via.placeholder.com/300' }
+        { project: 'Project1', src: '/images/Sketches/VD_1_IMG_0593_1.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_IMG_0594_1.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_IMG_0595_1.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_IMG_0590_1.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_Ingwershot_P_Zeichenfläche 1 Kopie 5.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_Ingwershot_P_Zeichenfläche 1.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_Ingwershot_P_Zeichenfläche 1 Kopie 2.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_Ingwershot_P_Zeichenfläche 1 Kopie.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_Ingwershot_P_Zeichenfläche 1 Kopie 3.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_Ingwershot_P_Zeichenfläche 1 Kopie 4.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_PT_Ingwershot_IMG_0557.jpg' },
+        { project: 'Project1', src: '/images/Sketches/VD_1_PT_Ingwershot_IMG_0561.jpg' },
+        { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0582_1.jpg' },
+        { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0585_1.jpg' },
+        { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0586_1.jpg' },
+        { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0588_1.jpg' },
+        { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0589_1.jpg' },
+        //{ project: 'Project3', src: 'https://via.placeholder.com/300' }
     ];
 
     // Add images to the canvas
