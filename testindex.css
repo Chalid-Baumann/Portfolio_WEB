@@ -176,9 +176,9 @@ nav ul li a {
     box-sizing: border-box;
     border-top: 0.8px solid rgb(0, 0, 0);
         /* Add the grid background */
-        background-image: 
+        /*background-image: 
             linear-gradient(90deg, white 5mm, transparent 5mm),
-            linear-gradient(180deg, rgb(0, 0, 0) 5mm, transparent 5mm);
+            linear-gradient(180deg, rgb(0, 0, 0) 5mm, transparent 5mm);*/
         background-size: 5mm 5mm;
         background-position: 0 0;
         background-repeat: repeat;
