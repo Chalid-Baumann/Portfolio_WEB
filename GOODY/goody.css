@@ -777,6 +777,11 @@ body {
     opacity: 1; /* Zeigt das zweite Bild beim Klick auf mobile Geräten */
 }
 
+.gallery-container .gallery-item:nth-child(9) {
+    width: 100%;     /* oder z. B. 50% – je nach gewünschter Größe */
+    margin: 0 auto; /* zentriert das Element horizontal */
+    flex: 0 0 auto; /* Verhindert flex-grow/shrink */
+}
 
 
 }
