@@ -51,6 +51,19 @@
     font-style: normal;
 }
 
+@font-face{
+    font-family: 'Throwup';
+    src: url(/font/Throwup-Stroke.otf);
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Spacegrotesk';
+    src: url(/font/SpaceGrotesk-Light.otf);
+    font-weight: lighter;
+    font-style: normal;
+}
 
 
 
@@ -182,6 +195,11 @@ nav ul li a {
         background-size: 5mm 5mm;
         background-position: 0 0;
         background-repeat: repeat;
+                    /*FONT*/
+                    /*font-family: "Throwup";
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 2.2rem;*/
 }
 
 
