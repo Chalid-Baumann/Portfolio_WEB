@@ -570,12 +570,19 @@ footer nav ul li a {
     flex: 1 1 45%; /* Beide nebeneinander mit etwas Platz */
 }
 
-/* Bild 9 zentriert in neuer Zeile */
-.gallery-container .gallery-item:nth-child(9) {
-    width: 40%;     /* oder z. B. 50% – je nach gewünschter Größe */
-    margin: 0 auto; /* zentriert das Element horizontal */
-    flex: 0 0 auto; /* Verhindert flex-grow/shrink */
+
+/* Bilder 9 und 10 nebeneinander */
+.gallery-container .gallery-item:nth-child(9),
+.gallery-container .gallery-item:nth-child(10) {
+    flex: 1 1 45%; /* Beide nebeneinander mit etwas Platz */
 }
+
+/* Bild 9 zentriert in neuer Zeile
+.gallery-container .gallery-item:nth-child(9) {
+    width: 40%;     
+    margin: 0 auto;
+    flex: 0 0 auto; 
+}*/
 
 
 
