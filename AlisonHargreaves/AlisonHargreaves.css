@@ -766,6 +766,15 @@ body {
     opacity: 1; /* Zeigt das zweite Bild beim Klick auf mobile Geräten */
 }
 
+.gallery-item.video video {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    max-height: 100vh; /* passt sich an die Höhe des Viewports an */
+    object-fit: contain; /* Verhindert Beschneidung des Videos */
+}
+
+
 
 
 }
