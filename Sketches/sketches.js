@@ -189,11 +189,15 @@ document.addEventListener("DOMContentLoaded", function () {
         { project: 'Project1', src: '/images/Sketches/VD_1_Flavour__Green.png'},
         { project: 'Project1', src: '/images/Sketches/VD_1_Flavour__Purple.png'},
         { project: 'Project1', src: '/images/Sketches/GoodyBooster123.png'},
+        { project: 'Project1', src: '/images/Sketches/VD_1_Sourale_Guava_01.jpg'},
+        { project: 'Project1', src: '/images/Sketches/VD_1_Sourale_Pumkin_01.jpg'},
         { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0582_1.jpg' },
         { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0585_1.jpg' },
         { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0586_1.jpg' },
         { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0588_1.jpg' },
         { project: 'Project2', src: '/images/Sketches/Signaletik_1_IMG_0589_1.jpg' },
+        { project: 'Project3', src: '/images/Sketches/Geotype_Baurex_01.jpg' },
+        { project: 'Project3', src: '/images/Sketches/Geotype_Baurex_02.jpg' },
         //{ project: 'Project3', src: 'https://via.placeholder.com/300' }
     ];
 
